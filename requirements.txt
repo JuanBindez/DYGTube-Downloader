@@ -1,0 +1,5 @@
+altgraph==0.17.2
+pyinstaller==5.1
+pyinstaller-hooks-contrib==2022.6
+pytube==12.1.0
+urllib3==1.26.9
