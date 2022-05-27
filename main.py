@@ -41,7 +41,8 @@ try:
 
     label = Label(window, text="Cole Seu Link Aqui:").place(x=20, y=60)# y é altura e x é para os lados
     #label.grid(row=0, column=0)
-    entrada_de_dados = Entry(window, width=40).place(x=150, y=60)
+    entrada_de_dados = Entry(window, width=40)
+    entrada_de_dados.place(x=150, y=60)
     #entrada_de_dados.grid(row=0, column=1)
 
     label_discricao = Label(window, text="Autor: Juan Bindez <https://github.com/JuanBindez>   2022 v0.1").place(x=20, y=170)
