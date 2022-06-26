@@ -8,7 +8,8 @@ try:
       from tkinter import messagebox
       import time
     except ModuleNotFoundError:
-      messagebox.showinfo("Atenção!!!", "você não tem o pytube instalado ,tente pip install pytube")
+      messagebox.showinfo("Atenção!!!", "você não tem o pytube instalado ,vou instalar pra você")
+      os.system("pip install pytube")
       
     import urllib3
     import time
