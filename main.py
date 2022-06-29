@@ -1,3 +1,11 @@
+'''
+Author: www.github.com/JuanBindez
+Description: download youtube videos
+Python Version: 3.10
+year: 2022
+Local: Brazil
+'''
+
 try:
 
     import os
