@@ -1,5 +1,11 @@
 # YOUTUBE-DOWLOADER-TKINTER
-dowloader com tkinter
+
+
+"This project is licensed under the MIT License."
+
+"Este projeto está licenciado nos termos da licença MIT."
+
+Este Software Faz Download De Videos Do Youtube.
 
 ## Comando Para Compilar:
 
