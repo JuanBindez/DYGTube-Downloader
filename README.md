@@ -7,6 +7,12 @@
 
 Este Software Faz Download De Videos Do Youtube.
 
+## Ative a Virtualenv e Digite o Comando:
+
+.. code-block:: bash
+
+    $ pip install -r requirements.txt
+
 ## Comando Para Compilar:
 
 
