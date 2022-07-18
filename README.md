@@ -13,8 +13,13 @@ Este Software Faz Download De Videos Do Youtube.
 
 
     $ pyinstaller --onefile --noconsole --windowed main.py
+    
+    
+## Antes de Compilar Os Arquivos Estarão Asim:
 
 ![Captura de tela de 2022-07-18 13-58-12](https://user-images.githubusercontent.com/79322362/179566764-2d5149fe-4425-45d6-a025-032d66251c7f.png)
+
+## Após Compilar Aparecerá 3 Arquivos Novos:
 
 ![Captura de tela de 2022-07-18 14-16-32](https://user-images.githubusercontent.com/79322362/179566787-86690eba-0902-4be7-9d7f-620996c776b5.png)
 
