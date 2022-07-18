@@ -71,7 +71,7 @@ try:
     entrada_de_dados.place(x=150, y=60)
     #entrada_de_dados.grid(row=0, column=1)
 
-    label_discricao = Label(window, text="Autor: Juan Bindez <https://github.com/JuanBindez>   2022 v0.1").place(x=20, y=170)
+    #label_discricao = Label(window, text="Autor: Juan Bindez <https://github.com/JuanBindez>   2022 v0.1").place(x=20, y=170)
 
 
     botao = Button(window, text="Iniciar Download", command=download_youtube).place(x=180, y=100)
