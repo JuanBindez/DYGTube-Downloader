@@ -6,4 +6,4 @@ dowloader com tkinter
 
 
 
-    $ pyinstaller --onefile --noconsole --windowed nome_do_programa.py
+    $ pyinstaller --onefile --noconsole --windowed main.py
