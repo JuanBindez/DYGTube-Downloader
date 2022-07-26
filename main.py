@@ -63,7 +63,7 @@ try:
     window = Tk()
     window.title("Youtube Downloader")
     window.geometry("500x200")
-    window['background'] = '#58F'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+    window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
     
 
     label = Label(window, text="Cole Seu Link Aqui:").place(x=20, y=60)# y é altura e x é para os lados
