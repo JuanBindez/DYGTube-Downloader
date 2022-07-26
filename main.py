@@ -63,6 +63,7 @@ try:
     window = Tk()
     window.title("Youtube Downloader")
     window.geometry("500x200")
+    window['background'] = '#58F'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
     
 
     label = Label(window, text="Cole Seu Link Aqui:").place(x=20, y=60)# y é altura e x é para os lados
@@ -74,7 +75,7 @@ try:
     #label_discricao = Label(window, text="Autor: Juan Bindez <https://github.com/JuanBindez>   2022 v0.1").place(x=20, y=170)
 
 
-    botao = Button(window, text="Iniciar Download", command=download_youtube).place(x=180, y=100)
+    botao = Button(window, text="Iniciar Download", command=download_youtube, fg='white', bg='green').place(x=180, y=100)
     #botao.grid(row=4, column=1)
 
 
