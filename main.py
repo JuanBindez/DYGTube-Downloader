@@ -66,7 +66,7 @@ try:
     window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
     
 
-    label = Label(window, text="Cole Seu Link Aqui:").place(x=20, y=60)# y é altura e x é para os lados
+    label = Label(window, text="Link *").place(x=20, y=60)# y é altura e x é para os lados
     #label.grid(row=0, column=0)
     entrada_de_dados = Entry(window, width=40)
     entrada_de_dados.place(x=150, y=60)
