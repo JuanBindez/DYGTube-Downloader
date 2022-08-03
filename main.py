@@ -54,7 +54,7 @@ try:
     window.title("Youtube Downloader")
     window.geometry("500x200")
     window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-    
+    window.resizable(False, False)# False para não responsivo e True para responsivo.
 
     label = Label(window, text="Link *").place(x=20, y=60)# y é altura e x é para os lados
     #label.grid(row=0, column=0)
