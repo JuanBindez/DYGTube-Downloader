@@ -5,7 +5,7 @@
 "Este projeto está licenciado nos termos da licença MIT."
 
 ----------
-### Detales de release:
+### Detalhes de release:
 
 #### v1.0.0:
 
