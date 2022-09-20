@@ -6,6 +6,18 @@
 
 Este Software Faz Download De Videos Do Youtube.
 
+#### Instale o Git:
+
+    sudo apt install git
+
+#### Faça um git clone:
+
+    git clone https://github.com/JuanBindez/YOUTUBE-DOWLOADER-GUI-v1.0.0
+    
+#### Acesse a pasta:
+
+    cd YOUTUBE-DOWLOADER-GUI-v1.0.0/
+
 ## Ative a Virtualenv e Digite o Comando:
 
 
