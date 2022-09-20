@@ -1,4 +1,4 @@
-# YOUTUBE-DOWLOADER-TKINTER
+# Este é o YOUTUBE-DOWLOADER-GUI versão 1.0.0
 
 "This project is licensed under the MIT License."
 
