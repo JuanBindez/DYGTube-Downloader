@@ -6,6 +6,12 @@
 
 Este Software Faz Download De Videos Do Youtube.
 
+### Detales de release:
+
+#### v1.0.0:
+
+- versão inicial
+
 #### Instale o Git:
 
     sudo apt install git
