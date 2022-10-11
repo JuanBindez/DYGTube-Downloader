@@ -1,4 +1,4 @@
-# Este é o YOUTUBE-DOWLOADER-GUI versão 1.0.0
+# Este é o DYG versão 1.0.0
 
 ### "This project is licensed under the MIT License."
 
