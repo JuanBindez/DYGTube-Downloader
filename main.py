@@ -59,12 +59,35 @@ def sobre_software():
   window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window.resizable(False, False)# False para não responsivo e True para responsivo.
 
-  label = Label(window, text="DYG", fg='white', bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
-  label = Label(window, text="v1.0.0", fg='white', bg="#4E4E4E").place(x=195, y=29)
-  label = Label(window, text="O DYG faz download de video do Youtube.", fg='white', bg="#4E4E4E").place(x=70, y=80)
-  label = Label(window, text="Este programa vem com absolutamente nenhuma garantia.", fg='red', bg="#4E4E4E").place(x=20, y=110)# y é altura e x é para os lados
-  label = Label(window, text="Para mais detalhes, visite Licença Pública Geral GNU, versão 2", fg='white', bg="#4E4E4E").place(x=15, y=150)# y é altura e x é para os lados
-  label = Label(window, text="Copyright (c) 2022 Juan Carlos Bindez", fg='black', bg="#4E4E4E").place(x=80, y=170)
+  label = Label(window,
+                text="DYG",
+                fg='white', 
+                bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
+
+  label = Label(window,
+                text="v1.0.0",
+                fg='white',
+                bg="#4E4E4E").place(x=195, y=29)
+
+  label = Label(window, 
+                text="O DYG faz download de video do Youtube.", 
+                fg='white', 
+                bg="#4E4E4E").place(x=70, y=80)
+
+  label = Label(window,
+                text="Este programa vem com absolutamente nenhuma garantia.", 
+                fg='red', 
+                bg="#4E4E4E").place(x=20, y=110)# y é altura e x é para os lados
+
+  label = Label(window, 
+                text="Para mais detalhes, visite Licença Pública Geral GNU, versão 2", 
+                fg='white',
+                bg="#4E4E4E").place(x=15, y=150)# y é altura e x é para os lados
+
+  label = Label(window,
+                text="Copyright (c) 2022 Juan Carlos Bindez", 
+                fg='black', 
+                bg="#4E4E4E").place(x=80, y=170)
 
 
 #bloco de interface
@@ -74,7 +97,12 @@ window.geometry("500x200")
 window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 window.resizable(False, False)# False para não responsivo e True para responsivo.
 
-label = Label(window, text="URL*", fg='white', bg="#4E4E4E").place(x=40, y=60)# y é altura e x é para os lados
+label = Label(window,
+                text="URL*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=60)# y é altura e x é para os lados
+
+
 entrada_de_dados = Entry(window, width=40)
 entrada_de_dados.place(x=95, y=60)
 
@@ -88,11 +116,11 @@ botao = Button(window,
 
 # botão para exibir informações sobre o programa.
 botao_sobre = Button(window,
-                    text="Sobre",
-                    command=sobre_software,
-                    fg='white',
-                    bg='grey',
-                    width=2,).place(x=455, y=2)
+                text="Sobre",
+                command=sobre_software,
+                fg='white',
+                bg='grey',
+                width=2,).place(x=455, y=2)
 
 if __name__ == "__main__":
   window.mainloop()
