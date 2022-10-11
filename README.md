@@ -16,11 +16,11 @@
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/YOUTUBE-DOWLOADER-GUI-v1.0.0
+    git clone https://github.com/JuanBindez/DYG-v1.0.0
     
 ### Acesse a pasta:
 
-    cd YOUTUBE-DOWLOADER-GUI-v1.0.0/
+    cd DYG-v1.0.0/
 
 ### Ative a Virtualenv e Digite o Comando:
 
@@ -28,8 +28,6 @@
     $ pip install -r requirements.txt
 
 ### Comando Para Compilar:
-
-
 
 
     $ pyinstaller --onefile --noconsole --windowed main.py
