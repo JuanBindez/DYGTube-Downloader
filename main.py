@@ -20,67 +20,80 @@
 # e-mail: juanbindez780@gmail.com
 
 
-try:
-
-    import os
-    try:
-      from pytube import YouTube
-      from pytube.cli import on_progress
-      from tkinter import *
-      from tkinter import messagebox
-      import time
-    except ModuleNotFoundError:
-      messagebox.showinfo("Atenção!!!", "você não tem o pytube instalado ,vou instalar pra você")
-      os.system("pip install pytube")
-      
-    import urllib3
-    import time
-
+import os
+import urllib3
+import time
     
+from pytube import YouTube
+from pytube.cli import on_progress
+from tkinter import *
+from tkinter import messagebox
 
-    def download_youtube():
 
-      link = entrada_de_dados.get()
+def download_youtube():
 
-      yt = YouTube(link, on_progress_callback = on_progress)
+  '''
+      Aqui é feito o download do video.
+      a variavel link recebe a url.
+  '''
 
-      messagebox.showinfo("Youtube Downloader", "Titulo = " + yt.title)
+  link = entrada_de_dados.get()
+  yt = YouTube(link, on_progress_callback = on_progress)
+  messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+  ys = yt.streams.get_highest_resolution()
+  ys.download()
+  time.sleep(5)
 
-      ys = yt.streams.get_highest_resolution()
-
-      ys.download()
-      time.sleep(5)
-
-      messagebox.showinfo("Youtube Downloader", "Seu Dowload Esta Pronto")
+  # exibe a menssagem de conclusão do download.
+  messagebox.showinfo("DYG Downloader", "Seu Dowload Esta Pronto")
       
 
+def sobre_software():
+  '''
+     exibe informações sobre o programa.
+     ao clicar no botão sobre abrirá uma janela com informações.
+  '''
+  window = Tk()
+  window.title("DYG Downloader")
+  window.geometry("435x200")
+  window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+  window.resizable(False, False)# False para não responsivo e True para responsivo.
 
-  
-    #bloco de interface
-    window = Tk()
-    window.title("Youtube Downloader")
-    window.geometry("500x200")
-    window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-    window.resizable(False, False)# False para não responsivo e True para responsivo.
-
-    label = Label(window, text="Link *").place(x=20, y=60)# y é altura e x é para os lados
-    #label.grid(row=0, column=0)
-    entrada_de_dados = Entry(window, width=40)
-    entrada_de_dados.place(x=150, y=60)
-    #entrada_de_dados.grid(row=0, column=1)
-
-    #label_discricao = Label(window, text="Autor: Juan Bindez <https://github.com/JuanBindez>   2022 v0.1").place(x=20, y=170)
-
-
-    botao = Button(window, text="Iniciar Download", command=download_youtube, fg='white', bg='green').place(x=180, y=100)
-    #botao.grid(row=4, column=1)
+  label = Label(window, text="DYG", fg='white', bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
+  label = Label(window, text="v1.0.0", fg='white', bg="#4E4E4E").place(x=195, y=29)
+  label = Label(window, text="O DYG faz download de video do Youtube.", fg='white', bg="#4E4E4E").place(x=70, y=80)
+  label = Label(window, text="Este programa vem com absolutamente nenhuma garantia.", fg='red', bg="#4E4E4E").place(x=20, y=110)# y é altura e x é para os lados
+  label = Label(window, text="Para mais detalhes, visite Licença Pública Geral GNU, versão 2", fg='white', bg="#4E4E4E").place(x=15, y=150)# y é altura e x é para os lados
+  label = Label(window, text="Copyright (c) 2022 Juan Carlos Bindez", fg='black', bg="#4E4E4E").place(x=80, y=170)
 
 
-    window.mainloop()
-    #fim do bloco de interface
+#bloco de interface
+window = Tk()
+window.title("DYG Downloader")
+window.geometry("500x200")
+window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+window.resizable(False, False)# False para não responsivo e True para responsivo.
+
+label = Label(window, text="URL*", fg='white', bg="#4E4E4E").place(x=40, y=60)# y é altura e x é para os lados
+entrada_de_dados = Entry(window, width=40)
+entrada_de_dados.place(x=95, y=60)
+
+# botão que inicia o download.
+botao = Button(window,
+                text="Iniciar Download",
+                command=download_youtube,
+                fg='white',
+                bg='green',).place(x=180, y=130)
 
 
-except AttributeError:
-  messagebox.showinfo("Atenção!!!", "Houve Um Erro De Atributo!")
+# botão para exibir informações sobre o programa.
+botao_sobre = Button(window,
+                    text="Sobre",
+                    command=sobre_software,
+                    fg='white',
+                    bg='grey',
+                    width=2,).place(x=455, y=2)
 
-  
+if __name__ == "__main__":
+  window.mainloop()
+#fim do bloco de interface
