@@ -1,8 +1,10 @@
 # Este é o DYG versão 1.0.0
 
-### "This project is licensed under the MIT License."
+Copyright (c) 2022 Juan Carlos Bindez
 
-### "Este projeto está licenciado nos termos da licença MIT."
+#### "This project is licensed under GNU General Public License v2.0."
+
+#### "Este projeto está licenciado nos termos da licença GNU General Public License v2.0."
 
 ----------
 ### Sobre:
