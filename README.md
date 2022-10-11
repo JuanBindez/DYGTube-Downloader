@@ -5,13 +5,6 @@
 ### "Este projeto está licenciado nos termos da licença MIT."
 
 ----------
-### Detalhes de release:
-
-### v1.0.0:
-
-- versão inicial
-
-----------
 ### Sobre:
 
 - Este Software Faz Download De Videos Do Youtube.
