@@ -29,12 +29,12 @@ Copyright (c) 2022 Juan Carlos Bindez
 ### Ative a Virtualenv e Digite o Comando:
 
 
-    $ pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ### Comando Para Compilar:
 
 
-    $ pyinstaller --onefile --noconsole --windowed main.py
+    pyinstaller --onefile --noconsole --windowed main.py
     
     
 ### Antes de Compilar Os Arquivos Estarão Asim:
