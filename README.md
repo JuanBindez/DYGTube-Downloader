@@ -49,4 +49,6 @@
 
 ### Clicando Em Cima Abrirá o Programa:
 
-![Captura de tela de 2022-07-18 14-09-10](https://user-images.githubusercontent.com/79322362/179566816-fb956cd1-1001-40fa-9c32-afc68e9feb26.png)
+![Captura de tela de 2022-10-13 11-55-26](https://user-images.githubusercontent.com/79322362/195632092-5f139150-e7f7-418d-a36f-e03d0c1b0172.png)
+
+
