@@ -16,8 +16,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #  
-# autor: https://github.com/juanBindez
-# e-mail: juanbindez780@gmail.com
+# autor: https://github.com/juanBindez <juanbindez780@gmail.com>
 
 
 import os
@@ -31,10 +30,8 @@ from tkinter import messagebox
 
 
 def download_youtube():
-  '''
-      Aqui é feito o download do video.
-      a variavel link recebe a url.
-  '''
+  """Aqui é feito o download do video.
+     a variavel link recebe a url."""
 
   link = entrada_de_dados.get()
   yt = YouTube(link, on_progress_callback = on_progress)
@@ -48,10 +45,9 @@ def download_youtube():
       
 
 def sobre_software():
-  '''
-     exibe informações sobre o programa.
-     ao clicar no botão sobre abrirá uma janela com informações.
-  '''
+  """exibe informações sobre o programa.
+     ao clicar no botão sobre abrirá uma janela com informações."""
+     
   window = Tk()
   window.title("DYG Downloader")
   window.geometry("435x200")
