@@ -1,4 +1,4 @@
-# Este é o DYG versão 1.0.0
+# Este é o DYG Downloader versão 1.0.0
 
 ## Este software é livre, os usuários possuem a liberdade de executar, copiar, distribuir, estudar, mudar e melhorar o software.
 
@@ -20,11 +20,11 @@
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/DYG-v1.0.0
+    git clone https://github.com/JuanBindez/DYG-Downloader-v1.0.0
     
 ### Acesse a pasta:
 
-    cd DYG-v1.0.0/
+    cd DYG-Downloader-v1.0.0/
 
 ### Ative a Virtualenv e Digite o Comando:
 
