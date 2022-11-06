@@ -11,7 +11,7 @@
 
 ### Sobre:
 
-- Este Software Faz Download De Videos e Áudios em mp3 Do Youtube.
+- Este Software Faz Download De Videos e Áudios em MP3 Do Youtube.
 
 -----------
 ## Abaixo esta o passo a passo para compilar (transformar em executavel) , mas se preferir já existe o executavel no site Acesse o site click __[aqui](https://juanbindez.github.io/site.dyg.downloader/)__.
