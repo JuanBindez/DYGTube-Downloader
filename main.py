@@ -84,7 +84,7 @@ def sobre_software():
                 bg="#4E4E4E").place(x=195, y=29)
 
   label = Label(window, 
-                text="O DYG faz download de video e audio mp3 do Youtube.", 
+                text="O DYG faz download de video e audio MP3 do Youtube.", 
                 fg='white', 
                 bg="#4E4E4E").place(x=50, y=80)
 
@@ -129,7 +129,7 @@ botao = Button(window,
 
 # botão para iniciar download apenas do auidio do vídeo.
 botao_mp3 = Button(window,
-                text="Download mp3",
+                text="Download MP3",
                 command=download_mp3,
                 fg='white',
                 bg='green',).place(x=270, y=130)
