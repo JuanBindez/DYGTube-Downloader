@@ -1,3 +1,7 @@
+### v2.1.0:
+
+- Acrescentado o recurso mix que permite fazer download de até 10 vídeos e MP3 simultâneos.
+
 ### v2.0.0:
 
 - Acrescentado recurso para fazer download somente do áudio em mp3.
