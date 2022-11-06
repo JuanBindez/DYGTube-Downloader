@@ -72,6 +72,7 @@ def sobre_software():
   window.geometry("435x200")
   window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window.resizable(False, False)# False para não responsivo e True para responsivo.
+  #window.attributes('-alpha',0.5)
 
   label = Label(window,
                 text="DYG",
