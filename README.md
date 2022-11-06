@@ -1,4 +1,4 @@
-# Este é o DYG Downloader versão 1.0.0
+# Este é o DYG Downloader versão 2.0.0
 
 ## Este software é livre, os usuários possuem a liberdade de executar, copiar, distribuir, estudar, mudar e melhorar o software.
 
@@ -11,20 +11,22 @@
 
 ### Sobre:
 
-- Este Software Faz Download De Videos Do Youtube.
+- Este Software Faz Download De Videos e Áudios em mp3 Do Youtube.
 
 -----------
+## Abaixo esta o passo a passo para compilar (trasformar em executavel) , mas se preferir já existe o executavel no site Acesse o site click __[aqui](https://juanbindez.github.io/site.dyg.downloader/)__.
+
 ### Instale o Git:
 
     sudo apt install git
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/DYG-Downloader-v1.0.0
+    git clone https://github.com/JuanBindez/DYG-Downloader-v2.0.0
     
 ### Acesse a pasta:
 
-    cd DYG-Downloader-v1.0.0/
+    cd DYG-Downloader-v2.0.0/
 
 ### Ative a Virtualenv e Digite o Comando:
 
