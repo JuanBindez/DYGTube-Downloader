@@ -31,9 +31,12 @@ from tkinter import messagebox
 
 def download_youtube():
   """Aqui é feito o download do video.
-     a variavel link recebe a url."""
+
+     a variavel link recebe a url.
+  """
 
   link = entrada_de_dados.get()
+
   yt = YouTube(link, on_progress_callback = on_progress)
   messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
   ys = yt.streams.get_highest_resolution()
@@ -42,11 +45,27 @@ def download_youtube():
 
   # exibe a menssagem de conclusão do download.
   messagebox.showinfo("DYG Downloader", "Seu Dowload Esta Pronto")
-      
+
+
+def download_mp3():
+  """Esta função faz download apenas do áudio."""
+
+  link = entrada_de_dados.get()
+  
+  yt = YouTube(link, on_progress_callback = on_progress)
+  messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+  ys = yt.streams.get_audio_only()
+  ys.download()
+  time.sleep(5)
+
+  messagebox.showinfo("DYG Downloader", "Seu Dowload Esta Pronto")
+
 
 def sobre_software():
   """exibe informações sobre o programa.
-     ao clicar no botão sobre abrirá uma janela com informações."""
+
+     ao clicar no botão sobre abrirá uma janela com informações.
+  """
      
   window = Tk()
   window.title("DYG Downloader")
@@ -60,14 +79,14 @@ def sobre_software():
                 bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v1.0.0",
+                text="v2.0.0",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
   label = Label(window, 
-                text="O DYG faz download de video do Youtube.", 
+                text="O DYG faz download de video e audio mp3 do Youtube.", 
                 fg='white', 
-                bg="#4E4E4E").place(x=70, y=80)
+                bg="#4E4E4E").place(x=50, y=80)
 
   label = Label(window,
                 text="Este programa vem com absolutamente nenhuma garantia.", 
@@ -103,10 +122,17 @@ entrada_de_dados.place(x=95, y=60)
 
 # botão que inicia o download.
 botao = Button(window,
-                text="Iniciar Download",
+                text="Download Vídeo",
                 command=download_youtube,
                 fg='white',
-                bg='green',).place(x=180, y=130)
+                bg='green',).place(x=120, y=130)
+
+# botão para iniciar download apenas do auidio do vídeo.
+botao_mp3 = Button(window,
+                text="Download mp3",
+                command=download_mp3,
+                fg='white',
+                bg='green',).place(x=270, y=130)
 
 
 # botão para exibir informações sobre o programa.
