@@ -29,9 +29,8 @@ from tkinter import *
 from tkinter import messagebox
 
 
-def download_youtube():
+def download_video():
   """Aqui é feito o download do video.
-
      a variavel link recebe a url.
   """
 
@@ -61,18 +60,425 @@ def download_mp3():
   messagebox.showinfo("DYG Downloader", "Seu Dowload Esta Pronto")
 
 
+def combo_mix():
+  """faz download de varios ao mesmo tempo"""
+
+  def download_video():
+    """Aqui é feito o download do video.
+      a variavel link recebe a url.
+    """
+
+    link_1 = entrada_url_1.get()
+    
+    yt = YouTube(link_1, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_2 = entrada_url_2.get()
+
+    yt = YouTube(link_2, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_3 = entrada_url_3.get()
+    
+    yt = YouTube(link_3, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_4 = entrada_url_4.get()
+
+    yt = YouTube(link_4, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_5 = entrada_url_5.get()
+    
+    yt = YouTube(link_5, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    link_6 = entrada_url_6.get()
+
+    yt = YouTube(link_6, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_7 = entrada_url_7.get()
+    
+    yt = YouTube(link_7, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_8 = entrada_url_8.get()
+
+    yt = YouTube(link_8, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_9 = entrada_url_9.get()
+    
+    yt = YouTube(link_9, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_10 = entrada_url_10.get()
+
+    yt = YouTube(link_10, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_highest_resolution()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
+    
+    # fim do bloco download video da opção mix
+
+  def download_mp3():
+    """Esta função faz download apenas do áudio."""
+
+    link_1 = entrada_url_1.get()
+    
+    yt = YouTube(link_1, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(1)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_2 = entrada_url_2.get()
+
+    yt = YouTube(link_2, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(1)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_3 = entrada_url_3.get()
+    
+    yt = YouTube(link_3, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_4 = entrada_url_4.get()
+
+    yt = YouTube(link_4, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_5 = entrada_url_5.get()
+    
+    yt = YouTube(link_5, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_6 = entrada_url_6.get()
+
+    yt = YouTube(link_6, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_7 = entrada_url_7.get()
+    
+    yt = YouTube(link_7, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_8 = entrada_url_8.get()
+
+    yt = YouTube(link_8, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_9 = entrada_url_9.get()
+    
+    yt = YouTube(link_9, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    link_10 = entrada_url_10.get()
+
+    yt = YouTube(link_10, on_progress_callback = on_progress)
+    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+    ys = yt.streams.get_audio_only()
+    ys.download()
+    time.sleep(3)
+
+    label_info = Label(window,
+                text="Downloads Concluído!",
+                fg='white', 
+                bg="#4E4E4E").place(x=170, y=10)# y é altura e x é para os lados
+
+    messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
+
+    # fim do bloco download MP3 da opção mix
+
+
+  def info_function():
+    """exibe informações sobre a função mix.
+      ao clicar no botão sobre abrirá uma janela com informações.
+    """
+
+    messagebox.showinfo("DYG Downloader", "Com esta função você pode baixar até 10 vídeos e MP3 com apenas 1 click")
+    
+
+
+  #bloco de interface da opção mix.
+  window = Tk()
+  window.title("DYG Downloader")
+  window.geometry("435x600")
+  window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+  window.resizable(False, False)# False para não responsivo e True para responsivo.
+  window.attributes('-alpha',0.1)
+
+  
+  label = Label(window,
+                text="URL 1*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=60)# y é altura e x é para os lados
+
+  entrada_url_1 = Entry(window, width=40)
+  entrada_url_1.place(x=95, y=60)
+
+
+  label = Label(window,
+                text="URL 2*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=85)
+
+  entrada_url_2 = Entry(window, width=40)
+  entrada_url_2.place(x=95, y=85)
+
+
+  label = Label(window,
+                text="URL 3*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=110)# y é altura e x é para os lados
+
+  entrada_url_3 = Entry(window, width=40)
+  entrada_url_3.place(x=95, y=110)
+
+
+  label = Label(window,
+                text="URL 4*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=135)
+
+  entrada_url_4 = Entry(window, width=40)
+  entrada_url_4.place(x=95, y=135)
+
+  label = Label(window,
+                text="URL 5*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=160)# y é altura e x é para os lados
+
+  entrada_url_5 = Entry(window, width=40)
+  entrada_url_5.place(x=95, y=160)
+
+
+  label = Label(window,
+                text="URL 6*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=185)
+
+  entrada_url_6 = Entry(window, width=40)
+  entrada_url_6.place(x=95, y=185)
+
+
+  label = Label(window,
+                text="URL 7*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=210)# y é altura e x é para os lados
+
+  entrada_url_7 = Entry(window, width=40)
+  entrada_url_7.place(x=95, y=210)
+
+
+  label = Label(window,
+                text="URL 8*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=235)
+
+  entrada_url_8 = Entry(window, width=40)
+  entrada_url_8.place(x=95, y=235)
+
+
+  label = Label(window,
+                text="URL 9*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=260)# y é altura e x é para os lados
+
+  entrada_url_9 = Entry(window, width=40)
+  entrada_url_9.place(x=95, y=260)
+
+
+  label = Label(window,
+                text="URL 10*",
+                fg='white',
+                bg="#4E4E4E").place(x=40, y=285)
+
+  entrada_url_10 = Entry(window, width=40)
+  entrada_url_10.place(x=95, y=285)
+
+
+  # botão que inicia o download do video da opção mix.
+  botao_video = Button(window,
+                  text="Download Vídeo",
+                  command=download_video,
+                  fg='white',
+                  bg='green',).place(x=90, y=500)
+
+  # botão para iniciar download apenas do auidio do vídeo da opção mix.
+  botao_mp3 = Button(window,
+                text="Download MP3",
+                command=download_mp3,
+                fg='white',
+                bg='green',).place(x=240, y=500)
+
+
+  botao_info = Button(window,
+                text="Info",
+                command=info_function,
+                fg='black',
+                bg='grey',
+                width=2,).place(x=390, y=2)# y é altura e x é para os lados
+
+  # fim do bloco da opção mix
+
+
 def sobre_software():
   """exibe informações sobre o programa.
-
      ao clicar no botão sobre abrirá uma janela com informações.
   """
-     
+  
+  #bloco de interface sobre o software.
   window = Tk()
   window.title("DYG Downloader")
   window.geometry("435x200")
   window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window.resizable(False, False)# False para não responsivo e True para responsivo.
-  #window.attributes('-alpha',0.5)
+  window.attributes('-alpha',0.1)
 
   label = Label(window,
                 text="DYG",
@@ -80,7 +486,7 @@ def sobre_software():
                 bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v2.0.0",
+                text="v2.1.0",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
@@ -105,12 +511,14 @@ def sobre_software():
                 bg="#4E4E4E").place(x=80, y=170)
 
 
-#bloco de interface
+#bloco de interface principal
 window = Tk()
 window.title("DYG Downloader")
 window.geometry("500x200")
 window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 window.resizable(False, False)# False para não responsivo e True para responsivo.
+window.attributes('-alpha',0.1)
+
 
 label = Label(window,
                 text="URL*",
@@ -124,7 +532,7 @@ entrada_de_dados.place(x=95, y=60)
 # botão que inicia o download.
 botao = Button(window,
                 text="Download Vídeo",
-                command=download_youtube,
+                command=download_video,
                 fg='white',
                 bg='green',).place(x=120, y=130)
 
@@ -140,9 +548,18 @@ botao_mp3 = Button(window,
 botao_sobre = Button(window,
                 text="Sobre",
                 command=sobre_software,
-                fg='white',
+                fg='black',
                 bg='grey',
-                width=2,).place(x=455, y=2)
+                width=2,).place(x=455, y=2)# y é altura e x é para os lados
+
+
+botao_combo = Button(window,
+                text="mix",
+                command=combo_mix,
+                fg='black',
+                bg='grey',
+                width=2,).place(x=455, y=30)
+
 
 if __name__ == "__main__":
   window.mainloop()
