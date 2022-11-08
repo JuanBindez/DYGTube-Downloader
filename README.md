@@ -28,30 +28,30 @@
 
     cd DYG-Downloader-v2.1.0/
 
-### Ative a Virtualenv e Digite o Comando:
+### Ative a virtualenv e digite o comando:
 
 
     pip install -r requirements.txt
 
-### Comando Para Compilar:
+### Comando para compilar:
 
 
     pyinstaller --onefile --noconsole --windowed main.py
     
     
-### Antes de Compilar Os Arquivos Estarão Asim:
+### Antes de compilar os arquivos estarão assim:
 
 ![Captura de tela de 2022-07-18 13-58-12](https://user-images.githubusercontent.com/79322362/179566764-2d5149fe-4425-45d6-a025-032d66251c7f.png)
 
-### Após Compilar Aparecerá 3 Arquivos Novos:
+### Após compilar aparecerá 3 arquivos novos:
 
 ![Captura de tela de 2022-07-18 14-16-32](https://user-images.githubusercontent.com/79322362/179566787-86690eba-0902-4be7-9d7f-620996c776b5.png)
 
-### Na Pasta Dist Estará o Arquivo Compilado:
+### Na pasta Dist estará o arquivo compilado:
 
 ![Captura de tela de 2022-07-18 13-59-03](https://user-images.githubusercontent.com/79322362/179566803-b58c664b-bb25-4d49-8bb0-8fd5466123de.png)
 
-### Clicando Em Cima Abrirá o Programa:
+### Clicando em cima abrirá o programa:
 
 ![Captura de tela de 2022-11-05 22-15-18](https://user-images.githubusercontent.com/79322362/200149479-dcf1425e-d951-4fee-99d0-7525a1c588a4.png)
 
