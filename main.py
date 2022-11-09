@@ -29,6 +29,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
+
 def progress_bar():
   #bloco de interface progress
   global window_progress
@@ -46,8 +47,8 @@ def progress_bar():
       length=300, mode='determinate')
 
   progress.pack(pady=30)
-
-
+    
+    
 def download_video():
   """Aqui é feito o download do video.
      a variavel link recebe a url.
@@ -67,7 +68,7 @@ def download_video():
   messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
   ys = yt.streams.get_highest_resolution()
   ys.download()
-
+  
   time.sleep(2)
   label = Label(window_progress,
                 text="10 %",
@@ -136,7 +137,7 @@ def download_video():
                   text="Dowload Concluído!",
                   fg='white',
                   bg="#4E4E4E").place(x=140, y=60)
-
+                  
   
 def download_mp3():
   """Esta função faz download apenas do áudio."""
@@ -224,6 +225,7 @@ def download_mp3():
                   text="Dowload Concluído!",
                   fg='white',
                   bg="#4E4E4E").place(x=140, y=60)
+
 
 def combo_mix():
   """faz download de varios ao mesmo tempo"""
@@ -418,14 +420,19 @@ def combo_mix():
     messagebox.showinfo("DYG Downloader", "Com esta função você pode baixar até 10 vídeos e MP3 com apenas 1 click")
     
 
-
   #bloco de interface da opção mix.
   window = Tk()
   window.title("DYG Downloader")
-  window.geometry("435x600")
+  window.geometry("450x500")
   window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window.resizable(False, False)# False para não responsivo e True para responsivo.
   window.attributes('-alpha',9.1)
+
+  color_1 = '#585757'
+  color_botao = '#3D3D3D'
+
+  frame = Frame(window, width=600, height=35, bg=color_1)
+  frame.grid(row=0, column=0)
 
   
   label = Label(window,
@@ -522,26 +529,26 @@ def combo_mix():
                   text="Download Vídeo",
                   command=download_video,
                   fg='white',
-                  bg='green',).place(x=90, y=500)
+                  bg=color_botao,).place(x=90, y=400)
 
   # botão para iniciar download apenas do auidio do vídeo da opção mix.
   botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
                 fg='white',
-                bg='green',).place(x=240, y=500)
+                bg=color_botao,).place(x=240, y=400)
 
 
   botao_info = Button(window,
                 text="Info",
                 command=info_function,
-                fg='black',
-                bg='grey',
-                width=2,).place(x=390, y=2)# y é altura e x é para os lados
+                fg='white',
+                bg=color_botao,
+                width=2,).place(x=405, y=2)# y é altura e x é para os lados
 
   # fim do bloco da opção mix
 
-
+    
 def sobre_software():
   """exibe informações sobre o programa.
      ao clicar no botão sobre abrirá uma janela com informações.
@@ -561,7 +568,7 @@ def sobre_software():
                 bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v2.1.0",
+                text="v2.2.1",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
@@ -589,51 +596,57 @@ def sobre_software():
 #bloco de interface principal
 window = Tk()
 window.title("DYG Downloader")
-window.geometry("500x200")
+window.geometry("500x250")
 window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 window.resizable(False, False)# False para não responsivo e True para responsivo.
 window.attributes('-alpha',9.1)
+
+color_frame = '#585757'
+color_botao = '#3D3D3D'
+
+frame = Frame(window, width=600, height=35, bg=color_frame)
+frame.grid(row=0, column=0)
 
 
 label = Label(window,
                 text="URL*",
                 fg='white',
-                bg="#4E4E4E").place(x=40, y=60)# y é altura e x é para os lados
+                bg="#4E4E4E").place(x=40, y=80)# y é altura e x é para os lados
 
 
 entrada_de_dados = Entry(window, width=40)
-entrada_de_dados.place(x=95, y=60)
+entrada_de_dados.place(x=95, y=80)
 
 # botão que inicia o download.
 botao = Button(window,
                 text="Download Vídeo",
                 command=download_video,
                 fg='white',
-                bg='green',).place(x=120, y=130)
+                bg=color_botao,).place(x=120, y=160)
 
 # botão para iniciar download apenas do auidio do vídeo.
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
                 fg='white',
-                bg='green',).place(x=270, y=130)
+                bg=color_botao,).place(x=270, y=160)
 
 
 # botão para exibir informações sobre o programa.
 botao_sobre = Button(window,
                 text="Sobre",
                 command=sobre_software,
-                fg='black',
-                bg='grey',
-                width=2,).place(x=455, y=2)# y é altura e x é para os lados
+                fg='white',
+                bg=color_botao,
+                width=2,).place(x=45, y=2)# y é altura e x é para os lados
 
 
 botao_combo = Button(window,
                 text="mix",
                 command=combo_mix,
-                fg='black',
-                bg='grey',
-                width=2,).place(x=455, y=30)
+                fg='white',
+                bg=color_botao,
+                width=2,).place(x=2, y=2)
 
 
 if __name__ == "__main__":
