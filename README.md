@@ -53,7 +53,10 @@
 
 ### Clicando em cima abrirá o programa:
 
-![Captura de tela de 2022-11-05 22-15-18](https://user-images.githubusercontent.com/79322362/200149479-dcf1425e-d951-4fee-99d0-7525a1c588a4.png)
 
+![Captura de tela de 2022-11-08 23-34-29](https://user-images.githubusercontent.com/79322362/200723299-6342c31a-bd4b-4b82-985d-872c20507e2c.png)
+
+
+![Captura de tela de 2022-11-08 23-34-53](https://user-images.githubusercontent.com/79322362/200723306-ff0de736-7a21-4d80-ad35-4cfc38d7c9b1.png)
 
 
