@@ -1,4 +1,3 @@
-# downloader of the Youtube.
 #
 # Copyright (c) 2022  Juan Carlos Bindez
 #
@@ -16,7 +15,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #  
-# autor: https://github.com/juanBindez <juanbindez780@gmail.com>
+# author: https://github.com/juanBindez <juanbindez780@gmail.com>
 
 
 import os
@@ -47,7 +46,102 @@ def progress_bar():
       length=300, mode='determinate')
 
   progress.pack(pady=30)
-    
+
+
+def progress_bar_mix():
+  #bloco de interface progress
+  global window_progress
+
+  window_progress = Tk()
+  window_progress.title("DYG Downloader")
+  window_progress.geometry("400x100")
+  window_progress['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+  window_progress.resizable(False, False)# False para não responsivo e True para responsivo.
+  window_progress.attributes('-alpha',9.1)
+
+  global progress
+
+  progress = ttk.Progressbar(window_progress, orient=HORIZONTAL,
+      length=300, mode='determinate')
+
+  progress.pack(pady=30)
+
+  progress['value'] = 0
+  label = Label(window_progress,
+                text="0 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+
+  time.sleep(2)
+  progress['value'] = 10
+  label = Label(window_progress,
+                text="10 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+  progress.update_idletasks()
+  progress['value'] = 10
+
+  time.sleep(1)
+  progress.update_idletasks()
+  progress['value'] = 50
+ 
+  label = Label(window_progress,
+                text="50 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+
+  time.sleep(1)
+  progress.update_idletasks()
+  progress['value'] = 60
+  
+  label = Label(window_progress,
+                text="60 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+
+  time.sleep(1)
+  progress.update_idletasks()
+  progress['value'] = 70
+  
+  label = Label(window_progress,
+                text="70 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+
+  time.sleep(1)
+  progress.update_idletasks()
+  progress['value'] = 80
+  
+  label = Label(window_progress,
+                text="80 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+
+  time.sleep(1)
+  progress.update_idletasks()
+  progress['value'] = 90
+  
+  label = Label(window_progress,
+                text="90 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+                
+  time.sleep(1)
+  progress.update_idletasks()
+  progress['value'] = 100
+ 
+  time.sleep(1)
+  label = Label(window_progress,
+                text="100 %",
+                fg='white',
+                bg="#4E4E4E").place(x=190, y=60)
+ 
+  time.sleep(1)
+  label = Label(window_progress,
+                  text="Dowload Concluído!",
+                  fg='white',
+                  bg="#4E4E4E").place(x=140, y=60)
+  
     
 def download_video():
   """Aqui é feito o download do video.
@@ -243,6 +337,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_2 = entrada_url_2.get()
 
     yt = YouTube(link_2, on_progress_callback = on_progress)
@@ -250,6 +346,8 @@ def combo_mix():
     ys = yt.streams.get_highest_resolution()
     ys.download()
     time.sleep(3)
+
+    progress_bar_mix()
 
     link_3 = entrada_url_3.get()
     
@@ -259,6 +357,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_4 = entrada_url_4.get()
 
     yt = YouTube(link_4, on_progress_callback = on_progress)
@@ -267,6 +367,7 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
 
     link_5 = entrada_url_5.get()
     
@@ -276,6 +377,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_6 = entrada_url_6.get()
 
     yt = YouTube(link_6, on_progress_callback = on_progress)
@@ -284,6 +387,7 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
 
     link_7 = entrada_url_7.get()
     
@@ -293,6 +397,7 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
 
     link_8 = entrada_url_8.get()
 
@@ -302,6 +407,7 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
   
     link_9 = entrada_url_9.get()
     
@@ -311,6 +417,7 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
   
     link_10 = entrada_url_10.get()
 
@@ -319,6 +426,8 @@ def combo_mix():
     ys = yt.streams.get_highest_resolution()
     ys.download()
     time.sleep(3)
+
+    progress_bar_mix()
 
     messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
     
@@ -335,6 +444,8 @@ def combo_mix():
     ys.download()
     time.sleep(1)
 
+    progress_bar_mix()
+
     link_2 = entrada_url_2.get()
 
     yt = YouTube(link_2, on_progress_callback = on_progress)
@@ -343,6 +454,8 @@ def combo_mix():
     ys.download()
     time.sleep(1)
 
+    progress_bar_mix()
+
     link_3 = entrada_url_3.get()
     
     yt = YouTube(link_3, on_progress_callback = on_progress)
@@ -350,6 +463,8 @@ def combo_mix():
     ys = yt.streams.get_audio_only()
     ys.download()
     time.sleep(3)
+
+    progress_bar_mix()
   
     link_4 = entrada_url_4.get()
 
@@ -359,6 +474,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_5 = entrada_url_5.get()
     
     yt = YouTube(link_5, on_progress_callback = on_progress)
@@ -366,6 +483,8 @@ def combo_mix():
     ys = yt.streams.get_audio_only()
     ys.download()
     time.sleep(3)
+
+    progress_bar_mix()
 
     link_6 = entrada_url_6.get()
 
@@ -375,6 +494,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_7 = entrada_url_7.get()
     
     yt = YouTube(link_7, on_progress_callback = on_progress)
@@ -382,6 +503,8 @@ def combo_mix():
     ys = yt.streams.get_audio_only()
     ys.download()
     time.sleep(3)
+
+    progress_bar_mix()
 
     link_8 = entrada_url_8.get()
 
@@ -391,6 +514,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_9 = entrada_url_9.get()
     
     yt = YouTube(link_9, on_progress_callback = on_progress)
@@ -399,6 +524,8 @@ def combo_mix():
     ys.download()
     time.sleep(3)
 
+    progress_bar_mix()
+
     link_10 = entrada_url_10.get()
 
     yt = YouTube(link_10, on_progress_callback = on_progress)
@@ -406,6 +533,8 @@ def combo_mix():
     ys = yt.streams.get_audio_only()
     ys.download()
     time.sleep(3)
+
+    progress_bar_mix()
 
     messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
 
