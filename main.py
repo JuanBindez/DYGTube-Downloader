@@ -30,7 +30,8 @@ from tkinter import ttk
 
 
 def progress_bar():
-  #bloco de interface progress
+  """bloco de interface progress"""
+
   global window_progress
 
   window_progress = Tk()
@@ -49,7 +50,8 @@ def progress_bar():
 
 
 def progress_bar_mix():
-  #bloco de interface progress
+  """bloco de interface progress func mix"""
+
   global window_progress
 
   window_progress = Tk()
@@ -130,7 +132,6 @@ def progress_bar_mix():
   progress.update_idletasks()
   progress['value'] = 100
  
-  time.sleep(1)
   label = Label(window_progress,
                 text="100 %",
                 fg='white',
@@ -250,12 +251,17 @@ def download_mp3():
   messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
   ys = yt.streams.get_audio_only()
   ys.download()
-  time.sleep(2)
+  time.sleep(3)
     
-  extesao = '.mp3'
-  extensao_mp4 = '.mp4'
+  extensao_mp3 = ".mp3"
+  extensao_mp4 = ".mp4"
 
-  os.rename(yt.title + extensao_mp4,yt.title + extesao)
+  try:
+    # renomeia o arquivo com extensão .mp4 para .mp3
+    os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+  except FileNotFoundError:
+    messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do Arquivo Manualmente.")
+    pass
 
   time.sleep(2)
   label = Label(window_progress,
@@ -341,7 +347,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -351,7 +357,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -361,7 +367,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -371,7 +377,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -381,7 +387,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -391,7 +397,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -401,7 +407,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -411,7 +417,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
   
@@ -421,7 +427,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
   
@@ -431,7 +437,7 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_highest_resolution()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
 
@@ -448,7 +454,17 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(1)
+    time.sleep(4)
+
+    extensao_mp3 = '.mp3'
+    extensao_mp4 = '.mp4'
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     progress_bar_mix()
 
@@ -458,9 +474,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(1)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_3 = entrada_url_3.get()
     
@@ -468,9 +491,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+    pass
   
     link_4 = entrada_url_4.get()
 
@@ -478,9 +508,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_5 = entrada_url_5.get()
     
@@ -488,9 +525,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_6 = entrada_url_6.get()
 
@@ -498,9 +542,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_7 = entrada_url_7.get()
     
@@ -508,9 +559,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_8 = entrada_url_8.get()
 
@@ -518,9 +576,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_9 = entrada_url_9.get()
     
@@ -528,9 +593,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     link_10 = entrada_url_10.get()
 
@@ -538,9 +610,16 @@ def combo_mix():
     #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
     ys = yt.streams.get_audio_only()
     ys.download()
-    time.sleep(3)
+    time.sleep(4)
 
     progress_bar_mix()
+
+    try:
+      # renomeia o arquivo com extensão .mp4 para .mp3
+      os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+    except FileNotFoundError:
+      messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+      pass
 
     messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
 
