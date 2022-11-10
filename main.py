@@ -782,7 +782,7 @@ def sobre_software():
                 bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v2.2.1",
+                text="v2.2.3",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
