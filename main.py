@@ -250,6 +250,12 @@ def download_mp3():
   messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
   ys = yt.streams.get_audio_only()
   ys.download()
+  time.sleep(2)
+    
+  extesao = '.mp3'
+  extensao_mp4 = '.mp4'
+
+  os.rename(yt.title + extensao_mp4,yt.title + extesao)
 
   time.sleep(2)
   label = Label(window_progress,
