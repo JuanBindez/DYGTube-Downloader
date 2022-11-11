@@ -1,3 +1,8 @@
+### v2.2.3:
+
+- Correção de bug que afetava a extensão de saída .mp3.
+- Correção de bug que afetava as janelas de progresso do download.
+
 ### v2.2.1:
 
 - Acrescentado barra de progresso do download
