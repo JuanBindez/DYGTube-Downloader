@@ -1,4 +1,4 @@
-# Release: v2.2.3 Beta
+# Release: v2.2.4-rc1
 #
 # Copyright (c) 2022  Juan Carlos Bindez
 #
