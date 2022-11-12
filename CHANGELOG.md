@@ -1,3 +1,7 @@
+### v2.3.0:
+
+- Adicionado recurso para colar a URL no Entry.
+
 ### v2.2.3:
 
 - Correção de bug que afetava a extensão de saída .mp3.
