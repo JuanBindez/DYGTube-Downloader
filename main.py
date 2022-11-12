@@ -828,9 +828,24 @@ label = Label(window,
                 fg='white',
                 bg="#4E4E4E").place(x=40, y=80)# y é altura e x é para os lados
 
+def make_menu(w):
+    global the_menu
+    the_menu = Menu(w, tearoff=0)
+    the_menu.add_command(label="Colar")
+    
+    
+def show_menu(e):
+    w = e.widget
+    the_menu.entryconfigure("Colar",
+    command=lambda: w.event_generate("<<Paste>>"))
+    the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
 
+
+make_menu(window)
 entrada_de_dados = Entry(window, width=40)
 entrada_de_dados.place(x=95, y=80)
+entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
+lbl = Label(window, text = "")
 
 # botão que inicia o download.
 botao = Button(window,
