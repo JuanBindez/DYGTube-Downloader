@@ -1,4 +1,6 @@
-# Este é o DYG Downloader versão 2.2.3 Beta
+# Este é o DYG Downloader versão 2.2.3
+
+### Em teste v2.2.4-rc1
 
 ## Este software é livre, os usuários possuem a liberdade de executar, copiar, distribuir, estudar, mudar e melhorar o software.
 
