@@ -1,4 +1,4 @@
-# Release: v2.2.4-rc1
+# Release: v2.3.0-Beta
 #
 # Copyright (c) 2022  Juan Carlos Bindez
 #
@@ -643,6 +643,21 @@ def combo_mix():
   window.resizable(False, False)# False para não responsivo e True para responsivo.
   window.attributes('-alpha',9.1)
 
+
+  def make_menu(w):
+    global the_menu
+    the_menu = Menu(w, tearoff=0)
+    the_menu.add_command(label="Colar")
+    
+    
+  def show_menu(e):
+      w = e.widget
+      the_menu.entryconfigure("Colar",
+      command=lambda: w.event_generate("<<Paste>>"))
+      the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
+
+
+
   color_1 = '#585757'
   color_botao = '#3D3D3D'
 
@@ -655,8 +670,12 @@ def combo_mix():
                 fg='white',
                 bg="#4E4E4E").place(x=40, y=60)# y é altura e x é para os lados
 
+
+  make_menu(window)
   entrada_url_1 = Entry(window, width=40)
   entrada_url_1.place(x=95, y=60)
+  entrada_url_1.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
+  lbl = Label(window, text = "")
 
 
   label = Label(window,
@@ -783,7 +802,7 @@ def sobre_software():
                 bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v2.2.3",
+                text="v2.3.0",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
