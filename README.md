@@ -2,6 +2,8 @@
 
 ### Candidato a release: v2.2.4-rc1
 
+----------
+
 ## Este software é livre, os usuários possuem a liberdade de executar, copiar, distribuir, estudar, mudar e melhorar o software.
 
 #### "This project is licensed under GNU General Public License v2.0."
