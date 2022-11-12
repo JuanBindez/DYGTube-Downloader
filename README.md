@@ -1,6 +1,6 @@
-# Este é o DYG Downloader versão 2.2.3
+# Este é o DYG Downloader versão 2.3.0
 
-### Candidato a release: v2.2.4-rc1
+### Candidato a release: v2.3.0-Beta
 
 ----------
 
@@ -26,11 +26,11 @@
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/DYG-Downloader-v2.2.3
+    git clone https://github.com/JuanBindez/DYG-Downloader-v2.3.0
     
 ### Acesse a pasta:
 
-    cd DYG-Downloader-v2.2.3/
+    cd DYG-Downloader-v2.3.0/
 
 ### Ative a virtualenv e digite o comando:
 
