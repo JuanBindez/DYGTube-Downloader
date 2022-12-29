@@ -1,6 +1,6 @@
 # Release: v2.3.0-Beta
 #
-# Copyright (c) 2022  Juan Carlos Bindez
+# Copyright (c) 2022-2023  Juan Carlos Bindez  <juanbindez780@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #  
-# author: https://github.com/juanBindez <juanbindez780@gmail.com>
+# repo: https://github.com/juanBindez
 
 
 import os
