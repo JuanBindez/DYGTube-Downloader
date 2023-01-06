@@ -822,7 +822,7 @@ def sobre_software():
                 bg="#4E4E4E").place(x=15, y=150)# y é altura e x é para os lados
 
   label = Label(window,
-                text="Copyright (c) 2022 Juan Carlos Bindez", 
+                text="Copyright (c) 2022-2023 Juan Bindez", 
                 fg='black', 
                 bg="#4E4E4E").place(x=80, y=170)
 
