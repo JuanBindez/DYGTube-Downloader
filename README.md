@@ -1,12 +1,8 @@
 # Este é o DYG Downloader versão 2.3.0
 
-### Candidato a release: v2.3.0-Beta
-
 ----------
 
 ## Este software é livre, os usuários possuem a liberdade de executar, copiar, distribuir, estudar, mudar e melhorar o software.
-
-#### "This project is licensed under GNU General Public License v2.0."
 
 #### "Este projeto está licenciado nos termos da licença GNU General Public License v2.0."
 
