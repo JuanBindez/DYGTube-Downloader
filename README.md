@@ -7,14 +7,14 @@
 #### "Este projeto está licenciado nos termos da licença GNU General Public License v2.0."
 
 ----------
-### Acesse o site click __[aqui](https://juanbindez.github.io/site.dyg.downloader/)__.
+### Acesse o site click __[aqui](https://juanbindez.github.io/site.dygtube.downloader/)__.
 
 ### Sobre:
 
 - Este Software Faz Download De Videos e Áudios em MP3 Do Youtube.
 
 -----------
-## Abaixo esta o passo a passo para compilar (transformar em executavel) , mas se preferir já existe o executavel no site Acesse o site click __[aqui](https://juanbindez.github.io/site.dyg.downloader/)__.
+## Abaixo esta o passo a passo para compilar (transformar em executavel) , mas se preferir já existe o executavel no site Acesse o site click __[aqui](https://juanbindez.github.io/site.dygtube.downloader/)__.
 
 ### Instale o Git:
 
@@ -22,11 +22,11 @@
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/DYG-Downloader-v2.4.2-rc2
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.4.2-rc2
     
 ### Acesse a pasta:
 
-    cd DYG-Downloader-v2.4.2-rc2/
+    cd DYGTube-Downloader-v2.4.2-rc2/
 
 ### Ative a virtualenv e digite o comando:
 
