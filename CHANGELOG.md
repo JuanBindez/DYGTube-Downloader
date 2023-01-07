@@ -1,17 +1,24 @@
+### v2.4.2:
+
+- Aplicado abstração de nivel 2.
+- bugfix (afetava o mecanismo de evento que permite colar o que foi copiado na Entry).
+- bugfix (afetava a velocidade de execução).
+
+
 ### v2.3.0:
 
 - Adicionado recurso para colar a URL no Entry.
 
 ### v2.2.3:
 
-- Correção de bug que afetava a extensão de saída .mp3.
-- Correção de bug que afetava as janelas de progresso do download.
+- bugfix (afetava a extensão de saída .mp3).
+- bugfix (afetava as janelas de progresso do download).
 
 ### v2.2.1:
 
 - Acrescentado barra de progresso do download
 - melhorias na interface do usuário
-- correções de bugs de execução
+- bugfix
 
 ### v2.1.0:
 
