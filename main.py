@@ -58,7 +58,7 @@ def progress_bar_mix():
   global window_progress
 
   window_progress = Tk()
-  window_progress.title("DYG Downloader")
+  window_progress.title("DYGTube Downloader")
   window_progress.geometry("400x100")
   window_progress['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window_progress.resizable(False, False)# False para não responsivo e True para responsivo.
@@ -473,7 +473,7 @@ def combo_mix():
 
   #bloco de interface da opção mix.
   window = Tk()
-  window.title("DYG Downloader")
+  window.title("DYGTube Downloader")
   window.geometry("450x500")
   window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window.resizable(False, False)# False para não responsivo e True para responsivo.
@@ -633,17 +633,17 @@ def sobre_software():
   window.attributes('-alpha',9.1)
 
   label = Label(window,
-                text="DYG",
+                text="DYGTube",
                 fg='white', 
                 bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v2.4.2",
+                text="v2.4.2-rc2",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
   label = Label(window, 
-                text="O DYG faz download de video e audio MP3 do Youtube.", 
+                text="O DYGTube faz download de video e audio MP3 do Youtube.", 
                 fg='white', 
                 bg="#4E4E4E").place(x=50, y=80)
 
@@ -665,7 +665,7 @@ def sobre_software():
 
 #bloco de interface principal
 window = Tk()
-window.title("DYG Downloader")
+window.title("DYGTube Downloader")
 window.geometry("500x250")
 window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 window.resizable(False, False)# False para não responsivo e True para responsivo.
