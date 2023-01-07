@@ -1,4 +1,4 @@
-# Este é o DYTube Downloader versão 2.4.2-rc2
+# Este é o DYGTube Downloader versão 2.4.2-rc2
 
 ----------
 
