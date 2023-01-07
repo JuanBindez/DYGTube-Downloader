@@ -22,11 +22,11 @@
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/DYG-Downloader-v2.3.0
+    git clone https://github.com/JuanBindez/DYG-Downloader-v2.4.2-rc2
     
 ### Acesse a pasta:
 
-    cd DYG-Downloader-v2.3.0/
+    cd DYG-Downloader-v2.4.2-rc2/
 
 ### Ative a virtualenv e digite o comando:
 
