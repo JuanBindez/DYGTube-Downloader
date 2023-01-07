@@ -1,4 +1,4 @@
-# Este é o DYG Downloader versão 2.3.0
+# Este é o DYG Downloader versão 2.4.2-rc2
 
 ----------
 
