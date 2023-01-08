@@ -1,4 +1,4 @@
-# Release: v2.4.2-rc2
+# Release: v2.5.2
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -29,6 +29,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 from src.source import DownloadInit
+from src.source import DownloadList
 
 
 
@@ -145,7 +146,82 @@ def progress_bar_mix():
                   text="Dowload Concluído!",
                   fg='white',
                   bg="#4E4E4E").place(x=140, y=60)
+
+
+def download_playlist():
+  """Aqui será capturado a url da playlist e passado para a class DownloadList fazer o download."""
+
+  def captura_playlist_mp3():
+    url = entrada_url_playlist.get()
+
+    DP = DownloadList(url)
+    DP.download_playlist_mp3()
+
+
+  def captura_playlist_mp4():
+
+    url = entrada_url_playlist.get()
+
+    DP = DownloadList(url)
+    DP.download_playlist_mp4()
+
+
+
+  #bloco de interface da opção mix.
+  window = Tk()
+  window.title("DYGTube Downloader")
+  window.geometry("455x320")
+  window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+  window.resizable(False, False)# False para não responsivo e True para responsivo.
+  window.attributes('-alpha',9.1)
+
+
+  def make_menu(w):
+    global the_menu_2
+    the_menu_2 = Menu(w, tearoff=0)
+    the_menu_2.add_command(label="Colar")
+    
+    
+  def show_menu(e):
+      w = e.widget
+      the_menu_2.entryconfigure("Colar",
+      command=lambda: w.event_generate("<<Paste>>"))
+      the_menu_2.tk.call("tk_popup", the_menu_2, e.x_root, e.y_root)
+
+
+  color_1 = '#585757'
+  color_botao = '#3D3D3D'
+
+  frame = Frame(window, width=600, height=35, bg=color_1)
+  frame.grid(row=0, column=0)
+
   
+  label = Label(window,
+                text="URL Playlist*",
+                fg='#09AF30',
+                bg="#4E4E4E").place(x=6, y=80)# y é altura e x é para os lados
+
+
+  make_menu(window)
+  entrada_url_playlist = Entry(window, width=40)
+  entrada_url_playlist.place(x=95, y=80)
+  entrada_url_playlist.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
+  lbl = Label(window, text = "")
+
+
+  botao_download = Button(window,
+                  text="Download Vídeo",
+                  command=captura_playlist_mp4,
+                  fg='#09AF30',
+                  bg=color_botao,).place(x=90, y=200)
+
+  botao_download = Button(window,
+                  text="Download MP3",
+                  command=captura_playlist_mp3,
+                  fg='#09AF30',
+                  bg=color_botao,).place(x=230, y=200)
+
+
 
 def download_video():
   """Aqui é feito o download do video.
@@ -314,7 +390,7 @@ def download_mp3():
                 fg='white',
                 bg="#4E4E4E").place(x=190, y=60)
  
-  time.sleep()
+  time.sleep(1)
   label = Label(window_progress,
                   text="Dowload Concluído!",
                   fg='white',
@@ -626,8 +702,8 @@ def sobre_software():
   
   #bloco de interface sobre o software.
   window = Tk()
-  window.title("DYG Downloader")
-  window.geometry("435x200")
+  window.title("DYGTube Downloader")
+  window.geometry("440x200")
   window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
   window.resizable(False, False)# False para não responsivo e True para responsivo.
   window.attributes('-alpha',9.1)
@@ -635,22 +711,22 @@ def sobre_software():
   label = Label(window,
                 text="DYGTube",
                 fg='white', 
-                bg="#4E4E4E").place(x=200, y=10)# y é altura e x é para os lados
+                bg="#4E4E4E").place(x=188, y=10)# y é altura e x é para os lados
 
   label = Label(window,
-                text="v2.4.2-rc2",
+                text="v2.5.2",
                 fg='white',
                 bg="#4E4E4E").place(x=195, y=29)
 
   label = Label(window, 
                 text="O DYGTube faz download de video e audio MP3 do Youtube.", 
                 fg='white', 
-                bg="#4E4E4E").place(x=50, y=80)
+                bg="#4E4E4E").place(x=27, y=80)
 
   label = Label(window,
                 text="Este programa vem com absolutamente nenhuma garantia.", 
                 fg='#09AF30', 
-                bg="#4E4E4E").place(x=20, y=110)# y é altura e x é para os lados
+                bg="#4E4E4E").place(x=21, y=110)# y é altura e x é para os lados
 
   label = Label(window, 
                 text="Para mais detalhes, visite Licença Pública Geral GNU, versão 2", 
@@ -666,7 +742,7 @@ def sobre_software():
 #bloco de interface principal
 window = Tk()
 window.title("DYGTube Downloader")
-window.geometry("500x250")
+window.geometry("500x260")
 window['background'] = '#4E4E4E'# site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 window.resizable(False, False)# False para não responsivo e True para responsivo.
 window.attributes('-alpha',9.1)
@@ -723,7 +799,15 @@ botao_sobre = Button(window,
                 command=sobre_software,
                 fg='#09AF30',
                 bg=color_botao,
-                width=2,).place(x=45, y=2)# y é altura e x é para os lados
+                width=3,).place(x=103, y=2)# y é altura e x é para os lados
+
+
+botao_playlist = Button(window,
+                text="playlist",
+                command=download_playlist,
+                fg='#09AF30',
+                bg=color_botao,
+                width=4,).place(x=45, y=2)# y é altura e x é para os lados
 
 
 botao_combo = Button(window,
