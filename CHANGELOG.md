@@ -1,6 +1,6 @@
 ### v2.5.2:
 
-- Adicionado recurso para fazer downloads de playlists complatas em MP3 ou MP4.
+- Adicionado recurso para fazer downloads de playlists completas em MP3 ou MP4.
 - Aplicado abstração de nivel 2.
 - bugfix (afetava o mecanismo de evento que permite colar o que foi copiado na Entry).
 - bugfix (afetava a velocidade de execução).
