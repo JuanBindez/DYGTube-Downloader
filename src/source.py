@@ -1,4 +1,4 @@
-# Release: v2.4.2-rc2
+# Release: v2.5.2
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -19,12 +19,12 @@
 # repo: https://github.com/juanBindez
 
 
-
 import os
 import time
 import urllib3
 
 from pytube import YouTube
+from pytube import Playlist
 from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
@@ -67,3 +67,51 @@ class DownloadInit():
         ys = yt.streams.get_highest_resolution()
         ys.download()
         time.sleep(3)
+
+
+class DownloadList():
+    """Aqui será capturado a url da playlist a ser baixada."""
+
+    def __init__(self, url_playlist):
+        self.url_playlist = url_playlist
+
+    
+    def download_playlist_mp3(self):
+        """Aqui será iniciado o download da playlist."""
+
+        try:
+            pl = Playlist(self.url_playlist)
+
+            for video in pl.videos:
+                video.streams.get_audio_only().download()
+
+            
+                extensao_mp3 = '.mp3'
+                extensao_mp4 = '.mp4'
+
+                time.sleep(3)
+
+                try:
+                    # renomeia o arquivo com extensão .mp4 para .mp3
+                    os.rename(str(pl.title + extensao_mp4),str(pl.title + extensao_mp3))
+                except FileNotFoundError:
+                    messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+                    pass
+
+                time.sleep(1)
+        
+        except:
+            messagebox.showerror("DYGTube Downloader", "Algo deu errado! verifique o link da playlist ")
+
+    
+    def download_playlist_mp4(self):
+        """Aqui será iniciado o download da playlist."""
+
+        try:
+            pl = Playlist(self.url_playlist)
+
+            for video in pl.videos:
+                video.streams.get_lowest_resolution().download()
+        
+        except:
+            messagebox.showerror("DYG Downloader", "Algo deu errado! verifique o link da playlist.")
