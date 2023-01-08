@@ -1,4 +1,4 @@
-# Este é o DYGTube Downloader versão 2.4.2-rc2
+# Este é o DYGTube Downloader versão 2.5.2
 
 ----------
 
@@ -22,11 +22,11 @@
 
 ### Faça um git clone:
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.4.2-rc2
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.5.2
     
 ### Acesse a pasta:
 
-    cd DYGTube-Downloader-v2.4.2-rc2/
+    cd DYGTube-Downloader-v2.5.2
 
 ### Ative a virtualenv e digite o comando:
 
