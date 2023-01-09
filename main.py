@@ -32,7 +32,6 @@ from src.source import DownloadInit
 from src.source import DownloadList
 
 
-
 def progress_bar():
   """bloco de interface progress"""
 
@@ -166,7 +165,6 @@ def download_playlist():
     DP.download_playlist_mp4()
 
 
-
   #bloco de interface da opção mix.
   window = Tk()
   window.title("DYGTube Downloader")
@@ -220,7 +218,6 @@ def download_playlist():
                   command=captura_playlist_mp3,
                   fg='#09AF30',
                   bg=color_botao,).place(x=230, y=200)
-
 
 
 def download_video():
@@ -467,9 +464,9 @@ def combo_mix():
     progress_bar_mix()
 
     messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
-    
+  
     # fim do bloco download video da opção mix
-
+    
 
   def download_mp3():
     """Esta função faz download apenas do áudio."""
@@ -567,7 +564,6 @@ def combo_mix():
       the_menu.entryconfigure("Colar",
       command=lambda: w.event_generate("<<Paste>>"))
       the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
-
 
 
   color_1 = '#585757'
