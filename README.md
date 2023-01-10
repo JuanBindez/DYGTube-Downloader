@@ -1,5 +1,9 @@
 # Este é o DYGTube Downloader versão 2.5.2
 
+![Captura de tela de 2023-01-09 08-55-23](https://user-images.githubusercontent.com/79322362/211603779-dfac1c01-21e7-49f8-bfd5-9060c58d5cf4.png)
+
+
+
 ----------
 
 ## Este software é livre, os usuários possuem a liberdade de executar, copiar, distribuir, estudar, mudar e melhorar o software.
@@ -53,10 +57,11 @@
 
 ### Clicando em cima abrirá o programa:
 
+![Captura de tela de 2023-01-10 13-12-47](https://user-images.githubusercontent.com/79322362/211603927-8c30bcad-6d3d-4b3a-bce3-43446c60d963.png)
 
-![Captura de tela de 2022-11-08 23-34-29](https://user-images.githubusercontent.com/79322362/200723299-6342c31a-bd4b-4b82-985d-872c20507e2c.png)
+![Captura de tela de 2023-01-10 13-13-06](https://user-images.githubusercontent.com/79322362/211603951-683d841f-85fb-4416-863d-bdd1aead91e1.png)
 
 
-![Captura de tela de 2022-11-08 23-34-53](https://user-images.githubusercontent.com/79322362/200723306-ff0de736-7a21-4d80-ad35-4cfc38d7c9b1.png)
+![Captura de tela de 2023-01-10 13-13-23](https://user-images.githubusercontent.com/79322362/211603968-4649fde5-b2d8-4922-94e9-729c1373b0f1.png)
 
 
