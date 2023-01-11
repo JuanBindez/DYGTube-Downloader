@@ -102,6 +102,8 @@ class DownloadList():
         
         except:
             messagebox.showerror("DYGTube Downloader", "Algo deu errado! verifique o link da playlist ")
+            
+        messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
 
     
     def download_playlist_mp4(self):
