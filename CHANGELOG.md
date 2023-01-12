@@ -1,3 +1,7 @@
+### v2.5.3:
+
+- bugfix
+
 ### v2.5.2:
 
 - Adicionado recurso para fazer downloads de playlists completas em MP3 ou MP4.
