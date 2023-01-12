@@ -10,14 +10,14 @@
 #### "Este projeto está licenciado nos termos da licença GNU General Public License v2.0."
 
 ----------
-### Acesse o site click __[aqui](https://juanbindez.github.io/site.dygtube.downloader/)__.
+### Acesse o site click __[aqui](https://dygtube.freesoftwarebrasil.com.br)__.
 
 ### Sobre:
 
 - Este Software Faz Download De Videos e Áudios em MP3 Do Youtube.
 
 -----------
-## Abaixo esta o passo a passo para compilar (transformar em executavel) , mas se preferir já existe o executavel no site Acesse o site click __[aqui](https://juanbindez.github.io/site.dygtube.downloader/)__.
+## Abaixo esta o passo a passo para compilar (transformar em executavel) , mas se preferir já existe o executavel no site Acesse o site click __[aqui](https://dygtube.freesoftwarebrasil.com.br)__.
 
 ### Instale o Git:
 
