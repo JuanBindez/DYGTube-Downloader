@@ -1,7 +1,7 @@
 ![Captura de tela de 2023-01-09 08-55-23](https://user-images.githubusercontent.com/79322362/211603779-dfac1c01-21e7-49f8-bfd5-9060c58d5cf4.png)
 
 
-# Este é o DYGTube Downloader versão 2.5.2
+# Este é o DYGTube Downloader versão 2.5.3-rc1
 
 ----------
 
