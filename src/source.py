@@ -1,4 +1,4 @@
-# Release: v2.5.2
+# Release: v2.5.3-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -51,8 +51,10 @@ class DownloadInit():
         extensao_mp4 = '.mp4'
 
         try:
+            time.sleep(5)
             # renomeia o arquivo com extensão .mp4 para .mp3
             os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
+            time.sleep(1)
         except FileNotFoundError:
             messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
             pass
@@ -89,14 +91,18 @@ class DownloadList():
                 extensao_mp3 = '.mp3'
                 extensao_mp4 = '.mp4'
 
-                time.sleep(3)
+                time.sleep(2)
 
                 try:
+                    time.sleep(2)
                     # renomeia o arquivo com extensão .mp4 para .mp3
                     os.rename(str(pl.title + extensao_mp4),str(pl.title + extensao_mp3))
+                    time.sleep(1)
                 except FileNotFoundError:
-                    messagebox.showerror("DYG Downloader", "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
+                    print("arquivo não encontrado testes")                  # usado em testes.
                     pass
+                  
+                    
 
                 time.sleep(1)
         
@@ -104,6 +110,7 @@ class DownloadList():
             messagebox.showerror("DYGTube Downloader", "Algo deu errado! verifique o link da playlist ")
             
         messagebox.showinfo("DYG Downloader", "O download da playlist foi concluído com sucesso!")
+        messagebox.showerror("DYG Downloader", "Caso seus downloads estiverem como MP4 você terá que mudar para .MP3 manualmente, é só apagar o .mp4 e colocar .mp3.")
 
     
     def download_playlist_mp4(self):
