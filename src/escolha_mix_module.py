@@ -25,7 +25,7 @@ from tkinter import messagebox
 from tkinter import ttk
 from src.source import DownloadInit
 from src.source import DownloadList
-from src.progress_bar_modole import progress_bar
+from src.progress_bar_module import progress_bar
 
 
 def escolha_mix():
