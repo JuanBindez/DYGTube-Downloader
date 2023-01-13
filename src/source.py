@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc1
+# Release: v2.5.3-rc3
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -29,6 +29,7 @@ from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
+from src.progress_bar_modole import progress_bar
 
 
 class DownloadInit():
@@ -47,11 +48,13 @@ class DownloadInit():
         ys.download()
         time.sleep(3)
 
+        progress_bar()
+
         extensao_mp3 = '.mp3'
         extensao_mp4 = '.mp4'
 
         try:
-            time.sleep(5)
+            time.sleep(3)
             # renomeia o arquivo com extensão .mp4 para .mp3
             os.rename(str(yt.title + extensao_mp4),str(yt.title + extensao_mp3))
             time.sleep(1)
@@ -68,7 +71,9 @@ class DownloadInit():
         #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
         ys = yt.streams.get_highest_resolution()
         ys.download()
-        time.sleep(3)
+        time.sleep(2)
+
+        progress_bar()
 
 
 class DownloadList():
@@ -87,6 +92,7 @@ class DownloadList():
             for video in pl.videos:
                 video.streams.get_audio_only().download()
 
+                progress_bar()
             
                 extensao_mp3 = '.mp3'
                 extensao_mp4 = '.mp4'
@@ -102,8 +108,6 @@ class DownloadList():
                     print("arquivo não encontrado testes")                  # usado em testes.
                     pass
                   
-                    
-
                 time.sleep(1)
         
         except:
@@ -121,6 +125,8 @@ class DownloadList():
 
             for video in pl.videos:
                 video.streams.get_lowest_resolution().download()
+
+                progress_bar()
         
         except:
             messagebox.showerror("DYG Downloader", "Algo deu errado! verifique o link da playlist.")
