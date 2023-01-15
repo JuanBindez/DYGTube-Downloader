@@ -9,7 +9,7 @@
 
 
 ----------
-### Access the website click __[aqui](https://dygtube.freesoftwarebrasil.com.br)__.
+### Access the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
 ### about:
 
