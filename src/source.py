@@ -38,7 +38,6 @@ class DownloadInit():
     def __init__(self, link_url_input):
         self.link_url_input = link_url_input
 
-
     def download_audio_mp3(self):
         """Here it will be downloaded in MP3"""
 
@@ -62,7 +61,6 @@ class DownloadInit():
                                  "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
             pass
 
-
     def download_video_mp4(self):
         """Here it will be downloaded in MP4 video."""
 
@@ -80,7 +78,6 @@ class DownloadList():
     def __init__(self, url_playlist):    
         self.url_playlist = url_playlist
 
-    
     def download_playlist_mp3(self):
         """Here the download of the playlist will start."""
 
@@ -94,7 +91,6 @@ class DownloadList():
                 EXTENSION_MP4 = '.mp4'
                 
                 time.sleep(2)
-
                 try:
                     time.sleep(2)
                     # renames the file with extension .mp4 to .mp3
@@ -103,7 +99,6 @@ class DownloadList():
                 except FileNotFoundError:
                     print("arquivo não encontrado")                  # usado em testes.
                     pass
-                  
                 time.sleep(1)
         
         except:
@@ -114,17 +109,14 @@ class DownloadList():
         messagebox.showerror("DYG Downloader",
                              "Caso seus downloads estiverem como MP4 você terá que mudar para .MP3 manualmente,é só apagar o .mp4 e colocar .mp3.")
 
-    
     def download_playlist_mp4(self):
         """Here the download of the playlist will start."""
 
         try:
             pl = Playlist(self.url_playlist)
-
             for video in pl.videos:
                 video.streams.get_lowest_resolution().download()
                 progress_bar()
-        
         except:
             messagebox.showerror("DYG Downloader", "Algo deu errado! verifique o link da playlist.")
         messagebox.showinfo("DYG Downloader", "O download da playlist foi concluído com sucesso!")
