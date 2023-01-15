@@ -4,35 +4,36 @@
 
 ### v2.5.2:
 
-- Adicionado recurso para fazer downloads de playlists completas em MP3 ou MP4.
-- Aplicado abstração de nivel 2.
-- bugfix (afetava o mecanismo de evento que permite colar o que foi copiado na Entry).
-- bugfix (afetava a velocidade de execução).
+- Added feature to download complete playlists in MP3 or MP4.
+- Applied level 2 abstraction.
+- bugfix (affected the event mechanism that allows pasting what was copied in the Entry).
+- bugfix (affected execution speed).
 
 
 ### v2.3.0:
 
-- Adicionado recurso para colar a URL no Entry.
+- Added feature to paste URL in Entry.
 
 ### v2.2.3:
 
-- bugfix (afetava a extensão de saída .mp3).
-- bugfix (afetava as janelas de progresso do download).
+- bugfix (affected .mp3 output extension).
+- bugfix (affected download progress windows).
 
 ### v2.2.1:
 
-- Acrescentado barra de progresso do download
-- melhorias na interface do usuário
+- Added download progress bar
+- UI improvements
 - bugfix
 
 ### v2.1.0:
 
-- Acrescentado o recurso mix que permite fazer download de até 10 vídeos e MP3 simultâneos.
+- Added the mix feature that allows you to download up to 10 videos and MP3s simultaneously.
 
 ### v2.0.0:
 
-- Acrescentado recurso para fazer download somente do áudio em MP3.
+- Added feature to download MP3 audio only.
 
 ### v1.0.0:
 
-- Versão inicial
+- Initial release
+
