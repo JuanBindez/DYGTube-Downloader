@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc3
+# Release: v2.5.3-rc4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -28,97 +28,103 @@ from tkinter import ttk
 
 
 def progress_bar():
-  """bloco de interface progress func mix"""
+    """mix option progress bar interface"""
+    
+    global window_progress
 
-  global window_progress
+    window_progress = Tk()
+    window_progress.title("DYGTube Downloader")
+    window_progress.geometry("400x100")
+    window_progress['background'] = '#4E4E4E'
+    window_progress.resizable(False, False)
+    window_progress.attributes('-alpha', 9.1)
 
-  window_progress = Tk()
-  window_progress.title("DYGTube Downloader")
-  window_progress.geometry("400x100")
-  # site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-  window_progress['background'] = '#4E4E4E'
-  # False para não responsivo e True para responsivo.
-  window_progress.resizable(False, False)
-  window_progress.attributes('-alpha', 9.1)
+    """information:
 
-  global progress
+    website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 
-  progress = ttk.Progressbar(window_progress, orient=HORIZONTAL,
-                             length=300, mode='determinate')
+    y is height and x is for sides
+    """
 
-  progress.pack(pady=30)
+    global progress
 
-  progress['value'] = 0
-  label = Label(window_progress,
-                text="0 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    progress = ttk.Progressbar(window_progress, orient=HORIZONTAL,
+                              length=300, mode='determinate')
 
-  time.sleep(2)
-  progress['value'] = 10
-  label = Label(window_progress,
-                text="10 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
-  progress.update_idletasks()
-  progress['value'] = 10
+    progress.pack(pady=30)
 
-  time.sleep(1)
-  progress.update_idletasks()
-  progress['value'] = 50
+    progress['value'] = 0
+    label = Label(window_progress,
+                  text="0 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
 
-  label = Label(window_progress,
-                text="50 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    time.sleep(2)
+    progress['value'] = 10
+    progress.update_idletasks()
+    label = Label(window_progress,
+                  text="10 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
 
-  time.sleep(1)
-  progress.update_idletasks()
-  progress['value'] = 60
 
-  label = Label(window_progress,
-                text="60 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    time.sleep(1)
+    progress.update_idletasks()
+    progress['value'] = 50
 
-  time.sleep(1)
-  progress.update_idletasks()
-  progress['value'] = 70
+    label = Label(window_progress,
+                  text="50 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
 
-  label = Label(window_progress,
-                text="70 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    time.sleep(1)
+    progress.update_idletasks()
+    progress['value'] = 60
 
-  time.sleep(1)
-  progress.update_idletasks()
-  progress['value'] = 80
+    label = Label(window_progress,
+                  text="60 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
 
-  label = Label(window_progress,
-                text="80 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    time.sleep(1)
+    progress.update_idletasks()
+    progress['value'] = 70
 
-  time.sleep(1)
-  progress.update_idletasks()
-  progress['value'] = 90
+    label = Label(window_progress,
+                  text="70 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
 
-  label = Label(window_progress,
-                text="90 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    time.sleep(1)
+    progress.update_idletasks()
+    progress['value'] = 80
 
-  time.sleep(1)
-  progress.update_idletasks()
-  progress['value'] = 100
+    label = Label(window_progress,
+                  text="80 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
 
-  label = Label(window_progress,
-                text="100 %",
-                fg='white',
-                bg="#4E4E4E").place(x=190, y=60)
+    time.sleep(1)
+    progress.update_idletasks()
+    progress['value'] = 90
 
-  time.sleep(1)
-  label = Label(window_progress,
-                text="Dowload Concluído!",
-                fg='white',
-                bg="#4E4E4E").place(x=140, y=60)
+    label = Label(window_progress,
+                  text="90 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
+
+    time.sleep(1)
+    progress.update_idletasks()
+    progress['value'] = 100
+
+    label = Label(window_progress,
+                  text="100 %",
+                  fg='white',
+                  bg="#4E4E4E").place(x=190, y=60)
+
+    time.sleep(1)
+    progress.update_idletasks()
+    label = Label(window_progress,
+                  text="Dowload Concluído!",
+                  fg='white',
+                  bg="#4E4E4E").place(x=140, y=60)
