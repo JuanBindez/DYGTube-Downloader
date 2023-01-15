@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc3
+# Release: v2.5.3-rc4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -25,6 +25,7 @@ import time
     
 from tkinter import *
 from tkinter import ttk
+from PIL import ImageTk, Image
 from src.source import DownloadInit
 from src.playlist_download_module import download_playlist
 from src.escolha_mix_module import escolha_mix
@@ -32,43 +33,55 @@ from src.sobre_module import sobre_software
 
 
 def download_video():
-  """Aqui é feito o download do video.
-     a variavel link recebe a url.
-  """
+    """Here the video is downloaded.
+      the link variable receives the url.
+    """
 
-  link = entrada_de_dados.get()
-
-  DI = DownloadInit(link)
-  DI.download_video_mp4()
-  
+    link = entrada_de_dados.get()
+    DI = DownloadInit(link)
+    DI.download_video_mp4()
+    
   
 def download_mp3():
-  """Esta função faz download apenas do áudio."""
+    """This function downloads audio only."""
 
-  link = entrada_de_dados.get()
-  
-  DI = DownloadInit(link)
-  DI.download_audio_mp3()
+    link = entrada_de_dados.get()
+    DI = DownloadInit(link)
+    DI.download_audio_mp3()
+
+
+"""information:
+
+website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
+
+ y is height and x is for sides.
+"""
 
 
 window = Tk()
 window.title("DYGTube Downloader")
-window.geometry("500x260")
-window['background'] = '#4E4E4E'                    # site para gerar cores Hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-window.resizable(False, False)                      # False para não responsivo e True para responsivo.
+window.geometry("500x370")
+window['background'] = '#4E4E4E'             
+window.resizable(False, False)                       # False for non-responsive window and True for responsive.
 window.attributes('-alpha',9.1)
+foto_icon = PhotoImage(file = 'logo_icon.png')
+window.iconphoto(True, foto_icon)
 
-color_frame = '#585757'
-color_botao = '#3D3D3D'
 
-frame = Frame(window, width=600, height=35, bg=color_frame)
+file_img = Image.open('logo.png')
+bg = ImageTk.PhotoImage(file_img)
+label = Label(window, image=bg)
+label.place(x = 50,y = 60)
+
+COLOR_FRAME = '#585757'
+COLOR_BUTTON = '#3D3D3D'
+
+frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
 frame.grid(row=0, column=0)
-
-
 label = Label(window,
                 text="URL*",
                 fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=80)     # y é altura e x é para os lados
+                bg="#4E4E4E").place(x=40, y=190)
 
 def make_menu(w):
     global the_menu_1
@@ -85,49 +98,47 @@ def show_menu(e):
 
 make_menu(window)
 entrada_de_dados = Entry(window, width=40)
-entrada_de_dados.place(x=95, y=80)
+entrada_de_dados.place(x=95, y=190)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 lbl = Label(window, text = "")
 
-# botão que inicia o download.
+# button that starts the download.
 botao = Button(window,
                 text="Download Vídeo",
                 command=download_video,
                 fg='#09AF30',
-                bg=color_botao,).place(x=120, y=160)
+                bg=COLOR_BUTTON,).place(x=120, y=270)
 
-# botão para iniciar download apenas do auidio do vídeo.
+# button to start downloading only the audio of the video.
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
                 fg='#09AF30',
-                bg=color_botao,).place(x=270, y=160)
+                bg=COLOR_BUTTON,).place(x=270, y=270)
 
-
-# botão para exibir informações sobre o programa.
+# button to display information about the program.
 botao_sobre = Button(window,
                 text="Sobre",
                 command=sobre_software,
                 fg='#09AF30',
-                bg=color_botao,
-                width=3,).place(x=103, y=2)          # y é altura e x é para os lados
+                bg=COLOR_BUTTON,
+                width=3,).place(x=103, y=2)
 
-
+# button to playlist download.
 botao_playlist = Button(window,
                 text="playlist",
                 command=download_playlist,
                 fg='#09AF30',
-                bg=color_botao,
-                width=4,).place(x=45, y=2)           # y é altura e x é para os lados
+                bg=COLOR_BUTTON,
+                width=4,).place(x=45, y=2) 
 
-
-botao_combo = Button(window,
+# mix option button.                     
+botao_mix = Button(window,
                 text="mix",
                 command=escolha_mix,
                 fg='#09AF30',
-                bg=color_botao,
+                bg=COLOR_BUTTON,
                 width=2,).place(x=2, y=2)
-
 
 if __name__ == "__main__":
   window.mainloop()
