@@ -49,14 +49,12 @@ def download_mp3():
     DI = DownloadInit(link)
     DI.download_audio_mp3()
 
-
 """information:
 
 website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 
  y is height and x is for sides.
 """
-
 
 window = Tk()
 window.title("DYGTube Downloader")
@@ -75,6 +73,7 @@ label.place(x = 50,y = 60)
 
 COLOR_FRAME = '#585757'
 COLOR_BUTTON = '#3D3D3D'
+COLOR_LETTER = '#09AF30'
 
 frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
 frame.grid(row=0, column=0)
@@ -113,14 +112,14 @@ botao = Button(window,
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
-                fg='#09AF30',
+                fg='COLOR_LETTER',
                 bg=COLOR_BUTTON,).place(x=270, y=270)
 
 # button to display information about the program.
 botao_sobre = Button(window,
                 text="Sobre",
                 command=sobre_software,
-                fg='#09AF30',
+                fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=3,).place(x=103, y=2)
 
@@ -128,7 +127,7 @@ botao_sobre = Button(window,
 botao_playlist = Button(window,
                 text="playlist",
                 command=download_playlist,
-                fg='#09AF30',
+                fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=4,).place(x=45, y=2) 
 
@@ -136,7 +135,7 @@ botao_playlist = Button(window,
 botao_mix = Button(window,
                 text="mix",
                 command=escolha_mix,
-                fg='#09AF30',
+                fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=2,).place(x=2, y=2)
 
