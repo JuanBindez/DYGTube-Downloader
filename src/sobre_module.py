@@ -44,41 +44,41 @@ def sobre_software():
 
    y is height and x is for sides.
    """
-   
-   COLOR_COPYRIGHT = '#4E4E4E'
-   COLOR_VERSION = '#4E4E4E'
+  
+   GENERAL_BACKGROUND_COLOR = '4E4E4E'
    COLOR_DYGTUBE_NAME = 'white'
-   COLOR_DESCRIPTION = '#09AF30'
-   COLOR_GPLV2 = '4E4E4E'
-   BACKGROUND_ALL = '4E4E4E'
-   
+   COLOR_VERSION = 'white'
+   COLOR_DESCRIPTION = 'white'
+   COLOR_NO_WARRANTY = '#09AF30'
+   COLOR_GPLV2 = 'white'
+   COLOR_COPYRIGHT = '#09AF30'
 
    label = Label(window,
                 text="DYGTube",
-                fg='white', 
-                bg="#4E4E4E").place(x=188, y=10)
+                fg=COLOR_DYGTUBE_NAME, 
+                bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
                 text="v2.5.3-rc4",
-                fg='white',
-                bg="#4E4E4E").place(x=195, y=29)
+                fg=COLOR_VERSION,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 
    label = Label(window, 
                 text="O DYGTube faz download de video e audio MP3 do Youtube.", 
-                fg='white', 
-                bg="#4E4E4E").place(x=27, y=80)
+                fg=COLOR_DESCRIPTION, 
+                bg=GENERAL_BACKGROUND_COLOR).place(x=27, y=80)
 
    label = Label(window,
                 text="Este programa vem com absolutamente nenhuma garantia.", 
-                fg='#09AF30', 
-                bg="#4E4E4E").place(x=21, y=110)
+                fg=COLOR_NO_WARRANTY, 
+                bg=GENERAL_BACKGROUND_COLOR).place(x=21, y=110)
 
    label = Label(window, 
                 text="Para mais detalhes, visite Licença Pública Geral GNU, versão 2", 
-                fg='white',
-                bg="#4E4E4E").place(x=15, y=150)
+                fg=COLOR_GPLV2,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=15, y=150)
                 
    label = Label(window,
                 text="Copyright (c) 2022-2023  Juan Bindez", 
-                fg='#09AF30', 
-                bg="#4E4E4E").place(x=80, y=170)
+                fg=COLOR_COPYRIGHT, 
+                bg=GENERAL_BACKGROUND_COLOR).place(x=80, y=170)
