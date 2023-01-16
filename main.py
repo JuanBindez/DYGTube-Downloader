@@ -38,16 +38,16 @@ def download_video():
     """
 
     link = entrada_de_dados.get()
-    DI = DownloadInit(link)
-    DI.download_video_mp4()
+    di = DownloadInit(link)
+    di.download_video_mp4()
     
   
 def download_mp3():
     """This function downloads audio only."""
 
     link = entrada_de_dados.get()
-    DI = DownloadInit(link)
-    DI.download_audio_mp3()
+    di = DownloadInit(link)
+    di.download_audio_mp3()
 
 """information:
 
@@ -79,7 +79,7 @@ frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
 frame.grid(row=0, column=0)
 label = Label(window,
                 text="URL*",
-                fg='#09AF30',
+                fg=COLOR_LETTER,
                 bg="#4E4E4E").place(x=40, y=190)
 
 def make_menu(w):
