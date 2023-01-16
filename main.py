@@ -53,7 +53,7 @@ def download_mp3():
 
 website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
 
- y is height and x is for sides.
+ y ishei ght and x is for sides.
 """
 
 window = Tk()
@@ -105,14 +105,14 @@ lbl = Label(window, text = "")
 botao = Button(window,
                 text="Download Vídeo",
                 command=download_video,
-                fg='#09AF30',
+                fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,).place(x=120, y=270)
 
 # button to start downloading only the audio of the video.
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
-                fg='COLOR_LETTER',
+                fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,).place(x=270, y=270)
 
 # button to display information about the program.
