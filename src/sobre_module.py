@@ -44,6 +44,14 @@ def sobre_software():
 
    y is height and x is for sides.
    """
+   
+   COLOR_COPYRIGHT = '#4E4E4E'
+   COLOR_VERSION = '#4E4E4E'
+   COLOR_DYGTUBE_NAME = 'white'
+   COLOR_DESCRIPTION = '#09AF30'
+   COLOR_GPLV2 = '4E4E4E'
+   BACKGROUND_ALL = '4E4E4E'
+   
 
    label = Label(window,
                 text="DYGTube",
