@@ -157,17 +157,17 @@ def escolha_mix():
       command=lambda: w.event_generate("<<Paste>>"))
       the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
 
-
-  color_1 = '#585757'
-  color_botao = '#3D3D3D'
+  GENERAL_BACKGROUND_COLOR = '#4E4E4E'
+  BUTTON_COLOR = '#3D3D3D'
+  LETTER_FG_COLOR = '#09AF30'
 
   frame = Frame(window, width=600, height=35, bg=color_1)
   frame.grid(row=0, column=0)
 
   label = Label(window,
                 text="URL 1*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=60)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=60)
 
   make_menu(window)
   entrada_url_1 = Entry(window, width=40)
@@ -177,71 +177,71 @@ def escolha_mix():
 
   label = Label(window,
                 text="URL 2*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=85)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=85)
 
   entrada_url_2 = Entry(window, width=40)
   entrada_url_2.place(x=95, y=85)
 
   label = Label(window,
                 text="URL 3*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=110)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=110)
   entrada_url_3 = Entry(window, width=40)
   entrada_url_3.place(x=95, y=110)
 
   label = Label(window,
                 text="URL 4*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=135)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=135)
 
   entrada_url_4 = Entry(window, width=40)
   entrada_url_4.place(x=95, y=135)
 
   label = Label(window,
                 text="URL 5*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=160)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=160)
 
   entrada_url_5 = Entry(window, width=40)
   entrada_url_5.place(x=95, y=160)
 
   label = Label(window,
                 text="URL 6*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=185)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=185)
 
   entrada_url_6 = Entry(window, width=40)
   entrada_url_6.place(x=95, y=185)
 
   label = Label(window,
                 text="URL 7*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=210)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=210)
 
   entrada_url_7 = Entry(window, width=40)
   entrada_url_7.place(x=95, y=210)
 
   label = Label(window,
                 text="URL 8*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=235)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=235)
 
   entrada_url_8 = Entry(window, width=40)
   entrada_url_8.place(x=95, y=235)
 
   label = Label(window,
                 text="URL 9*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=260)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=260)
 
   entrada_url_9 = Entry(window, width=40)
   entrada_url_9.place(x=95, y=260)
 
   label = Label(window,
                 text="URL 10*",
-                fg='#09AF30',
-                bg="#4E4E4E").place(x=40, y=285)
+                fg=LETTER_FG_COLOR,
+                bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=285)
 
   entrada_url_10 = Entry(window, width=40)
   entrada_url_10.place(x=95, y=285)
@@ -250,18 +250,18 @@ def escolha_mix():
   botao_video = Button(window,
                   text="Download Vídeo",
                   command=download_mix_video,
-                  fg='#09AF30',
-                  bg=color_botao,).place(x=90, y=400)
+                  fg=LETTER_FG_COLOR,
+                  bg=BUTTON_COLOR,).place(x=90, y=400)
   # button to start downloading only the audio of the video from the mix option.
   botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mix_mp3,
-                fg='#09AF30',
-                bg=color_botao,).place(x=240, y=400)
+                fg=LETTER_FG_COLOR,
+                bg=BUTTON_COLOR,).place(x=240, y=400)
 
   botao_info = Button(window,
                 text="Info",
                 command=info_function,
-                fg='#09AF30',
-                bg=color_botao,
+                fg=LETTER_FG_COLOR,
+                bg=BUTTON_COLOR,
                 width=2,).place(x=405, y=2)
