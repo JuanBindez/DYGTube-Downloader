@@ -69,6 +69,7 @@ def download_playlist():
 
     COLOR_FRAME = '#585757'
     COLOR_BUTTON = '#3D3D3D'
+    LETTER_COLOR = '#09AF30'
 
     frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
     frame.grid(row=0, column=0)
@@ -86,10 +87,10 @@ def download_playlist():
     botao_download = Button(window,
                     text="Download Vídeo",
                     command=captura_playlist_mp4,
-                    fg='#09AF30',
+                    fg=LETTER_COLOR,
                     bg=COLOR_BUTTON,).place(x=90, y=200)
     botao_download = Button(window,
                     text="Download MP3",
                     command=captura_playlist_mp3,
-                    fg='#09AF30',
+                    fg=LETTER_COLOR,
                     bg=COLOR_BUTTON,).place(x=230, y=200)
