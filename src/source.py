@@ -34,13 +34,11 @@ from src.progress_bar_module import progress_bar
 
 class DownloadInit():
     """This class will receive the url to download the video."""
-
     def __init__(self, link_url_input):
         self.link_url_input = link_url_input
 
     def download_audio_mp3(self):
         """Here it will be downloaded in MP3"""
-
         yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
         #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
         ys = yt.streams.get_audio_only()
@@ -63,7 +61,6 @@ class DownloadInit():
 
     def download_video_mp4(self):
         """Here it will be downloaded in MP4 video."""
-
         yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
         #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
         ys = yt.streams.get_highest_resolution()
@@ -74,13 +71,11 @@ class DownloadInit():
 
 class DownloadList():
     """Here the url of the playlist to be downloaded will be captured."""
-
     def __init__(self, url_playlist):    
         self.url_playlist = url_playlist
 
     def download_playlist_mp3(self):
         """Here the download of the playlist will start."""
-
         try: 
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
@@ -111,7 +106,6 @@ class DownloadList():
 
     def download_playlist_mp4(self):
         """Here the download of the playlist will start."""
-
         try:
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
