@@ -45,7 +45,7 @@ def sobre_software():
    y is height and x is for sides.
    """
   
-   GENERAL_BACKGROUND_COLOR = '4E4E4E'
+   GENERAL_BACKGROUND_COLOR = '#4E4E4E'
    COLOR_DYGTUBE_NAME = 'white'
    COLOR_VERSION = 'white'
    COLOR_DESCRIPTION = 'white'
