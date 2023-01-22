@@ -36,7 +36,6 @@ def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
-
     link = entrada_de_dados.get()
     di = DownloadInit(link)
     di.download_video_mp4()
@@ -44,7 +43,6 @@ def download_video():
   
 def download_mp3():
     """This function downloads audio only."""
-
     link = entrada_de_dados.get()
     di = DownloadInit(link)
     di.download_audio_mp3()
@@ -64,7 +62,6 @@ window.resizable(False, False)                       # False for non-responsive 
 window.attributes('-alpha',9.1)
 foto_icon = PhotoImage(file = 'logo_icon.png')
 window.iconphoto(True, foto_icon)
-
 
 file_img = Image.open('logo.png')
 bg = ImageTk.PhotoImage(file_img)
