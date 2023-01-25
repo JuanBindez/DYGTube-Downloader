@@ -5,6 +5,8 @@
 
 ----------
 
+#### you can use this software on windown and linux.
+
 ## This software is free under the GPLv2 license, users are free to run, copy, distribute, study, change and improve the software.
 
 
