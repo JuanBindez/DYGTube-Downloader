@@ -29,6 +29,7 @@ from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
+
 from src.progress_bar_module import progress_bar
 
 
