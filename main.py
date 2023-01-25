@@ -26,6 +26,7 @@ import time
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
+
 from src.source import DownloadInit
 from src.playlist_download_module import download_playlist
 from src.escolha_mix_module import escolha_mix
