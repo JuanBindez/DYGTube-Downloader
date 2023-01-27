@@ -30,7 +30,6 @@ from src.source import DownloadInit, DownloadList
 
 def download_playlist():
     """Here the url of the playlist will be captured and passed to the DownloadList class to download it."""
-
     def captura_playlist_mp3():
         url = entrada_url_playlist.get()
         DP = DownloadList(url)
@@ -41,7 +40,6 @@ def download_playlist():
         DP = DownloadList(url)
         DP.download_playlist_mp4()
 
-
     window = Tk()
     window.title("DYGTube Downloader")
     window.geometry("455x320")
@@ -49,7 +47,6 @@ def download_playlist():
     window.resizable(False, False)
     window.attributes('-alpha',9.1)
     
-
     """information:
 
     website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
@@ -90,6 +87,7 @@ def download_playlist():
                     command=captura_playlist_mp4,
                     fg=LETTER_COLOR,
                     bg=COLOR_BUTTON,).place(x=90, y=200)
+    
     botao_download = Button(window,
                     text="Download MP3",
                     command=captura_playlist_mp3,
