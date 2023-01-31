@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc4
+# Release: v2.6.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -21,6 +21,7 @@
 
 import os
 import time
+import logging
 import urllib3
 
 from pytube import YouTube
@@ -30,6 +31,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
+from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
 
 
@@ -40,12 +42,16 @@ class DownloadInit():
 
     def download_audio_mp3(self):
         """Here it will be downloaded in MP3"""
-        yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
-        #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
-        ys = yt.streams.get_audio_only()
-        ys.download()
-        time.sleep(3)
-        progress_bar()
+        try:
+            yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
+            #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+            ys = yt.streams.get_audio_only()
+            ys.download()
+            DebugInfo.logger_info.info("(From source Init) Starting to download audio MP3 from URL: %s",self.link_url_input)
+            time.sleep(3)
+            progress_bar()
+        except Exception as e:
+            DebugInfo.logger_error.error(e, exc_info=True)
 
         EXTENSION_MP3 = '.mp3'
         EXTENSION_MP4 = '.mp4'
@@ -55,19 +61,24 @@ class DownloadInit():
             # renames the file with extension .mp4 to .mp3
             os.rename(str(yt.title + EXTENSION_MP4),str(yt.title + EXTENSION_MP3))
             time.sleep(1)
-        except FileNotFoundError:
+        except Exception as e:
+            DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", 
                                  "Erro Ao Salvar Com Extensão .mp3!, Fique Tranquilo Basta Mudar o Nome Do A Extensão Manualmente De .mp4 Para .mp3.")
             pass
 
     def download_video_mp4(self):
         """Here it will be downloaded in MP4 video."""
-        yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
-        #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
-        ys = yt.streams.get_highest_resolution()
-        ys.download()
-        time.sleep(2)
-        progress_bar()
+        try:
+            yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
+            #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+            ys = yt.streams.get_highest_resolution()
+            ys.download()
+            DebugInfo.logger_info.info("(From source Init) Starting to download video MP4 from URL: %s",self.link_url_input)
+            time.sleep(2)
+            progress_bar()
+        except Exception as e:
+            DebugInfo.logger_error.error(e, exc_info=True)
 
 
 class DownloadList():
@@ -77,10 +88,11 @@ class DownloadList():
 
     def download_playlist_mp3(self):
         """Here the download of the playlist will start."""
-        try: 
+        try:
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
                 video.streams.get_audio_only().download()
+                DebugInfo.logger_info.info("(From source playlist) Starting to download audio MP3 from URL: %s",self.url_playlist)
                 progress_bar()
             
                 EXTENSION_MP3 = '.mp3'
@@ -92,18 +104,23 @@ class DownloadList():
                     # renames the file with extension .mp4 to .mp3
                     os.rename(str(pl.title + EXTENSION_MP4),str(pl.title + EXTENSION_MP3))
                     time.sleep(1)
-                except FileNotFoundError:
-                    print("arquivo não encontrado")                  # usado em testes.
+                    raise Exception('An error has occurred')
+                except Exception as e:
+                    DebugInfo.logger_error.error(e, exc_info=True)
+    
                     pass
                 time.sleep(1)
-        
-        except:
+            raise Exception('An error has occurred')
+        except Exception as e:
+            error = True
+            DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYGTube Downloader",
                                  "Algo deu errado! verifique o link da playlist ")
-        messagebox.showinfo("DYG Downloader", 
-                            "O download da playlist foi concluído com sucesso!")
-        messagebox.showerror("DYG Downloader",
-                             "Caso seus downloads estiverem como MP4 você terá que mudar para .MP3 manualmente,é só apagar o .mp4 e colocar .mp3.")
+        if not error:
+            messagebox.showinfo("DYG Downloader", 
+                                "O download da playlist foi concluído com sucesso!")
+            messagebox.showerror("DYG Downloader",
+                                "Caso seus downloads estiverem como MP4 você terá que mudar para .MP3 manualmente,é só apagar o .mp4 e colocar .mp3.")
 
     def download_playlist_mp4(self):
         """Here the download of the playlist will start."""
@@ -111,7 +128,12 @@ class DownloadList():
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
                 video.streams.get_lowest_resolution().download()
+                DebugInfo.logger_info.info("(From source playlist) Starting to download video MP4 from URL: %s",self.url_playlist)
                 progress_bar()
-        except:
+            raise Exception('An error has occurred')
+        except Exception as e:
+            error = True
+            DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Algo deu errado! verifique o link da playlist.")
-        messagebox.showinfo("DYG Downloader", "O download da playlist foi concluído com sucesso!")
+        if not error:
+            messagebox.showinfo("DYG Downloader", "O download da playlist foi concluído com sucesso!")

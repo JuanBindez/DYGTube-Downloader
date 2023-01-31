@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc4
+# Release: v2.6.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -29,7 +29,6 @@ from tkinter import ttk
 
 def progress_bar():
     """mix option progress bar interface"""
-    
     global window_progress
 
     window_progress = Tk()
@@ -79,24 +78,6 @@ def progress_bar():
 
     time.sleep(1)
     progress.update_idletasks()
-    progress['value'] = 60
-
-    label = Label(window_progress,
-                  text="60 %",
-                  fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
-
-    time.sleep(1)
-    progress.update_idletasks()
-    progress['value'] = 70
-
-    label = Label(window_progress,
-                  text="70 %",
-                  fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
-
-    time.sleep(1)
-    progress.update_idletasks()
     progress['value'] = 80
 
     label = Label(window_progress,
@@ -128,3 +109,5 @@ def progress_bar():
                   text="Dowload Concluído!",
                   fg='white',
                   bg="#4E4E4E").place(x=140, y=60)
+    time.sleep(5)
+    window_progress.destroy()

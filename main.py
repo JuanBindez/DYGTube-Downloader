@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc4
+# Release: v2.6.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -20,6 +20,7 @@
 
 
 import os
+import logging
 import urllib3
 import time
     
@@ -33,11 +34,17 @@ from src.escolha_mix_module import escolha_mix
 from src.sobre_module import sobre_software
 
 
+# Configure the logging system
+#logging.basicConfig(filename="DYGTUbe_main.log", level=logging.INFO, format='%(asctime)s %(message)s')
+#logger = logging.getLogger()
+
+
 def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
     link = entrada_de_dados.get()
+    #logger.info("(From main)Starting to download video MP4 from URL: %s", link)
     di = DownloadInit(link)
     di.download_video_mp4()
     
@@ -45,6 +52,7 @@ def download_video():
 def download_mp3():
     """This function downloads audio only."""
     link = entrada_de_dados.get()
+    #logger.info("(From main)Starting to download audio MP3 from URL: %s", link)
     di = DownloadInit(link)
     di.download_audio_mp3()
 

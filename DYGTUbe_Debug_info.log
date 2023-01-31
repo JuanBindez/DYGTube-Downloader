@@ -1,0 +1,43 @@
+31/01/2023 13:34:45 'list'
+Traceback (most recent call last):
+  File "/home/juan/Área de Trabalho/DYGTube-Downloader-v2.6.0-rc1/src/source.py", line 93, in download_playlist_mp3
+    for video in pl.videos:
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/helpers.py", line 71, in __iter__
+    curr_item = self[iter_index]
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/helpers.py", line 57, in __getitem__
+    next_item = next(self.gen)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/contrib/playlist.py", line 296, in videos_generator
+    for url in self.video_urls:
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/helpers.py", line 71, in __iter__
+    curr_item = self[iter_index]
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/helpers.py", line 57, in __getitem__
+    next_item = next(self.gen)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/contrib/playlist.py", line 281, in url_generator
+    for page in self._paginate():
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/contrib/playlist.py", line 118, in _paginate
+    json.dumps(extract.initial_data(self.html))
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/contrib/playlist.py", line 58, in html
+    self._html = request.get(self.playlist_url)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/contrib/playlist.py", line 48, in playlist_url
+    return f"https://www.youtube.com/playlist?list={self.playlist_id}"
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/contrib/playlist.py", line 39, in playlist_id
+    self._playlist_id = extract.playlist_id(self._input_url)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/extract.py", line 151, in playlist_id
+    return parse_qs(parsed.query)['list'][0]
+KeyError: 'list'
+31/01/2023 13:35:17 regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+Traceback (most recent call last):
+  File "/home/juan/Área de Trabalho/DYGTube-Downloader-v2.6.0-rc1/src/source.py", line 46, in download_audio_mp3
+    yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/__main__.py", line 71, in __init__
+    self.video_id = extract.video_id(url)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/extract.py", line 133, in video_id
+    return regex_search(r"(?:v=|\/)([0-9A-Za-z_-]{11}).*", url, group=1)
+  File "/home/juan/.local/lib/python3.10/site-packages/pytube/helpers.py", line 129, in regex_search
+    raise RegexMatchError(caller="regex_search", pattern=pattern)
+pytube.exceptions.RegexMatchError: regex_search: could not find match for (?:v=|\/)([0-9A-Za-z_-]{11}).*
+31/01/2023 13:35:20 local variable 'yt' referenced before assignment
+Traceback (most recent call last):
+  File "/home/juan/Área de Trabalho/DYGTube-Downloader-v2.6.0-rc1/src/source.py", line 62, in download_audio_mp3
+    os.rename(str(yt.title + EXTENSION_MP4),str(yt.title + EXTENSION_MP3))
+UnboundLocalError: local variable 'yt' referenced before assignment

@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc3
+# Release: v2.6.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #

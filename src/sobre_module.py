@@ -1,4 +1,4 @@
-# Release: v2.5.3-rc4
+# Release: v2.6.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -59,7 +59,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v2.5.3-rc4",
+                text="v2.6.0-rc1",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 
