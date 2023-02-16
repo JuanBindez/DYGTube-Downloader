@@ -38,7 +38,6 @@ from src.sobre_module import sobre_software
 #logging.basicConfig(filename="DYGTUbe_main.log", level=logging.INFO, format='%(asctime)s %(message)s')
 #logger = logging.getLogger()
 
-
 def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
