@@ -1,3 +1,7 @@
+### v2.6.0:
+
+- added feature that create log file for debugging
+
 ### v2.5.3:
 
 - bugfix
