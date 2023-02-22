@@ -59,7 +59,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v2.6.0-rc1",
+                text="v2.6.0",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 
