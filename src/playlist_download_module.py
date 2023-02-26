@@ -1,4 +1,4 @@
-# Release: v2.6.0
+# Release: v2.7.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -43,7 +43,7 @@ def download_playlist():
     window = Tk()
     window.title("DYGTube Downloader")
     window.geometry("455x320")
-    window['background'] = '#4E4E4E'
+    window['background'] = '#373636'
     window.resizable(False, False)
     window.attributes('-alpha',9.1)
     
@@ -66,19 +66,19 @@ def download_playlist():
         the_menu_2.tk.call("tk_popup", the_menu_2, e.x_root, e.y_root)
 
     COLOR_FRAME = '#585757'
-    COLOR_BUTTON = '#3D3D3D'
-    LETTER_COLOR = '#09AF30'
+    COLOR_BUTTON = '#191A1A'
+    LETTER_COLOR = '#00E9CA'
 
     frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
     frame.grid(row=0, column=0)
     label = Label(window,
                   text="URL Playlist*",
-                  fg='#09AF30',
-                  bg="#4E4E4E").place(x=6, y=80)
+                  fg='#00E9CA',
+                  bg="#373636").place(x=6, y=100)
 
     make_menu(window)
     entrada_url_playlist = Entry(window, width=40)
-    entrada_url_playlist.place(x=95, y=80)
+    entrada_url_playlist.place(x=95, y=100)
     entrada_url_playlist.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
     lbl = Label(window, text = "")
 
