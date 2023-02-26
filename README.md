@@ -55,11 +55,5 @@
 
 ### Clicking on it will open the program:
 
-![Captura de tela de 2023-01-10 13-12-47](https://user-images.githubusercontent.com/79322362/211603927-8c30bcad-6d3d-4b3a-bce3-43446c60d963.png)
 
-![Captura de tela de 2023-01-10 13-13-06](https://user-images.githubusercontent.com/79322362/211603951-683d841f-85fb-4416-863d-bdd1aead91e1.png)
-
-
-![Captura de tela de 2023-01-10 13-13-23](https://user-images.githubusercontent.com/79322362/211603968-4649fde5-b2d8-4922-94e9-729c1373b0f1.png)
-
-
+![Captura de tela de 2023-02-26 16-14-44](https://user-images.githubusercontent.com/79322362/221431815-303b5ece-9285-4682-9c2a-d36f2db673ae.png)
