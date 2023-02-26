@@ -1,7 +1,7 @@
 ![Captura de tela de 2023-01-09 08-55-23](https://user-images.githubusercontent.com/79322362/211603779-dfac1c01-21e7-49f8-bfd5-9060c58d5cf4.png)
 
 
-# This is DYGTube Downloader version 2.7.0-rc1
+# This is DYGTube Downloader version 2.7.0
 
 ----------
 
@@ -24,11 +24,11 @@
 
 ### Make a git clone:
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.6.0
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.7.0
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v2.6.0
+    cd DYGTube-Downloader-v2.7.0
 
 ### Activate the virtualenv and enter the command:
 
