@@ -1,4 +1,4 @@
-# Release: v2.6.0
+# Release: v2.7.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -34,7 +34,7 @@ def sobre_software():
    window = Tk()
    window.title("DYGTube Downloader")
    window.geometry("440x200")
-   window['background'] = '#4E4E4E'
+   window['background'] = '#373636'
    window.resizable(False, False)
    window.attributes('-alpha',9.1)
 
@@ -45,13 +45,13 @@ def sobre_software():
    y is height and x is for sides.
    """
   
-   GENERAL_BACKGROUND_COLOR = '#4E4E4E'
+   GENERAL_BACKGROUND_COLOR = '#373636'
    COLOR_DYGTUBE_NAME = 'white'
    COLOR_VERSION = 'white'
    COLOR_DESCRIPTION = 'white'
-   COLOR_NO_WARRANTY = '#09AF30'
+   COLOR_NO_WARRANTY = '#00E9CA'
    COLOR_GPLV2 = 'white'
-   COLOR_COPYRIGHT = '#09AF30'
+   COLOR_COPYRIGHT = '#00E9CA'
 
    label = Label(window,
                 text="DYGTube",
@@ -59,7 +59,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v2.6.0",
+                text="v2.7.0",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 
