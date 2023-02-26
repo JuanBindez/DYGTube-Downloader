@@ -1,6 +1,6 @@
 ![logo](https://user-images.githubusercontent.com/79322362/221431897-23117e05-7600-4b86-bc79-6284ead43bbe.png)
 
-![pngegg](https://user-images.githubusercontent.com/79322362/221441930-3a40bdda-38e2-432f-bda7-cf2a1dc7b12f.png)
+![Captura de tela de 2023-02-26 19-44-25](https://user-images.githubusercontent.com/79322362/221442003-2429f122-585c-4424-894d-dd30e18d84b1.png)
 
 
 
