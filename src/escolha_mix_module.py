@@ -1,4 +1,4 @@
-# Release: v2.6.0
+# Release: v2.7.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -131,7 +131,7 @@ try:
     window = Tk()
     window.title("DYGTube Downloader")
     window.geometry("450x500")
-    window['background'] = '#4E4E4E'
+    window['background'] = '#373636'
     window.resizable(False, False)
     window.attributes('-alpha',9.1)
 
@@ -160,9 +160,9 @@ try:
         the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
 
     COLOR_FRAME = '#585757'
-    GENERAL_BACKGROUND_COLOR = '#4E4E4E'
-    BUTTON_COLOR = '#3D3D3D'
-    LETTER_FG_COLOR = '#09AF30'
+    GENERAL_BACKGROUND_COLOR = '#373636'
+    BUTTON_COLOR = '#191A1A'
+    LETTER_FG_COLOR = '#00E9CA'
 
     frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
     frame.grid(row=0, column=0)
