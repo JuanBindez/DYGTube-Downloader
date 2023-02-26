@@ -1,4 +1,4 @@
-# Release: v2.6.0
+# Release: v2.7.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -21,15 +21,15 @@
 
 import os
 import time
-import logging
-import urllib3
 
 from pytube import YouTube
 from pytube import Playlist
+from pytube import Channel
 from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
+
 
 from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
@@ -50,6 +50,9 @@ class DownloadInit():
             DebugInfo.logger_info.info("(From source Init) Starting to download audio MP3 from URL: %s",self.link_url_input)
             time.sleep(3)
             progress_bar()
+        except KeyError:
+            DebugInfo.logger_error.error(KeyError, exc_info=True)
+            messagebox.showerror("DYG Downloader", "Não foi possível fazer o download, isto é provocado por alguma mudança no Youtube, tente outro vídeo.")
         except Exception as e:
             DebugInfo.logger_error.error(e, exc_info=True)
 
@@ -77,6 +80,10 @@ class DownloadInit():
             DebugInfo.logger_info.info("(From source Init) Starting to download video MP4 from URL: %s",self.link_url_input)
             time.sleep(2)
             progress_bar()
+        except KeyError:
+            DebugInfo.logger_info.info("(Error from source Init) Error KeyError found in download video MP4 from URL: %s",self.link_url_input)
+            DebugInfo.logger_error.error(KeyError, exc_info=True)
+            messagebox.showerror("DYG Downloader", "Não foi possível fazer o download, isto é provocado por alguma mudança no Youtube, tente outro vídeo.")
         except Exception as e:
             DebugInfo.logger_error.error(e, exc_info=True)
 
@@ -137,3 +144,20 @@ class DownloadList():
             messagebox.showerror("DYG Downloader", "Algo deu errado! verifique o link da playlist.")
         if not error:
             messagebox.showinfo("DYG Downloader", "O download da playlist foi concluído com sucesso!")
+
+
+class ChannelDownload():
+    def __init__(self, url_channel):
+        self.url_channel = url_channel
+
+    def download_channel_m4(self):
+        try:
+            messagebox.showerror("DYG Downloader", "Não foi possível fazer o download, isto é provocado por alguma mudança no Youtube, tente outro vídeo.")
+            c = Channel(self.url_channel)
+
+            for video in c.videos:
+                video.streams.first().download()
+                messagebox.showerror("DYG Downloader", "Não foi possível fazer o download, isto é provocado por alguma mudança no Youtube, tente outro vídeo.")
+        except Exception as e:
+            DebugInfo.logger_error.error(e, exc_info=True)
+            messagebox.showerror("DYG Downloader", "Algo deu errado! verifique o link do canal.")
