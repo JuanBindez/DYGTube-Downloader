@@ -1,4 +1,4 @@
-# Release: v2.6.0
+# Release: v2.7.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -32,6 +32,7 @@ from src.source import DownloadInit
 from src.playlist_download_module import download_playlist
 from src.escolha_mix_module import escolha_mix
 from src.sobre_module import sobre_software
+from src.channel_module import download_channel
 
 
 # Configure the logging system
@@ -65,7 +66,7 @@ website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Co
 window = Tk()
 window.title("DYGTube Downloader")
 window.geometry("500x370")
-window['background'] = '#4E4E4E'             
+window['background'] = '#373636'             
 window.resizable(False, False)                       # False for non-responsive window and True for responsive.
 window.attributes('-alpha',9.1)
 foto_icon = PhotoImage(file = 'logo_icon.png')
@@ -74,18 +75,18 @@ window.iconphoto(True, foto_icon)
 file_img = Image.open('logo.png')
 bg = ImageTk.PhotoImage(file_img)
 label = Label(window, image=bg)
-label.place(x = 50,y = 60)
+label.place(x = 10,y = 60)
 
 COLOR_FRAME = '#585757'
-COLOR_BUTTON = '#3D3D3D'
-COLOR_LETTER = '#09AF30'
+COLOR_BUTTON = '#191A1A'
+COLOR_LETTER = '#00E9CA'
 
 frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
 frame.grid(row=0, column=0)
 label = Label(window,
                 text="URL*",
                 fg=COLOR_LETTER,
-                bg="#4E4E4E").place(x=40, y=190)
+                bg="#373636").place(x=40, y=190)
 
 def make_menu(w):
     global the_menu_1
@@ -126,12 +127,20 @@ botao_sobre = Button(window,
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
-                width=3,).place(x=103, y=2)
+                width=3,).place(x=160, y=2)
 
 # button to playlist download.
 botao_playlist = Button(window,
                 text="playlist",
                 command=download_playlist,
+                fg=COLOR_LETTER,
+                bg=COLOR_BUTTON,
+                width=4,).place(x=104, y=2)
+
+# button to channel download.
+botao_channel = Button(window,
+                text="Channel",
+                command=download_channel,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=4,).place(x=45, y=2) 
