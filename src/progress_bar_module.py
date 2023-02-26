@@ -1,4 +1,4 @@
-# Release: v2.6.0
+# Release: v2.7.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -34,7 +34,7 @@ def progress_bar():
     window_progress = Tk()
     window_progress.title("DYGTube Downloader")
     window_progress.geometry("400x100")
-    window_progress['background'] = '#4E4E4E'
+    window_progress['background'] = '#373636'
     window_progress.resizable(False, False)
     window_progress.attributes('-alpha', 9.1)
 
@@ -44,6 +44,8 @@ def progress_bar():
 
     y is height and x is for sides
     """
+
+    BACKGROUND_COLOR_LETTER = '#373636'
 
     global progress
 
@@ -56,7 +58,7 @@ def progress_bar():
     label = Label(window_progress,
                   text="0 %",
                   fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=190, y=60)
 
     time.sleep(2)
     progress['value'] = 10
@@ -64,7 +66,7 @@ def progress_bar():
     label = Label(window_progress,
                   text="10 %",
                   fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=190, y=60)
 
 
     time.sleep(1)
@@ -74,7 +76,7 @@ def progress_bar():
     label = Label(window_progress,
                   text="50 %",
                   fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=190, y=60)
 
     time.sleep(1)
     progress.update_idletasks()
@@ -83,7 +85,7 @@ def progress_bar():
     label = Label(window_progress,
                   text="80 %",
                   fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=190, y=60)
 
     time.sleep(1)
     progress.update_idletasks()
@@ -92,7 +94,7 @@ def progress_bar():
     label = Label(window_progress,
                   text="90 %",
                   fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=190, y=60)
 
     time.sleep(1)
     progress.update_idletasks()
@@ -101,13 +103,13 @@ def progress_bar():
     label = Label(window_progress,
                   text="100 %",
                   fg='white',
-                  bg="#4E4E4E").place(x=190, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=190, y=60)
 
     time.sleep(1)
     progress.update_idletasks()
     label = Label(window_progress,
                   text="Dowload Concluído!",
                   fg='white',
-                  bg="#4E4E4E").place(x=140, y=60)
+                  bg=BACKGROUND_COLOR_LETTER).place(x=140, y=60)
     time.sleep(5)
     window_progress.destroy()
