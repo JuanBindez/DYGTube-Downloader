@@ -22,7 +22,6 @@
 from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
-from PIL import ImageTk, Image
 from tkinter import ttk
 
 from src.source import DownloadInit, DownloadList
