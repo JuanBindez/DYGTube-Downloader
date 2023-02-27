@@ -6,11 +6,6 @@
 # This is DYGTube Downloader version 2.7.0
 
 ----------
-
-## This software is free under the GPLv2 license, users are free to run, copy, distribute, study, change and improve the software.
-
-
-----------
 ### Access the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
 ### about:
