@@ -1,3 +1,13 @@
+### v2.7.0:
+
+- improvements made to the user screen
+
+- added feature to check for errors
+
+- added feature to generate debug log
+
+- added feature to download all videos from a channel
+
 ### v2.6.0:
 
 - added feature that create log file for debugging
