@@ -10,7 +10,7 @@
 
 ### about:
 
-- This Software Download Videos and Audios in MP3 From Youtube.
+- This Software Download Videos and Audios in MP3.
 
 -----------
 ## Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
