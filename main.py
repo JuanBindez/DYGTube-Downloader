@@ -26,7 +26,6 @@ import time
     
 from tkinter import *
 from tkinter import ttk
-#from PIL import ImageTk, Image
 import base64
 
 from src.source import DownloadInit
@@ -36,17 +35,11 @@ from src.sobre_module import sobre_software
 from src.channel_module import download_channel
 
 
-# Configure the logging system
-#logging.basicConfig(filename="DYGTUbe_main.log", level=logging.INFO, format='%(asctime)s %(message)s')
-#logger = logging.getLogger()
-
-    
 def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
     link = entrada_de_dados.get()
-    #logger.info("(From main)Starting to download video MP4 from URL: %s", link)
     di = DownloadInit(link)
     di.download_video_mp4()
     
@@ -54,7 +47,6 @@ def download_video():
 def download_mp3():
     """This function downloads audio only."""
     link = entrada_de_dados.get()
-    #logger.info("(From main)Starting to download audio MP3 from URL: %s", link)
     di = DownloadInit(link)
     di.download_audio_mp3()
 
