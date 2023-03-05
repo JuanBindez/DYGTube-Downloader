@@ -1,4 +1,4 @@
-# Release: v2.7.0
+# Release: v2.8.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -23,9 +23,11 @@ import os
 import logging
 import urllib3
 import time
-    
+
+from pytube import YouTube
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 import base64
 
 from src.source import DownloadInit
@@ -33,6 +35,8 @@ from src.playlist_download_module import download_playlist
 from src.escolha_mix_module import escolha_mix
 from src.sobre_module import sobre_software
 from src.channel_module import download_channel
+from src.progress_bar_module import progress_bar
+from src.debug import DebugInfo
 
 
 def download_video():
@@ -40,8 +44,32 @@ def download_video():
       the link variable receives the url.
     """
     link = entrada_de_dados.get()
-    di = DownloadInit(link)
-    di.download_video_mp4()
+    video = YouTube(link)
+
+    try:
+        if var_1080p.get() == 1:
+            video_stream = video.streams.filter(res="1080p").first()
+        elif var_720p.get() == 1:
+            video_stream = video.streams.filter(res="720p").first()
+        elif var_480p.get() == 1:
+            video_stream = video.streams.filter(res="480p").first()
+        elif var_360p.get() == 1:
+            video_stream = video.streams.filter(res="360p").first()
+        elif var_240p.get() == 1:
+            video_stream = video.streams.filter(res="240p").first()
+        elif var_144p.get() == 1:
+            video_stream = video.streams.filter(res="144p").first()
+
+        DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
+        video_stream.download()
+
+    except KeyError:
+            DebugInfo.logger_info.info("(Error from in main.py) Error KeyError found in download video MP4 from URL: %s",link)
+            DebugInfo.logger_error.error(KeyError, exc_info=True)
+            messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
+    except Exception as e:
+            DebugInfo.logger_error.error(e, exc_info=True)
+    progress_bar()
     
   
 def download_mp3():
@@ -89,7 +117,7 @@ frame.grid(row=0, column=0)
 label = Label(window,
                 text="URL*",
                 fg=COLOR_LETTER,
-                bg="#373636").place(x=40, y=190)
+                bg="#373636").place(x=40, y=170)
 
 def make_menu(w):
     global the_menu_1
@@ -104,17 +132,67 @@ def show_menu(e):
     the_menu_1.tk.call("tk_popup", the_menu_1, e.x_root, e.y_root)
 
 
+var_1080p = IntVar()
+var_720p = IntVar()
+var_480p = IntVar()
+var_360p = IntVar()
+var_240p = IntVar()
+var_144p = IntVar()
+
+check_1080p = Checkbutton(window,
+                         text="1080p",
+                         fg=COLOR_LETTER,
+                         bg="#373636",
+                         variable=var_1080p,)
+
+check_720p = Checkbutton(window,
+                        text="720p",
+                        fg=COLOR_LETTER,
+                        bg="#373636",
+                        variable=var_720p)
+
+check_480p = Checkbutton(window,
+                        text="480p",
+                        fg=COLOR_LETTER,
+                        bg="#373636",
+                        variable=var_480p)
+
+check_360p = Checkbutton(window,
+                        text="360p",
+                        fg=COLOR_LETTER,
+                        bg="#373636",
+                        variable=var_360p)
+
+check_240p = Checkbutton(window,
+                        text="240p",
+                        fg=COLOR_LETTER,
+                        bg="#373636",
+                        variable=var_240p)
+
+check_144p = Checkbutton(window,
+                        text="144p",
+                        fg=COLOR_LETTER,
+                        bg="#373636",
+                        variable=var_144p)
+
+check_1080p.place(x=80, y=220)
+check_720p.place(x=149, y=220)
+check_480p.place(x=210, y=220)
+check_360p.place(x=270, y=220)
+check_240p.place(x=330, y=220)
+check_144p.place(x=390, y=220)
+
 make_menu(window)
 entrada_de_dados = Entry(window, width=40)
-entrada_de_dados.place(x=95, y=190)
+entrada_de_dados.place(x=95, y=170)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.7.0",
+                text="v2.8.0",
                 fg=COLOR_LETTER,
-                bg="#373636").place(x=16, y=340)
+                bg="#373636").place(x=50, y=340)
 
 # button that starts the download.
 botao = Button(window,
@@ -132,7 +210,7 @@ botao_mp3 = Button(window,
 
 # button to display information about the program.
 botao_sobre = Button(window,
-                text="Sobre",
+                text="About",
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,

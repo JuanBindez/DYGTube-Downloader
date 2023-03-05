@@ -3,10 +3,13 @@
 
 ![logo](https://user-images.githubusercontent.com/79322362/221431897-23117e05-7600-4b86-bc79-6284ead43bbe.png)
 
-# This is DYGTube Downloader version 2.7.0
+# This is DYGTube Downloader version 2.8.0-rc1
 
 ----------
 ### Access the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+
+### go to the Softpedia review click __[here](https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml)__.
+
 
 ### about:
 

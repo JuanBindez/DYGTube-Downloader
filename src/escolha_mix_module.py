@@ -1,4 +1,6 @@
-# Release: v2.7.0
+# this is part of the DYGtube Downloader project.
+#
+# Release: v2.8.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -26,7 +28,7 @@ from tkinter import ttk
 
 from src.debug import DebugInfo
 from src.source import DownloadInit
-from src.source import DownloadList
+from src.source import PlaylistDownload
 from src.progress_bar_module import progress_bar
 
 try:

@@ -1,4 +1,6 @@
-# Release: v2.7.0
+# this is part of the DYGtube Downloader project.
+#
+# Release: v2.8.0-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -24,19 +26,19 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
-from src.source import DownloadInit, DownloadList
+from src.source import DownloadInit, PlaylistDownload
 
 
 def download_playlist():
     """Here the url of the playlist will be captured and passed to the DownloadList class to download it."""
     def captura_playlist_mp3():
         url = entrada_url_playlist.get()
-        DP = DownloadList(url)
+        DP = PlaylistDownload(url)
         DP.download_playlist_mp3()
 
     def captura_playlist_mp4():
         url = entrada_url_playlist.get()
-        DP = DownloadList(url)
+        DP = PlaylistDownload(url)
         DP.download_playlist_mp4()
 
     window = Tk()
