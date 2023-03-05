@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.8.0-rc1
+# Release: v2.8.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -35,7 +35,7 @@ def sobre_software():
     
    window = Tk()
    window.title("DYGTube Downloader")
-   window.geometry("440x200")
+   window.geometry("435x200")
    window['background'] = '#373636'
    window.resizable(False, False)
    window.attributes('-alpha',9.1)
@@ -49,7 +49,7 @@ def sobre_software():
   
    GENERAL_BACKGROUND_COLOR = '#373636'
    COLOR_DYGTUBE_NAME = 'white'
-   COLOR_VERSION = 'white'
+   COLOR_VERSION = '#00E9CA'
    COLOR_DESCRIPTION = 'white'
    COLOR_NO_WARRANTY = '#00E9CA'
    COLOR_GPLV2 = 'white'
@@ -61,24 +61,24 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v2.8.0",
+                text="v2.8.1",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 
    label = Label(window, 
                 text="DYGTube downloads MP4 video and audio MP3.", 
                 fg=COLOR_DESCRIPTION, 
-                bg=GENERAL_BACKGROUND_COLOR).place(x=27, y=80)
+                bg=GENERAL_BACKGROUND_COLOR).place(x=55, y=80)
 
    label = Label(window,
                 text="This program comes with absolutely no guarantees.", 
                 fg=COLOR_NO_WARRANTY, 
-                bg=GENERAL_BACKGROUND_COLOR).place(x=21, y=110)
+                bg=GENERAL_BACKGROUND_COLOR).place(x=45, y=110)
 
    label = Label(window, 
                 text="For more details, visit the GNU General Public License, version 2", 
                 fg=COLOR_GPLV2,
-                bg=GENERAL_BACKGROUND_COLOR).place(x=15, y=150)
+                bg=GENERAL_BACKGROUND_COLOR).place(x=9, y=150)
                 
    label = Label(window,
                 text="Copyright (c) 2022-2023  Juan Bindez", 

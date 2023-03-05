@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.8.0-rc1
+# Release: v2.8.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -84,7 +84,7 @@ def download_playlist():
     lbl = Label(window, text = "")
 
     botao_download = Button(window,
-                    text="Download Vídeo",
+                    text="Download Video",
                     command=captura_playlist_mp4,
                     fg=LETTER_COLOR,
                     bg=COLOR_BUTTON,).place(x=90, y=200)

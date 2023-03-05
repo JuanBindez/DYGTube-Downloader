@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.8.0-rc1
+# Release: v2.8.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -32,7 +32,7 @@ from src.source import PlaylistDownload
 from src.progress_bar_module import progress_bar
 
 try:
-  def escolha_mix():
+  def choice_mix():
     """download multiple files at the same time"""
 
     def download_mix_video():
@@ -148,7 +148,7 @@ try:
       """displays information about the mix function.
       clicking on the button will open a window with information.
       """
-      messagebox.showinfo("DYG Downloader", "Com esta função você pode baixar até 10 vídeos e MP3 com apenas 1 click")
+      messagebox.showinfo("DYG Downloader", "here you make 10 downloads at once")
 
     def make_menu(w):
       global the_menu
@@ -253,7 +253,7 @@ try:
 
     # mix download option dutton video.
     botao_video = Button(window,
-                    text="Download Vídeo",
+                    text="Download Video",
                     command=download_mix_video,
                     fg=LETTER_FG_COLOR,
                     bg=BUTTON_COLOR,).place(x=90, y=400)

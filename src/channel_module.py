@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.8.0-rc1
+# Release: v2.8.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -36,7 +36,7 @@ def download_channel():
       """displays information about the mix function.
       clicking on the button will open a window with information.
       """
-      messagebox.showinfo("DYG Downloader", "Cole a URL do canal que deseja fazer download, esta função irá fazer download de todos os vídeos do canal")
+      messagebox.showinfo("DYG Downloader", "here you can download all the videos of a channel")
 
     def captura_channel_mp4():
         url = entrada_url_channel.get()
@@ -95,7 +95,7 @@ def download_channel():
                   width=2,).place(x=405, y=2)
 
     botao_download = Button(window,
-                    text="Download Vídeos",
+                    text="Download Videos",
                     command=captura_channel_mp4,
                     fg=LETTER_COLOR,
                     bg=COLOR_BUTTON,).place(x=155, y=200)

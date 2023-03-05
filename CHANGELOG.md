@@ -1,3 +1,14 @@
+### v2.8.1:
+
+- Added feature for user to choose video resolution.
+
+- added feature to check available resolution for video.
+
+- (bugfix) affected the "Mix" menu allowing that when the field was empty, many dry errors appeared on the screen, this could bother users, now only a message appears indicating that the field is empty.
+
+
+
+
 ### v2.7.0:
 
 - improvements made to the user screen

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.8.0-rc1
+# Release: v2.8.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -45,6 +45,16 @@ class DownloadInit():
     def download_audio_mp3(self):
         """Here it will be downloaded in MP3"""
         try:
+            if self.link_url_input == "":
+                ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. Do you want to continue?")
+                if ask == True:
+                    pass
+                else:
+                    messagebox.showinfo("DYG Downloader", 
+                                    "ok just close the mix option window!")
+            elif not self.link_url_input == "":
+                pass
+
             yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
             #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
             ys = yt.streams.get_audio_only()
@@ -66,15 +76,28 @@ class DownloadInit():
             # renames the file with extension .mp4 to .mp3
             os.rename(str(yt.title + EXTENSION_MP4),str(yt.title + EXTENSION_MP3))
             time.sleep(1)
+        except FileNotFoundError:
+            messagebox.showerror("DYG Downloader", 
+                                 "Error Saving With Extension .mp3!, Don't worry, just change the name of the extension manually from .mp4 to .mp3.")
         except Exception as e:
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", 
-                                 "Error Saving With Extension .mp3!, Don't worry, just change the name of the extension manually from .mp4 to .mp3.")
+                                 "Something went wrong!")
             pass
 
     def download_video_mp4(self):
         """Here it will be downloaded in MP4 video."""
         try:
+            if self.link_url_input == "":
+                ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. Do you want to continue?")
+                if ask == True:
+                    pass
+                else:
+                    messagebox.showinfo("DYG Downloader", 
+                                    "ok just close the mix option window!")
+            elif not self.link_url_input == "":
+                pass
+
             yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
             ys = yt.streams.get_highest_resolution()
             ys.download()
@@ -119,6 +142,10 @@ class PlaylistDownload():
                     pass
                 time.sleep(1)
             raise Exception('An error has occurred')
+        except FileNotFoundError:
+            messagebox.showerror("DYG Downloader",
+                                "If your downloads are as MP4 you will have to change to .MP3 manually, just delete the .mp4 and put .mp3.")
+            DebugInfo.logger_info.info("(Error in main) exception FileNotFoundErrorfrom URL: %s",self.url_playlist)
         except Exception as e:
             error = True
             DebugInfo.logger_error.error(e, exc_info=True)
@@ -127,8 +154,7 @@ class PlaylistDownload():
         if not error:
             messagebox.showinfo("DYG Downloader", 
                                 "The playlist has been downloaded successfully!")
-            messagebox.showerror("DYG Downloader",
-                                "If your downloads are as MP4 you will have to change to .MP3 manually, just delete the .mp4 and put .mp3.")
+
 
     def download_playlist_mp4(self):
         """Here the download of the playlist will start."""
