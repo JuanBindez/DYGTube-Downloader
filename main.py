@@ -45,6 +45,10 @@ from src.debug import DebugInfo
 def check_quality():
 
     link = entrada_de_dados.get()
+    if link == "":
+        messagebox.showinfo("DYG Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
+    else:
+        pass
     video = YouTube(link)
     resolucoes = [stream.resolution for stream in video.streams if stream.resolution]
     messagebox.showinfo(title="DYGTUbe", message="The resolutions available for the video, " + video.title + ", ".join(resolucoes))
@@ -144,7 +148,7 @@ botao_mix = Button(window,
                 image=button_quality,
                 command=check_quality,
                 width=16,
-                height=17).place(x=426, y=170)
+                height=17).place(x=423, y=170)
 
 
 COLOR_FRAME = '#585757'
