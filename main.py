@@ -57,11 +57,10 @@ def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
+    
     link = entrada_de_dados.get()
-        
     if link == "":
         messagebox.showerror("DYG Downloader", "the field is empty!")
-
     elif not link == "":
         pass
 
