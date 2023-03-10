@@ -32,7 +32,6 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
-
 from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
 
