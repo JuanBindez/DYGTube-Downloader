@@ -56,7 +56,8 @@
 ### Clicking on it will open the program:
 
 
-![Captura de tela de 2023-03-05 18-21-32](https://user-images.githubusercontent.com/79322362/222986752-2164afbc-f91f-4f25-b838-a3837bcfa50f.png)
+![Captura de tela de 2023-03-11 14-00-45](https://user-images.githubusercontent.com/79322362/224499591-fbb09be4-1a75-49cd-8816-854b1c8d0ec0.png)
+
 
 
 
