@@ -179,12 +179,9 @@ class ChannelDownload():
     def download_channel_m4(self):
         try:
             time.sleep(3)
-            messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another channel.")
             c = Channel(self.url_channel)
-
             for video in c.videos:
                 video.streams.first().download()
-                messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another channel.")
         except Exception as e:
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Something went wrong! check channel link.")
