@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.8.1
+# Release: v2.9.0-alpha
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -39,11 +39,12 @@ from src.mix_module import choice_mix
 from src.about_module import sobre_software
 from src.channel_module import download_channel
 from src.progress_bar_module import progress_bar
+from src.conversion_module import convert_avi
 from src.debug import DebugInfo
 
 
 def check_quality():
-
+    """this function checks the available resolution of a video."""
     link = entrada_de_dados.get()
     if link == "":
         messagebox.showinfo("DYG Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
@@ -79,6 +80,11 @@ def download_video():
             video_stream = video.streams.filter(res="240p").first()
         elif var_144p.get() == 1:
             video_stream = video.streams.filter(res="144p").first()
+        else:
+            yt = YouTube(link, on_progress_callback = on_progress)
+            ys = yt.streams.get_highest_resolution()
+            ys.download()
+            DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
 
         DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
         video_stream.download()
@@ -95,10 +101,8 @@ def download_video():
 def download_mp3():
     """This function downloads audio only."""
     link = entrada_de_dados.get()
-
     if link == "":
         messagebox.showerror("DYG Downloader", "the field is empty!")
-
     elif not link == "":
         pass
 
@@ -250,13 +254,21 @@ botao_mp3 = Button(window,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,).place(x=270, y=270)
 
+
+botao_convert = Button(window,
+                text="convert",
+                command=convert_avi,
+                fg=COLOR_LETTER,
+                bg=COLOR_BUTTON,
+                width=4,).place(x=160, y=2)
+
 # button to display information about the program.
 botao_sobre = Button(window,
                 text="About",
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
-                width=3,).place(x=160, y=2)
+                width=3,).place(x=220, y=2)
 
 # button to playlist download.
 botao_playlist = Button(window,

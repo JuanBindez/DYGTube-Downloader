@@ -1,0 +1,8 @@
+13/03/2023 22:18:07 (From main.py ) Starting to download video from URL: https://www.youtube.com/watch?v=qP4BYTDeR84&list=RDZvRlusdjMSs&index=5
+13/03/2023 22:18:07 (From main.py ) Starting to download video from URL: https://www.youtube.com/watch?v=qP4BYTDeR84&list=RDZvRlusdjMSs&index=5
+13/03/2023 22:18:07 local variable 'video_stream' referenced before assignment
+Traceback (most recent call last):
+  File "/home/juan/Área de Trabalho/DYGTube-Downloader-v2.8.1/main.py", line 90, in download_video
+    video_stream.download()
+UnboundLocalError: local variable 'video_stream' referenced before assignment
+13/03/2023 22:18:34 (From main.py ) Starting to download video from URL: https://www.youtube.com/watch?v=qP4BYTDeR84&list=RDZvRlusdjMSs&index=5

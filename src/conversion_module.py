@@ -20,17 +20,25 @@
 #  
 # repo: https://github.com/juanBindez
 
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
+from tkinter import filedialog
+from moviepy.editor import VideoFileClip
 
-import logging
+def convert_avi():
+    window = Tk()
+    window.withdraw()
 
-class DebugInfo:
-    logging.basicConfig(filename="DYGTUbe_Debug_info.log", level=logging.INFO,
-                        format='%(asctime)s %(message)s',
-                        datefmt='%d/%m/%Y %H:%M:%S')
-    logger_info = logging.getLogger("DYGTUbe_Debug_info")
+    file_path = filedialog.askopenfilename(filetypes=[('Video Files', '*.mp4')])
 
-    # Configuração para o arquivo de log de erro
-    logging.basicConfig(filename='DYGTUbe_Error.log', level=logging.ERROR,
-                        format='%(asctime)s %(levelname)s: %(message)s',
-                        datefmt='%d/%m/%Y %H:%M:%S')
-    logger_error = logging.getLogger("DYGTUbe_error")
+    if file_path:
+        video_clip = VideoFileClip(file_path)
+        new_file_path = filedialog.asksaveasfilename(defaultextension='.avi', filetypes=[('Video Files', '*.avi')])
+
+        if new_file_path:
+            video_clip.write_videofile(new_file_path)
+
+        video_clip.close()
+
+    window.mainloop()
