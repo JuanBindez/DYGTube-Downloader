@@ -37,7 +37,7 @@ def convert_avi():
         new_file_path = filedialog.asksaveasfilename(defaultextension='.avi', filetypes=[('Video Files', '*.avi')])
 
         if new_file_path:
-            video_clip.write_videofile(new_file_path)
+            video_clip.write_videofile(new_file_path, codec='mpeg4')
 
         video_clip.close()
 
