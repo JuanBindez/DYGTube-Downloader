@@ -26,11 +26,11 @@
 
 ### Make a git clone:
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.8.1
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.9.2-beta
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v2.8.1
+    cd DYGTube-Downloader-v2.9.2-beta
 
 ### Activate the virtualenv and enter the command:
 
