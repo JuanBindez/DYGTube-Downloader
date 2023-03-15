@@ -5,7 +5,7 @@
 
 # last version released 2.8.1
 
-# unofficial version 2.9.2-beta
+# unofficial version 2.9.2-rc
 
 
 ![Captura de tela de 2023-03-05 18-21-32](https://user-images.githubusercontent.com/79322362/222986752-2164afbc-f91f-4f25-b838-a3837bcfa50f.png)
@@ -26,11 +26,11 @@
 
 ### Make a git clone:
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.9.2-beta
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.9.2-rc
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v2.9.2-beta
+    cd DYGTube-Downloader-v2.9.2-rc
 
 ### Activate the virtualenv and enter the command:
 
