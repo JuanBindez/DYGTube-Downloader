@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-alpha
+# Release: v2.9.2-beta
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -25,13 +25,13 @@ import os
 import logging
 import urllib3
 import time
+import base64
 
 from pytube import YouTube
 from pytube.cli import on_progress
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-import base64
 
 from src.source import DownloadInit
 from src.playlist_download_module import download_playlist
@@ -236,7 +236,7 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.8.1",
+                text="v2.9.2-beta",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=50, y=340)
 
@@ -256,11 +256,11 @@ botao_mp3 = Button(window,
 
 
 botao_convert = Button(window,
-                text="convert",
+                text="converter",
                 command=convert_avi,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
-                width=4,).place(x=160, y=2)
+                width=6,).place(x=160, y=2)
 
 # button to display information about the program.
 botao_sobre = Button(window,
@@ -268,7 +268,7 @@ botao_sobre = Button(window,
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
-                width=3,).place(x=220, y=2)
+                width=3,).place(x=233, y=2)
 
 # button to playlist download.
 botao_playlist = Button(window,

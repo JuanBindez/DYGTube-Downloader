@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-alpha
+# Release: v2.9.2-beta
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -27,8 +27,12 @@ from tkinter import filedialog
 from moviepy.editor import VideoFileClip
 
 def convert_avi():
+
     window = Tk()
     window.withdraw()
+
+    messagebox.showinfo("DYG Downloader",
+                        "here you convert from .MP4 to .AVI.")
 
     file_path = filedialog.askopenfilename(filetypes=[('Video Files', '*.mp4')])
 
@@ -40,5 +44,3 @@ def convert_avi():
             video_clip.write_videofile(new_file_path, codec='mpeg4')
 
         video_clip.close()
-
-    window.mainloop()
