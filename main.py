@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-beta
+# Release: v2.9.2-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -236,7 +236,7 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.9.2-beta",
+                text="v2.9.2-rc",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=50, y=340)
 

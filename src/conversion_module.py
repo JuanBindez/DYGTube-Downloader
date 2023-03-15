@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-beta
+# Release: v2.9.2-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -41,6 +41,14 @@ def convert_avi():
         new_file_path = filedialog.asksaveasfilename(defaultextension='.avi', filetypes=[('Video Files', '*.avi')])
 
         if new_file_path:
+            ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. Do you want to continue?")
+            if ask == True:
+                pass
+            else:
+                messagebox.showinfo("DYG Downloader", 
+                                    "ok just close the converter option window!")
             video_clip.write_videofile(new_file_path, codec='mpeg4')
 
         video_clip.close()
+        messagebox.showinfo("DYG Downloader",
+                        "conversion completed")

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-beta
+# Release: v2.9.2-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -81,7 +81,7 @@ try:
       di = DownloadInit(link_10)
       di.download_video_mp4()
 
-      messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
+      messagebox.showinfo("DYG Downloader", "Your Dowloads Are Ready")
     
 
     def download_mix_mp3():
@@ -127,7 +127,7 @@ try:
       di = DownloadInit(link_10)
       di.download_audio_mp3()
       
-      messagebox.showinfo("DYG Downloader", "Seus Dowloads Estão Prontos")
+      messagebox.showinfo("DYG Downloader", "Your Dowloads Are Ready")
 
 
     window = Tk()
