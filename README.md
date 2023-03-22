@@ -1,7 +1,9 @@
 
 ## [Bug]:
 
-### Se você instalou a versão 2.8.1 deve ter percebido que não baixando nada, isso esta ocorrendo provavelmente por alguma mudança no Youtube que esta afetando a biblioteca base PyTube, se você olhar o arqui de log do DYGTube verá a seguinte menssagem:
+###  If you installed the 2.8.1 version, you must have noticed that nothing was being downloaded, this is probably due to some change in Youtube that is affecting the PyTube base library, if you look at the DYGTube log file you will see the following message:
+
+
 
 ----------
 
