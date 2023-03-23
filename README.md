@@ -1,15 +1,4 @@
 
-## [Bug]:
-
-###  If you installed the 2.8.1 version, you must have noticed that nothing was being downloaded, this is probably due to some change in Youtube that is affecting the PyTube base library, if you look at the DYGTube log file you will see the following message:
-
-![Captura de tela de 2023-03-22 15-44-01](https://user-images.githubusercontent.com/79322362/227007251-275b2c0f-4332-4747-9e3f-42c2430c94bf.png)
-
-### the log file is located where you downloaded the program, the file name is DYGTube_Debug_info.log
-
-### I'll have to wait for the library to be updated to fix this bug so I can update DYGTube.
-
-
 ----------
 
 ![Captura de tela de 2023-02-26 19-44-25](https://user-images.githubusercontent.com/79322362/221442003-2429f122-585c-4424-894d-dd30e18d84b1.png)
