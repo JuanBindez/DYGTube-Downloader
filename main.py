@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-rc
+# Release: v2.9.2-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -81,10 +81,20 @@ def download_video():
         elif var_144p.get() == 1:
             video_stream = video.streams.filter(res="144p").first()
         else:
-            yt = YouTube(link, on_progress_callback = on_progress)
-            ys = yt.streams.get_highest_resolution()
-            ys.download()
-            DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
+            try:
+                yt = YouTube(link, on_progress_callback = on_progress)
+                ys = yt.streams.get_highest_resolution()
+                ys.download()
+                DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
+            except Exception as e:
+                global error_1
+                error_1 = True
+                messagebox.showerror("DYG Downloader", "Something went wrong!")
+                DebugInfo.logger_error.error(e, exc_info=True)
+            if not error_1:
+                progress_bar()
+            else:
+                pass
 
         DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
         video_stream.download()
@@ -94,8 +104,14 @@ def download_video():
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
     except Exception as e:
+            global error_2
+            error_2 = True
+            messagebox.showerror("DYG Downloader", "Something went wrong!")
             DebugInfo.logger_error.error(e, exc_info=True)
-    progress_bar()
+    if not error_2:
+        progress_bar()
+    else:
+        pass
     
   
 def download_mp3():
@@ -106,13 +122,23 @@ def download_mp3():
     elif not link == "":
         pass
 
-    yt = YouTube(link, on_progress_callback = on_progress)
-    #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
-    ys = yt.streams.get_audio_only()
-    ys.download()
-    DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",self.link_url_input)
-    time.sleep(3)
-    progress_bar()
+    try:   
+        yt = YouTube(link, on_progress_callback = on_progress)
+        #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+        ys = yt.streams.get_audio_only()
+        ys.download()
+        DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",link)
+        time.sleep(3)
+        progress_bar()
+    except Exception as e:
+            global error_3
+            error_3 = True
+            messagebox.showerror("DYG Downloader", "Something went wrong!")
+            DebugInfo.logger_error.error(e, exc_info=True)
+    if not error_3:
+        progress_bar()
+    else:
+        pass
 
 """information:
 
