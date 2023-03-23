@@ -85,21 +85,24 @@ def download_video():
                 yt = YouTube(link, on_progress_callback = on_progress)
                 ys = yt.streams.get_highest_resolution()
                 ys.download()
+                DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
                 global error_1
                 error_1 = True
                 messagebox.showerror("DYG Downloader", "Something went wrong!")
+                DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_error.error(e, exc_info=True)
             if not error_1:
                 progress_bar()
             else:
                 pass
-
+        DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
         DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
         video_stream.download()
 
     except KeyError:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error from in main.py) Error KeyError found in download video MP4 from URL: %s",link)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
@@ -127,6 +130,7 @@ def download_mp3():
         #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
         ys = yt.streams.get_audio_only()
         ys.download()
+        DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
         DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",link)
         time.sleep(3)
         progress_bar()
@@ -134,6 +138,7 @@ def download_mp3():
             global error_3
             error_3 = True
             messagebox.showerror("DYG Downloader", "Something went wrong!")
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
     if not error_3:
         progress_bar()
