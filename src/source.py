@@ -58,13 +58,16 @@ class DownloadInit():
             #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
             ys = yt.streams.get_audio_only()
             ys.download()
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(From source Init) Starting to download audio MP3 from URL: %s",self.link_url_input)
             time.sleep(3)
             progress_bar()
         except KeyError:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
         except Exception as e:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
 
         EXTENSION_MP3 = '.mp3'
@@ -76,9 +79,11 @@ class DownloadInit():
             os.rename(str(yt.title + EXTENSION_MP4),str(yt.title + EXTENSION_MP3))
             time.sleep(1)
         except FileNotFoundError:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             messagebox.showerror("DYG Downloader", 
                                  "Error Saving With Extension .mp3!, Don't worry, just change the name of the extension manually from .mp4 to .mp3.")
         except Exception as e:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", 
                                  "Something went wrong!")
@@ -104,10 +109,12 @@ class DownloadInit():
             time.sleep(2)
             progress_bar()
         except KeyError:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error from source Init) Error KeyError found in download video MP4 from URL: %s",self.link_url_input)
             DebugInfo.logger_error.error(KeyError, exc_info=True)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
         except Exception as e:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
 
 
@@ -136,6 +143,7 @@ class PlaylistDownload():
                     time.sleep(1)
                     raise Exception('An error has occurred')
                 except Exception as e:
+                    DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                     DebugInfo.logger_error.error(e, exc_info=True)
     
                     pass
@@ -144,9 +152,11 @@ class PlaylistDownload():
         except FileNotFoundError:
             messagebox.showerror("DYG Downloader",
                                 "If your downloads are as MP4 you will have to change to .MP3 manually, just delete the .mp4 and put .mp3.")
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error in main) exception FileNotFoundErrorfrom URL: %s",self.url_playlist)
         except Exception as e:
             error = True
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYGTube Downloader",
                                  "Something went wrong! check playlist link")
@@ -166,6 +176,7 @@ class PlaylistDownload():
             raise Exception('An error has occurred')
         except Exception as e:
             error = True
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Something went wrong! check playlist link.")
         if not error:
@@ -183,5 +194,6 @@ class ChannelDownload():
             for video in c.videos:
                 video.streams.first().download()
         except Exception as e:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Something went wrong! check channel link.")
