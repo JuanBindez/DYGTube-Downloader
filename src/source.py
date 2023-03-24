@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.3-rc
+# Release: v2.10.3-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -31,6 +31,7 @@ from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
+from tkinter import filedialog
 
 from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
@@ -69,7 +70,7 @@ class DownloadInit():
             os.rename(downloaded_file_path, new_file_path)
 
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
-            DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",link)
+            DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",self.link_url_input)
             time.sleep(3)
             progress_bar()
             
@@ -119,8 +120,9 @@ class DownloadInit():
 
 class PlaylistDownload():
     """Here the url of the playlist to be downloaded will be captured."""
-    def __init__(self, url_playlist):    
+    def __init__(self, url_playlist, path_to_save):  
         self.url_playlist = url_playlist
+        self.path_to_save = path_to_save
 
     def download_playlist_mp3(self):
         """Here the download of the playlist will start."""
@@ -130,7 +132,7 @@ class PlaylistDownload():
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
                 ys = video.streams.get_audio_only()
-                ys.download()
+                ys.download(self.path_to_save)
 
                 # Obter o caminho absoluto do arquivo baixado
                 downloaded_file_path = os.path.abspath(ys.default_filename)
@@ -162,7 +164,7 @@ class PlaylistDownload():
         try:
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
-                video.streams.get_lowest_resolution().download()
+                video.streams.get_lowest_resolution().download(self.path_to_save)
                 DebugInfo.logger_info.info("(From source playlist) Starting to download video MP4 from URL: %s",self.url_playlist)
                 progress_bar()
             raise Exception('An error has occurred')

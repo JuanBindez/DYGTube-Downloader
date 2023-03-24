@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.3-rc
+# Release: v2.10.3-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -32,6 +32,7 @@ from pytube.cli import on_progress
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+from tkinter import filedialog
 
 from src.source import DownloadInit
 from src.playlist_download_module import download_playlist
@@ -58,12 +59,14 @@ def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
-    
+
     link = entrada_de_dados.get()
     if link == "":
         messagebox.showerror("DYG Downloader", "the field is empty!")
     elif not link == "":
         pass
+
+    save_path = filedialog.askdirectory()
 
     video = YouTube(link)
 
@@ -84,7 +87,7 @@ def download_video():
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
                 ys = yt.streams.get_highest_resolution()
-                ys.download()
+                ys.download(save_path)
                 DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
@@ -99,7 +102,7 @@ def download_video():
                 pass
         DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
         DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
-        video_stream.download()
+        video_stream.download(save_path)
 
     except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
@@ -125,13 +128,15 @@ def download_mp3():
     elif not link == "":
         pass
 
+    save_path = filedialog.askdirectory()
+
     try:
         EXTENSION_MP3 = '.mp3'
         EXTENSION_MP4 = '.mp4'
 
         yt = YouTube(link, on_progress_callback=on_progress)
         ys = yt.streams.get_audio_only()
-        ys.download()
+        ys.download(save_path)
 
         # Obter o caminho absoluto do arquivo baixado
         downloaded_file_path = os.path.abspath(ys.default_filename)
@@ -277,9 +282,10 @@ entrada_de_dados.place(x=95, y=170)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 lbl = Label(window, text = "")
 
+
 # version label
 label = Label(window,
-                text="v2.9.3-rc",
+                text="v2.10.3-rc",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=50, y=340)
 
