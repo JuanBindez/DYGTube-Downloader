@@ -4,10 +4,9 @@
 
 - added feature to check available resolution for video.
 
-- (bugfix) affected the "Mix" menu allowing that when the field was empty, many dry errors appeared on the screen, this could bother users, now only a message appears indicating that the field is empty.
+### bugfix:
 
-
-
+- affected the "Mix" menu allowing that when the field was empty, many dry errors appeared on the screen, this could bother users, now only a message appears indicating that the field is empty.
 
 ### v2.7.0:
 
@@ -25,14 +24,17 @@
 
 ### v2.5.3:
 
-- bugfix
+### bugfix:
 
 ### v2.5.2:
 
 - Added feature to download complete playlists in MP3 or MP4.
 - Applied level 2 abstraction.
-- bugfix (affected the event mechanism that allows pasting what was copied in the Entry).
-- bugfix (affected execution speed).
+- 
+### bugfix: 
+
+- affected the event mechanism that allows pasting what was copied in the Entry).
+- affected execution speed).
 
 
 ### v2.3.0:
@@ -41,8 +43,10 @@
 
 ### v2.2.3:
 
-- bugfix (affected .mp3 output extension).
-- bugfix (affected download progress windows).
+### bugfix: 
+
+-affected .mp3 output extension).
+- affected download progress windows).
 
 ### v2.2.1:
 
