@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-rc1
+# Release: v2.9.3-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -61,7 +61,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v2.9.2-rc",
+                text="v2.9.3-rc",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 
@@ -71,7 +71,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=55, y=80)
 
    label = Label(window,
-                text="This program comes with absolutely no guarantees.", 
+                text="This software comes with absolutely no warranty.", 
                 fg=COLOR_NO_WARRANTY, 
                 bg=GENERAL_BACKGROUND_COLOR).place(x=45, y=110)
 

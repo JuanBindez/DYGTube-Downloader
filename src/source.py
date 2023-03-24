@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.9.2-rc1
+# Release: v2.9.3-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -54,14 +54,26 @@ class DownloadInit():
             elif not self.link_url_input == "":
                 pass
 
-            yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
-            #messagebox.showinfo("DYG Downloader", "Titulo = " + yt.title)
+            EXTENSION_MP3 = '.mp3'
+            EXTENSION_MP4 = '.mp4'
+
+            yt = YouTube(self.link_url_input, on_progress_callback=on_progress)
             ys = yt.streams.get_audio_only()
             ys.download()
+
+            # Obter o caminho absoluto do arquivo baixado
+            downloaded_file_path = os.path.abspath(ys.default_filename)
+
+            # Renomear o arquivo com o caminho absoluto
+            new_file_path = os.path.splitext(downloaded_file_path)[0] + EXTENSION_MP3
+            os.rename(downloaded_file_path, new_file_path)
+
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
-            DebugInfo.logger_info.info("(From source Init) Starting to download audio MP3 from URL: %s",self.link_url_input)
+            DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",link)
             time.sleep(3)
             progress_bar()
+            
+
         except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
@@ -69,25 +81,6 @@ class DownloadInit():
         except Exception as e:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
-
-        EXTENSION_MP3 = '.mp3'
-        EXTENSION_MP4 = '.mp4'
-
-        try:
-            time.sleep(3)
-            # renames the file with extension .mp4 to .mp3
-            os.rename(str(yt.title + EXTENSION_MP4),str(yt.title + EXTENSION_MP3))
-            time.sleep(1)
-        except FileNotFoundError:
-            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
-            messagebox.showerror("DYG Downloader", 
-                                 "Error Saving With Extension .mp3!, Don't worry, just change the name of the extension manually from .mp4 to .mp3.")
-        except Exception as e:
-            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
-            DebugInfo.logger_error.error(e, exc_info=True)
-            messagebox.showerror("DYG Downloader", 
-                                 "Something went wrong!")
-            pass
 
     def download_video_mp4(self):
         """Here it will be downloaded in MP4 video."""
@@ -114,8 +107,14 @@ class DownloadInit():
             DebugInfo.logger_error.error(KeyError, exc_info=True)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
         except Exception as e:
+            global error_4
+            error_4 = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
+        if not error_4:
+            progress_bar()
+        else:
+            pass
 
 
 class PlaylistDownload():
@@ -126,28 +125,21 @@ class PlaylistDownload():
     def download_playlist_mp3(self):
         """Here the download of the playlist will start."""
         try:
+            EXTENSION_MP3 = '.mp3'
+
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
-                video.streams.get_audio_only().download()
+                ys = video.streams.get_audio_only()
+                ys.download()
+
+                # Obter o caminho absoluto do arquivo baixado
+                downloaded_file_path = os.path.abspath(ys.default_filename)
+
+                # Renomear o arquivo com o caminho absoluto
+                new_file_path = os.path.splitext(downloaded_file_path)[0] + EXTENSION_MP3
+                os.rename(downloaded_file_path, new_file_path)
                 DebugInfo.logger_info.info("(From source playlist) Starting to download audio MP3 from URL: %s",self.url_playlist)
-                progress_bar()
-            
-                EXTENSION_MP3 = '.mp3'
-                EXTENSION_MP4 = '.mp4'
-                
-                time.sleep(2)
-                try:
-                    time.sleep(2)
-                    # renames the file with extension .mp4 to .mp3
-                    os.rename(str(pl.title + EXTENSION_MP4),str(pl.title + EXTENSION_MP3))
-                    time.sleep(1)
-                    raise Exception('An error has occurred')
-                except Exception as e:
-                    DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
-                    DebugInfo.logger_error.error(e, exc_info=True)
-    
-                    pass
-                time.sleep(1)
+               
             raise Exception('An error has occurred')
         except FileNotFoundError:
             messagebox.showerror("DYG Downloader",
