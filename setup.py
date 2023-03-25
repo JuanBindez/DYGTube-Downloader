@@ -21,16 +21,11 @@
 # repo: https://github.com/juanBindez
 
 
-import logging
+from cx_Freeze import setup, Executable
 
-class DebugInfo:
-    logging.basicConfig(filename="DYGTUbe_Debug_info.log", level=logging.INFO,
-                        format='%(asctime)s %(message)s',
-                        datefmt='%d/%m/%Y %H:%M:%S')
-    logger_info = logging.getLogger("DYGTUbe_Debug_info")
-
-    # Configuração para o arquivo de log de erro
-    logging.basicConfig(filename='DYGTUbe_Error.log', level=logging.ERROR,
-                        format='%(asctime)s %(levelname)s: %(message)s',
-                        datefmt='%d/%m/%Y %H:%M:%S')
-    logger_error = logging.getLogger("DYGTUbe_error")
+setup(
+    name="DYGTube Downloader",
+    version="2.10.4-rc",
+    description="video and music downlader",
+    executables=[Executable("main.py")]
+)

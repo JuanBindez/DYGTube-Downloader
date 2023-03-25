@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.3-rc
+# Release: v2.10.4-rc
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -40,7 +40,6 @@ from src.mix_module import choice_mix
 from src.about_module import sobre_software
 from src.channel_module import download_channel
 from src.progress_bar_module import progress_bar
-from src.conversion_module import convert_avi
 from src.debug import DebugInfo
 
 
@@ -291,7 +290,7 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.10.3-rc",
+                text="v2.10.4-rc",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=50, y=340)
 
@@ -310,20 +309,13 @@ botao_mp3 = Button(window,
                 bg=COLOR_BUTTON,).place(x=270, y=270)
 
 
-botao_convert = Button(window,
-                text="converter",
-                command=convert_avi,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,
-                width=6,).place(x=160, y=2)
-
 # button to display information about the program.
 botao_sobre = Button(window,
                 text="About",
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
-                width=3,).place(x=233, y=2)
+                width=3,).place(x=166, y=2)
 
 # button to playlist download.
 botao_playlist = Button(window,
