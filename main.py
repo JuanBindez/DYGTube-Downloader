@@ -44,6 +44,7 @@ from src.conversion_module import convert_avi
 from src.debug import DebugInfo
 
 
+
 def check_quality():
     """this function checks the available resolution of a video."""
     link = entrada_de_dados.get()
@@ -54,6 +55,10 @@ def check_quality():
     video = YouTube(link)
     resolucoes = [stream.resolution for stream in video.streams if stream.resolution]
     messagebox.showinfo(title="DYGTUbe", message="The resolutions available for the video, " + video.title + ", ".join(resolucoes))
+
+error = False
+error_2 = False
+error_3 = False
 
 def download_video():
     """Here the video is downloaded.
@@ -70,7 +75,10 @@ def download_video():
 
     video = YouTube(link)
 
+
     try:
+        video_stream = None  # Inicialize a variável com um valor padrão
+
         if var_1080p.get() == 1:
             video_stream = video.streams.filter(res="1080p").first()
         elif var_720p.get() == 1:
@@ -83,6 +91,11 @@ def download_video():
             video_stream = video.streams.filter(res="240p").first()
         elif var_144p.get() == 1:
             video_stream = video.streams.filter(res="144p").first()
+
+        if video_stream is not None:
+            DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
+            DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
+            video_stream.download(save_path)
         else:
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
@@ -91,18 +104,16 @@ def download_video():
                 DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
-                global error_1
-                error_1 = True
+                global error
+                error = True
                 messagebox.showerror("DYG Downloader", "Something went wrong!")
                 DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_error.error(e, exc_info=True)
-            if not error_1:
+            if not error:
                 progress_bar()
             else:
                 pass
-        DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
-        DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
-        video_stream.download(save_path)
+
 
     except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
@@ -114,11 +125,7 @@ def download_video():
             error_2 = True
             messagebox.showerror("DYG Downloader", "Something went wrong!")
             DebugInfo.logger_error.error(e, exc_info=True)
-    if not error_2:
-        progress_bar()
-    else:
-        pass
-    
+
   
 def download_mp3():
     """This function downloads audio only."""
@@ -149,7 +156,6 @@ def download_mp3():
         DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
         DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",link)
         time.sleep(3)
-        progress_bar()
 
     except Exception as e:
             global error_3

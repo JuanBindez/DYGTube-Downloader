@@ -36,6 +36,8 @@ from tkinter import filedialog
 from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
 
+error = False
+error_4 = False
 
 class DownloadInit():
     """This class will receive the url to download the video."""
@@ -142,13 +144,13 @@ class PlaylistDownload():
                 os.rename(downloaded_file_path, new_file_path)
                 DebugInfo.logger_info.info("(From source playlist) Starting to download audio MP3 from URL: %s",self.url_playlist)
                
-            raise Exception('An error has occurred')
         except FileNotFoundError:
             messagebox.showerror("DYG Downloader",
                                 "If your downloads are as MP4 you will have to change to .MP3 manually, just delete the .mp4 and put .mp3.")
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error in main) exception FileNotFoundErrorfrom URL: %s",self.url_playlist)
         except Exception as e:
+            global error
             error = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
@@ -167,7 +169,7 @@ class PlaylistDownload():
                 video.streams.get_lowest_resolution().download(self.path_to_save)
                 DebugInfo.logger_info.info("(From source playlist) Starting to download video MP4 from URL: %s",self.url_playlist)
                 progress_bar()
-            raise Exception('An error has occurred')
+
         except Exception as e:
             error = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
