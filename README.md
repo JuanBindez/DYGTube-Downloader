@@ -42,6 +42,10 @@
 
     pyinstaller --onefile --noconsole --windowed main.py
     
+#### Or:
+
+    python3 setup.py build
+    
     
 ### Before compiling the files will look like this:
 
