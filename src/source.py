@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4-rc
+# Release: v2.10.4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -36,8 +36,12 @@ from tkinter import filedialog
 from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
 
-error = False
-error_4 = False
+
+ERROR_01 = False
+ERROR_02 = False
+ERROR_03 = False
+ERROR_04 = False
+ERROR_05 = False
 
 class DownloadInit():
     """This class will receive the url to download the video."""
@@ -110,11 +114,11 @@ class DownloadInit():
             DebugInfo.logger_error.error(KeyError, exc_info=True)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
         except Exception as e:
-            global error_4
-            error_4 = True
+            global ERROR_01
+            ERROR_01 = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
-        if not error_4:
+        if not ERROR_01:
             progress_bar()
         else:
             pass
@@ -133,8 +137,20 @@ class PlaylistDownload():
 
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
-                ys = video.streams.get_audio_only()
-                ys.download(self.path_to_save)
+                try:
+                    ys = video.streams.get_audio_only()
+                    ys.download(self.path_to_save)
+                    DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
+                    DebugInfo.logger_info.info("(From source playlist) Starting to download audio MP3 from URL: %s",self.url_playlist)
+                except Exception as e:
+                    global ERROR_03
+                    ERROR_03 = True
+                    DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
+                    DebugInfo.logger_error.error(e, exc_info=True)
+                    messagebox.showerror("DYGTube Downloader",
+                                        "Something went wrong! check playlist link")
+                if not ERROR_03:
+                    progress_bar()
 
                 # Obter o caminho absoluto do arquivo baixado
                 downloaded_file_path = os.path.abspath(ys.default_filename)
@@ -150,13 +166,14 @@ class PlaylistDownload():
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error in main) exception FileNotFoundErrorfrom URL: %s",self.url_playlist)
         except Exception as e:
-            global error
-            error = True
+            global ERROR_02
+            ERROR_02 = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYGTube Downloader",
                                  "Something went wrong! check playlist link")
-        if not error:
+        if not ERROR_02:
+            progress_bar()
             messagebox.showinfo("DYG Downloader", 
                                 "The playlist has been downloaded successfully!")
 
@@ -166,16 +183,27 @@ class PlaylistDownload():
         try:
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
-                video.streams.get_lowest_resolution().download(self.path_to_save)
-                DebugInfo.logger_info.info("(From source playlist) Starting to download video MP4 from URL: %s",self.url_playlist)
-                progress_bar()
+                try:
+                    video.streams.get_lowest_resolution().download(self.path_to_save)
+                    DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
+                    DebugInfo.logger_info.info("(From source playlist) Starting to download video MP4 from URL: %s",self.url_playlist)
+                except Exception as e:
+                    global ERROR_05
+                    ERROR_05 = True
+                    DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
+                    DebugInfo.logger_error.error(e, exc_info=True)
+                    messagebox.showerror("DYGTube Downloader",
+                                        "Something went wrong! check playlist link")
+                if not ERROR_05:
+                    progress_bar()
 
         except Exception as e:
-            error = True
+            global ERROR_04
+            ERROR_04 = True 
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Something went wrong! check playlist link.")
-        if not error:
+        if not ERROR_04:
             messagebox.showinfo("DYG Downloader", "The playlist has been downloaded successfully!")
 
 

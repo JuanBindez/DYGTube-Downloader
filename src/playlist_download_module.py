@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4-rc
+# Release: v2.10.4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -35,12 +35,14 @@ def download_playlist():
     def captura_playlist_mp3():
         save_path = filedialog.askdirectory()
         url = entrada_url_playlist.get()
+        messagebox.showinfo("DYG Downloader", "download will start... please wait")
         DP = PlaylistDownload(url, save_path)
         DP.download_playlist_mp3()
 
     def captura_playlist_mp4():
         save_path = filedialog.askdirectory()
         url = entrada_url_playlist.get()
+        messagebox.showinfo("DYG Downloader", "download will start... please wait")
         DP = PlaylistDownload(url, save_path)
         DP.download_playlist_mp4()
 

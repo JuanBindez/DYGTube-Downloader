@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4-rc
+# Release: v2.10.4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -274,4 +274,6 @@ try:
                   width=2,).place(x=405, y=2)
                   
 except Exception as e:
+  DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
+  DebugInfo.logger_info.info("(From mix mudule) Error found ")
   DebugInfo.logger_error.error(e, exc_info=True)

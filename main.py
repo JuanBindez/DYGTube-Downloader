@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4-rc
+# Release: v2.10.4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -55,9 +55,9 @@ def check_quality():
     resolucoes = [stream.resolution for stream in video.streams if stream.resolution]
     messagebox.showinfo(title="DYGTUbe", message="The resolutions available for the video, " + video.title + ", ".join(resolucoes))
 
-error = False
-error_2 = False
-error_3 = False
+ERROR_001 = False
+ERROR_002 = False
+ERROR_003 = False
 
 def download_video():
     """Here the video is downloaded.
@@ -103,12 +103,12 @@ def download_video():
                 DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_info.info("(From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
-                global error
-                error = True
+                global ERROR_001
+                ERROR_001 = True
                 messagebox.showerror("DYG Downloader", "Something went wrong!")
                 DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_error.error(e, exc_info=True)
-            if not error:
+            if not ERROR_001:
                 progress_bar()
             else:
                 pass
@@ -120,8 +120,8 @@ def download_video():
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
     except Exception as e:
-            global error_2
-            error_2 = True
+            global ERROR_002
+            ERROR_002 = True
             messagebox.showerror("DYG Downloader", "Something went wrong!")
             DebugInfo.logger_error.error(e, exc_info=True)
 
@@ -157,12 +157,12 @@ def download_mp3():
         time.sleep(3)
 
     except Exception as e:
-            global error_3
-            error_3 = True
+            global ERROR_003
+            ERROR_003 = True
             messagebox.showerror("DYG Downloader", "Something went wrong!")
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
-    if not error_3:
+    if not ERROR_003:
         progress_bar()
     else:
         pass
@@ -170,7 +170,6 @@ def download_mp3():
 """information:
 
 website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-
  y ishei ght and x is for sides.
 """
 
@@ -290,7 +289,7 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.10.4-rc",
+                text="v2.10.4",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=50, y=340)
 
@@ -315,7 +314,7 @@ botao_sobre = Button(window,
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
-                width=3,).place(x=166, y=2)
+                width=3,).place(x=165, y=2)
 
 # button to playlist download.
 botao_playlist = Button(window,
