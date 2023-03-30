@@ -24,8 +24,8 @@
 from cx_Freeze import setup, Executable
 
 setup(
-    name="DYGTube Downloader",
-    version="2.10.4",
-    description="video and music downloader",
-    executables=[Executable("main.py")]
+     name="DYGTube Downloader",
+     version="2.10.4",
+     description="video and music downloader",
+     executables=[Executable("main.py")]
 )
