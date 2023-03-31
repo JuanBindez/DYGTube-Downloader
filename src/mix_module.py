@@ -38,7 +38,6 @@ try:
 
     def download_mix_video():
       """Here the video is downloaded.
-      
       the link variable receives the url.
       """ 
       save_path = filedialog.askdirectory()
