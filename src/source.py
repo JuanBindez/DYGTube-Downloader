@@ -80,7 +80,6 @@ class DownloadInit():
             time.sleep(3)
             progress_bar()
             
-
         except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
