@@ -43,7 +43,6 @@ from src.progress_bar_module import progress_bar
 from src.debug import DebugInfo
 
 
-
 def check_quality():
     """this function checks the available resolution of a video."""
     link = entrada_de_dados.get()
@@ -69,11 +68,9 @@ def download_video():
         messagebox.showerror("DYG Downloader", "the field is empty!")
     elif not link == "":
         pass
-
+    
     save_path = filedialog.askdirectory()
-
     video = YouTube(link)
-
 
     try:
         video_stream = None  # Inicialize a variável com um valor padrão
@@ -112,7 +109,6 @@ def download_video():
                 progress_bar()
             else:
                 pass
-
 
     except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
