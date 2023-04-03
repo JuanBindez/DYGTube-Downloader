@@ -1,7 +1,7 @@
 
 ----------
-![logo_dygtube](https://user-images.githubusercontent.com/79322362/229537035-24709810-a527-490e-b0fc-675dfe1a50d5.png)
 
+![DYGTube_logo](https://user-images.githubusercontent.com/79322362/229537993-900504d4-7e7d-427f-9854-6d7fa10ccf5e.png)
 
 
 ![logo](https://user-images.githubusercontent.com/79322362/221431897-23117e05-7600-4b86-bc79-6284ead43bbe.png)
