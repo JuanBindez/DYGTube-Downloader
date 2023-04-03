@@ -1,3 +1,12 @@
+<h1 align="center">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="DYGTube_logo.png" width="150px"/>
+</h1>
+
+<h1 align="center">DYGTube Downloader</h1>
+
+<h1 align="center">Change Log</h1>
+
+
 ### v2.10.4:
 
 - now you can choose the folder where the video or audio will be downloaded
