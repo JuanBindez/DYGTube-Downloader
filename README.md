@@ -1,7 +1,8 @@
 
 ----------
+![logo_dygtube](https://user-images.githubusercontent.com/79322362/229537035-24709810-a527-490e-b0fc-675dfe1a50d5.png)
 
-![Captura de tela de 2023-02-26 19-44-25](https://user-images.githubusercontent.com/79322362/221442003-2429f122-585c-4424-894d-dd30e18d84b1.png)
+
 
 ![logo](https://user-images.githubusercontent.com/79322362/221431897-23117e05-7600-4b86-bc79-6284ead43bbe.png)
 
