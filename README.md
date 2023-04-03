@@ -2,7 +2,7 @@
 ----------
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="DYGTube_logo.png" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="DYGTube_logo.png" width="100px"/>
 </h1>
 
 
