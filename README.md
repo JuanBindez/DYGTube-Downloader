@@ -3,6 +3,11 @@
 ![DYGTube_logo](https://user-images.githubusercontent.com/79322362/229538367-660b3e61-c903-40da-88a1-4a4f5973398a.png)
 
 
+<h1 align="center">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="DYGTube_logo.png" />
+</h1>
+
+
 # DYGTube Downloader
 
 # Version 2.10.4 released 
