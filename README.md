@@ -7,7 +7,7 @@
 
 <h1 align="center">DYGTube Downloader</h1>
 
-<h1 align="center">Version 2.10.4 released</h1>
+<h1 align="center">2.10.4</h1>
 
 ----------
 
