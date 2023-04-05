@@ -62,7 +62,6 @@ def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
-
     link = entrada_de_dados.get()
     if link == "":
         messagebox.showerror("DYG Downloader", "the field is empty!")
@@ -105,6 +104,7 @@ def download_video():
                 messagebox.showerror("DYG Downloader", "Something went wrong!")
                 DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
                 DebugInfo.logger_error.error(e, exc_info=True)
+                
             if not ERROR_001:
                 progress_bar()
             else:
@@ -139,19 +139,14 @@ def download_mp3():
         yt = YouTube(link, on_progress_callback=on_progress)
         ys = yt.streams.get_audio_only()
         ys.download(save_path)
-
-        # Obter o caminho absoluto do arquivo baixado
         downloaded_file_path = os.path.abspath(ys.default_filename)
-
-        # Renomear o arquivo com o caminho absoluto
         new_file_path = os.path.splitext(downloaded_file_path)[0] + EXTENSION_MP3
         os.rename(downloaded_file_path, new_file_path)
-
 
         DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
         DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",link)
         time.sleep(3)
-
+        
     except Exception as e:
             global ERROR_003
             ERROR_003 = True
