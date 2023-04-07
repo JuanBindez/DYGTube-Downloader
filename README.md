@@ -2,7 +2,6 @@
 
 <h1 align="center">
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="DYGTube_logo.png" width="150px"/>
-  <h1 align="center">DYGTube Downloader</h1>
 </h1>
 
 
