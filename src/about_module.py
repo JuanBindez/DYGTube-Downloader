@@ -21,6 +21,8 @@
 # repo: https://github.com/juanBindez
 
 
+import base64
+
 from pytube.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
@@ -39,6 +41,8 @@ def sobre_software():
    window['background'] = '#373636'
    window.resizable(False, False)
    window.attributes('-alpha',9.1)
+
+   
 
    """information:
 
