@@ -276,7 +276,6 @@ entrada_de_dados.place(x=95, y=170)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 lbl = Label(window, text = "")
 
-
 # version label
 label = Label(window,
                 text="v2.10.4",
