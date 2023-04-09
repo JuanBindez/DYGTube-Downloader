@@ -1,13 +1,13 @@
 
 
-<h1 align="center">
+<h1 align="">
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="DYGTube_logo.png" width="150px"/>
 </h1>
 
 
-<h1 align="center">DYGTube Downloader</h1>
+<h1 align="">DYGTube Downloader</h1>
 
-<h1 align="center">2.10.4</h1>
+<h1 align="">2.10.4</h1>
 
 ----------
 
