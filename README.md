@@ -5,7 +5,7 @@
 </h1>
 
 
-<h1 align="">DYGTube Downloader 2.10.4</h1>
+<h1 align="">DYGTube 2.10.4</h1>
 
 ----------
 
