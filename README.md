@@ -9,9 +9,6 @@
 
 ----------
 
-![Captura de tela de 2023-03-11 14-00-45](https://user-images.githubusercontent.com/79322362/224499591-fbb09be4-1a75-49cd-8816-854b1c8d0ec0.png)
-
-----------
 ### Access the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
 ### about:
@@ -20,6 +17,8 @@
 
 -----------
 ## Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+
+![Captura de tela de 2023-03-11 14-00-45](https://user-images.githubusercontent.com/79322362/224499591-fbb09be4-1a75-49cd-8816-854b1c8d0ec0.png)
 
 ### Install Git:
 
