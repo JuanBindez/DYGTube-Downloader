@@ -43,6 +43,10 @@ from src.progress_bar_module import progress_bar
 from src.debug import DebugInfo
 
 
+ERROR_001 = False
+ERROR_002 = False
+ERROR_003 = False
+
 def check_quality():
     """this function checks the available resolution of a video."""
     link = entrada_de_dados.get()
@@ -54,10 +58,7 @@ def check_quality():
     resolucoes = [stream.resolution for stream in video.streams if stream.resolution]
     messagebox.showinfo(title="DYGTUbe", message="The resolutions available for the video, " + video.title + ", ".join(resolucoes))
 
-ERROR_001 = False
-ERROR_002 = False
-ERROR_003 = False
-
+    
 def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
