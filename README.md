@@ -19,7 +19,7 @@
 ### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
 
 -----------
-## Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+### Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
 ![Captura de tela de 2023-03-11 14-00-45](https://user-images.githubusercontent.com/79322362/224499591-fbb09be4-1a75-49cd-8816-854b1c8d0ec0.png)
 
