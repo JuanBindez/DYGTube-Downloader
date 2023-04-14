@@ -14,7 +14,7 @@
 
 ----------
 
-### about:
+## about:
 
 ### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
 
