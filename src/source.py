@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4
+# Release: v2.11-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -43,17 +43,20 @@ ERROR_03 = False
 ERROR_04 = False
 ERROR_05 = False
 
-class DownloadInit():
+class MixDownload():
     """This class will receive the url to download the video."""
-    def __init__(self, link_url_input):
+    def __init__(self, link_url_input, save_path):
         self.link_url_input = link_url_input
+        self.save_path = save_path
 
     def download_audio_mp3(self):
         """Here it will be downloaded in MP3"""
         try:
             if self.link_url_input == "":
-                ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. Do you want to continue?")
+                ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. want to exit the program?")
                 if ask == True:
+                    exit()
+                elif ask == False:
                     pass
                 else:
                     messagebox.showinfo("DYG Downloader", 
@@ -66,7 +69,7 @@ class DownloadInit():
 
             yt = YouTube(self.link_url_input, on_progress_callback=on_progress)
             ys = yt.streams.get_audio_only()
-            ys.download()
+            ys.download(self.save_path)
 
             # Obter o caminho absoluto do arquivo baixado
             downloaded_file_path = os.path.abspath(ys.default_filename)
@@ -92,8 +95,10 @@ class DownloadInit():
         """Here it will be downloaded in MP4 video."""
         try:
             if self.link_url_input == "":
-                ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. Do you want to continue?")
+                ask = messagebox.askokcancel("DYGTube Downloader", "The field is empty. want to exit the program??")
                 if ask == True:
+                    exit()
+                elif ask == False:
                     pass
                 else:
                     messagebox.showinfo("DYG Downloader", 
@@ -103,7 +108,7 @@ class DownloadInit():
 
             yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
             ys = yt.streams.get_highest_resolution()
-            ys.download()
+            ys.download(self.save_path)
             DebugInfo.logger_info.info("(From source Init) Starting to download video MP4 from URL: %s",self.link_url_input)
             time.sleep(2)
             progress_bar()

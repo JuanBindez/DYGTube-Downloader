@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4
+# Release: v2.11-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -28,7 +28,7 @@ from tkinter import ttk
 from tkinter import filedialog
 
 from src.debug import DebugInfo
-from src.source import DownloadInit
+from src.source import MixDownload
 from src.source import PlaylistDownload
 from src.progress_bar_module import progress_bar
 
@@ -43,43 +43,43 @@ try:
       save_path = filedialog.askdirectory()
 
       link_1 = entrada_url_1.get()
-      di = DownloadInit(link_1)
+      di = MixDownload(link_1, save_path)
       di.download_video_mp4()
 
       link_2 = entrada_url_2.get()
-      di = DownloadInit(link_2)
+      di = MixDownload(link_2, save_path)
       di.download_video_mp4()
 
       link_3 = entrada_url_3.get()
-      di = DownloadInit(link_3)
+      di = MixDownload(link_3, save_path)
       di.download_video_mp4()
 
       link_4 = entrada_url_4.get()
-      di = DownloadInit(link_4)
+      di = MixDownload(link_4, save_path)
       di.download_video_mp4()
 
       link_5 = entrada_url_5.get()
-      di = DownloadInit(link_5)
+      di = MixDownload(link_5, save_path)
       di.download_video_mp4()
 
       link_6 = entrada_url_6.get()
-      di = DownloadInit(link_6)
+      di = MixDownload(link_6, save_path)
       di.download_video_mp4()
 
       link_7 = entrada_url_7.get()
-      di = DownloadInit(link_7)
+      di = MixDownload(link_7, save_path)
       di.download_video_mp4()
 
       link_8 = entrada_url_8.get()
-      di = DownloadInit(link_8)
+      di = MixDownload(link_8, save_path)
       di.download_video_mp4()
     
       link_9 = entrada_url_9.get()
-      di = DownloadInit(link_9)
+      di = MixDownload(link_9, save_path)
       di.download_video_mp4()
     
       link_10 = entrada_url_10.get()
-      di = DownloadInit(link_10)
+      di = MixDownload(link_10, save_path)
       di.download_video_mp4()
 
       messagebox.showinfo("DYG Downloader", "Your Dowloads Are Ready")
@@ -88,44 +88,46 @@ try:
     def download_mix_mp3():
       """This function only downloads the audio."""
 
+      save_path = filedialog.askdirectory()
+
       link_1 = entrada_url_1.get()
-      di = DownloadInit(link_1)
+      di = MixDownload(link_1, save_path)
       di.download_audio_mp3()
 
       link_2 = entrada_url_2.get()
-      di = DownloadInit(link_2)
+      di = MixDownload(link_2, save_path)
       di.download_audio_mp3()
 
       link_3 = entrada_url_3.get()
-      di = DownloadInit(link_3)
+      di = MixDownload(link_3, save_path)
       di.download_audio_mp3()
 
       link_4 = entrada_url_4.get()
-      di = DownloadInit(link_4)
+      di = MixDownload(link_4, save_path)
       di.download_audio_mp3()
 
       link_5 = entrada_url_5.get()
-      di = DownloadInit(link_5)
+      di = MixDownload(link_5, save_path)
       di.download_audio_mp3()
 
       link_6 = entrada_url_6.get()
-      di = DownloadInit(link_6)
+      di = MixDownload(link_6, save_path)
       di.download_audio_mp3()
 
       link_7 = entrada_url_7.get()
-      di = DownloadInit(link_7)
+      di = MixDownload(link_7, save_path)
       di.download_audio_mp3()
 
       link_8 = entrada_url_8.get()
-      di = DownloadInit(link_8)
+      di = MixDownload(link_8, save_path)
       di.download_audio_mp3()
 
       link_9 = entrada_url_9.get()
-      di = DownloadInit(link_9)
+      di = MixDownload(link_9, save_path)
       di.download_audio_mp3()
 
       link_10 = entrada_url_10.get()
-      di = DownloadInit(link_10)
+      di = MixDownload(link_10, save_path)
       di.download_audio_mp3()
       
       messagebox.showinfo("DYG Downloader", "Your Dowloads Are Ready")
