@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.11-rc1
+# Release: v2.11-rc2
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -279,9 +279,9 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.10.4",
+                text="v2.11-rc2",
                 fg=COLOR_LETTER,
-                bg="#373636").place(x=50, y=340)
+                bg="#373636").place(x=430, y=345)
 
 # button that starts the download.
 botao = Button(window,

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.10.4
+# Release: v2.11-rc2
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -25,7 +25,7 @@ from cx_Freeze import setup, Executable
 
 setup(
      name="DYGTube Downloader",
-     version="2.10.4",
+     version="2.11-rc2",
      description="video and music downloader",
      executables=[Executable("main.py")]
 )

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.11-rc1
+# Release: v2.11-rc2
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -42,6 +42,7 @@ ERROR_02 = False
 ERROR_03 = False
 ERROR_04 = False
 ERROR_05 = False
+ERROR_06 = False
 
 class MixDownload():
     """This class will receive the url to download the video."""
@@ -81,15 +82,19 @@ class MixDownload():
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(From main) Starting to download audio MP3 from URL: %s",self.link_url_input)
             time.sleep(3)
-            progress_bar()
-            
         except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
         except Exception as e:
+            global ERROR_01
+            ERROR_01 = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
+        if not ERROR_01:
+            progress_bar()
+        else:
+            pass
 
     def download_video_mp4(self):
         """Here it will be downloaded in MP4 video."""
@@ -111,18 +116,17 @@ class MixDownload():
             ys.download(self.save_path)
             DebugInfo.logger_info.info("(From source Init) Starting to download video MP4 from URL: %s",self.link_url_input)
             time.sleep(2)
-            progress_bar()
         except KeyError:
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error from source Init) Error KeyError found in download video MP4 from URL: %s",self.link_url_input)
             DebugInfo.logger_error.error(KeyError, exc_info=True)
             messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
         except Exception as e:
-            global ERROR_01
-            ERROR_01 = True
+            global ERROR_02
+            ERROR_02 = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
-        if not ERROR_01:
+        if not ERROR_02:
             progress_bar()
         else:
             pass
@@ -170,13 +174,13 @@ class PlaylistDownload():
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_info.info("(Error in main) exception FileNotFoundErrorfrom URL: %s",self.url_playlist)
         except Exception as e:
-            global ERROR_02
-            ERROR_02 = True
+            global ERROR_04
+            ERROR_04 = True
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYGTube Downloader",
                                  "Something went wrong! check playlist link")
-        if not ERROR_02:
+        if not ERROR_04:
             progress_bar()
             messagebox.showinfo("DYG Downloader", 
                                 "The playlist has been downloaded successfully!")
@@ -202,12 +206,12 @@ class PlaylistDownload():
                     progress_bar()
 
         except Exception as e:
-            global ERROR_04
-            ERROR_04 = True 
+            global ERROR_06
+            ERROR_06 = True 
             DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Something went wrong! check playlist link.")
-        if not ERROR_04:
+        if not ERROR_06:
             messagebox.showinfo("DYG Downloader", "The playlist has been downloaded successfully!")
 
 
