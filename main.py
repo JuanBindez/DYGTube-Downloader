@@ -73,7 +73,7 @@ def download_video():
     video = YouTube(link)
 
     try:
-        video_stream = None  # Inicialize a variável com um valor padrão
+        video_stream = None 
 
         if var_1080p.get() == 1:
             video_stream = video.streams.filter(res="1080p").first()
