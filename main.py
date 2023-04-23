@@ -179,7 +179,6 @@ window.attributes('-alpha',9.1)
 foto_icon = PhotoImage(data=base64.b64decode(ICON_LOGO))
 window.iconphoto(True, foto_icon)
 
-#file_img = Image.open('logo.png')
 bg = PhotoImage(data=base64.b64decode(BANNER_LOGO))
 label = Label(window, image=bg)
 label.place(x = 10,y = 60)
