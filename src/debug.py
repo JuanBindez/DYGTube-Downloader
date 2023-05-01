@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.11-rc3
+# Release: v2.11-rc4
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -36,3 +36,10 @@ class DebugInfo:
                         datefmt='%d/%m/%Y %H:%M:%S')
     
     logger_error = logging.getLogger("DYGTUbe_error")
+
+
+    info = logger_info.info("------------------------------start debugging--------------------------------")
+    bug_tag = logger_info.info("------------------------------ [BUG] ----------------------------------------")
+
+    info = ''
+    bug_tag = ''
