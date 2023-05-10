@@ -21,7 +21,9 @@
 -----------
 ### Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
-![Captura de tela de 2023-03-11 14-00-45](https://user-images.githubusercontent.com/79322362/224499591-fbb09be4-1a75-49cd-8816-854b1c8d0ec0.png)
+![Captura de tela de 2023-05-09 21-54-31](https://github.com/JuanBindez/DYGTube-Downloader-v2.11.0/assets/79322362/cbe72864-d7b0-494c-87e4-611b43eb6dbe)
+
+
 
 ### Install Git:
 
@@ -64,5 +66,6 @@
 
 ### Clicking on it will open the program:
 
+![Captura de tela de 2023-05-09 21-55-22](https://github.com/JuanBindez/DYGTube-Downloader-v2.11.0/assets/79322362/486fe912-4143-4b92-9fd2-86ea0b10dee2)
 
-![Captura de tela de 2023-03-05 18-21-32](https://user-images.githubusercontent.com/79322362/222986752-2164afbc-f91f-4f25-b838-a3837bcfa50f.png)
+
