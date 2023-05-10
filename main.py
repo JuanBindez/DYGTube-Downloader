@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.11-rc4
+# Release: v2.12-rc1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -33,6 +33,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
+import notify2
 
 from src.source import MixDownload
 from src.playlist_download_module import download_playlist
@@ -47,6 +48,12 @@ from src.debug import DebugInfo
 ERROR_001 = False
 ERROR_002 = False
 ERROR_003 = False
+
+notify2.init("DYGTube")
+
+TITLE_NOTIFY = "DYGTube"
+MESSAGE_INIT_NOTIFY = "Started Downloading"
+MESSAGE_FINAL_NOTIFY = "download completed"
 
 def check_quality():
     """this function checks the available resolution of a video."""
@@ -116,7 +123,7 @@ def download_video():
                 DebugInfo.logger_error.error(e, exc_info=True)
                 
             if not ERROR_001:
-                progress_bar()
+                notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
             else:
                 pass
 
@@ -169,7 +176,7 @@ def download_mp3():
             DebugInfo.bug_tag
             DebugInfo.logger_error.error(e, exc_info=True)
     if not ERROR_003:
-        progress_bar()
+        notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
     else:
         pass
 
@@ -195,10 +202,11 @@ bg = PhotoImage(data=base64.b64decode(BANNER_LOGO))
 label = Label(window, image=bg)
 label.place(x = 10,y = 60)
 
+"""
 bg2 = PhotoImage(data=base64.b64decode(GUAXINIM))
 label = Label(window, image=bg2)
 label.place(x = 7,y = 310)
-
+"""
 
 button_quality = PhotoImage(data=base64.b64decode(ICON_QUALITY_VIDEO))
 botao_mix = Button(window,
@@ -290,7 +298,7 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.11-rc4",
+                text="v2.12-rc1",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=430, y=345)
 
