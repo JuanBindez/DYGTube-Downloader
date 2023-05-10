@@ -107,11 +107,13 @@ def download_video():
             DebugInfo.info
             DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             video_stream.download(save_path)
+            notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
         else:
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
                 ys = yt.streams.get_highest_resolution()
                 ys.download(save_path)
+                notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
