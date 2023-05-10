@@ -11,6 +11,8 @@
 
 - updated the base library
 
+----------
+
 ### v2.10.4:
 
 - now you can choose the folder where the video or audio will be downloaded
