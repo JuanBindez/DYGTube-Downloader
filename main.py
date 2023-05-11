@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.12-rc1
+# Release: v2.12.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -26,6 +26,7 @@ import logging
 import urllib3
 import time
 import base64
+import webbrowser
 
 from pytube import YouTube
 from pytube.cli import on_progress
@@ -54,6 +55,12 @@ notify2.init("DYGTube")
 TITLE_NOTIFY = "DYGTube"
 MESSAGE_INIT_NOTIFY = "Started Downloading"
 MESSAGE_FINAL_NOTIFY = "download completed"
+
+
+def page_web():
+    webbrowser.open("https://github.com/JuanBindez/DYGTube-Downloader-v2.12-rc1")
+    pass
+    
 
 def check_quality():
     """this function checks the available resolution of a video."""
@@ -201,8 +208,8 @@ foto_icon = PhotoImage(data=base64.b64decode(ICON_LOGO))
 window.iconphoto(True, foto_icon)
 
 bg = PhotoImage(data=base64.b64decode(BANNER_LOGO))
-label = Label(window, image=bg)
-label.place(x = 10,y = 60)
+label = Label(window, image=bg, bd=0)
+label.place(x = 220,y = 60)
 
 """
 bg2 = PhotoImage(data=base64.b64decode(GUAXINIM))
@@ -253,36 +260,42 @@ check_1080p = Checkbutton(window,
                          text="1080p",
                          fg=COLOR_LETTER,
                          bg="#373636",
+                         bd=0,
                          variable=var_1080p,)
 
 check_720p = Checkbutton(window,
                         text="720p",
                         fg=COLOR_LETTER,
                         bg="#373636",
+                        bd=0,
                         variable=var_720p)
 
 check_480p = Checkbutton(window,
                         text="480p",
                         fg=COLOR_LETTER,
                         bg="#373636",
+                        bd=0,
                         variable=var_480p)
 
 check_360p = Checkbutton(window,
                         text="360p",
                         fg=COLOR_LETTER,
                         bg="#373636",
+                        bd=0,
                         variable=var_360p)
 
 check_240p = Checkbutton(window,
                         text="240p",
                         fg=COLOR_LETTER,
                         bg="#373636",
+                        bd=0,
                         variable=var_240p)
 
 check_144p = Checkbutton(window,
                         text="144p",
                         fg=COLOR_LETTER,
                         bg="#373636",
+                        bd=0,
                         variable=var_144p)
 
 check_1080p.place(x=80, y=220)
@@ -300,9 +313,9 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.12-rc1",
+                text="v2.12.0",
                 fg=COLOR_LETTER,
-                bg="#373636").place(x=430, y=345)
+                bg="#373636").place(x=4, y=345)
 
 # button that starts the download.
 botao = Button(window,
@@ -321,7 +334,7 @@ botao_mp3 = Button(window,
 
 # button to display information about the program.
 botao_sobre = Button(window,
-                text="About",
+                text="Help",
                 command=sobre_software,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
@@ -350,6 +363,16 @@ botao_mix = Button(window,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=2,).place(x=2, y=2)
+
+
+botao_logo = Button(window,
+                text="Github",
+                command=page_web,
+                fg=COLOR_LETTER,
+                bg="#373636",
+                bd=0,
+                width=2,
+                height=1).place(x=450, y=342)
 
 
 if __name__ == "__main__":

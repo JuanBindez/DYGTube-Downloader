@@ -7,6 +7,15 @@
 <h1 align="center">Change Log</h1>
 
 
+### v2.12.0:
+
+- user interface improvements
+
+- improvements to the notification system.
+
+- updated the base library
+
+
 ### v2.11.0:
 
 - updated the base library

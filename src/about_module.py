@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.12-rc1
+# Release: v2.12.0
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -43,7 +43,6 @@ def sobre_software():
    window.attributes('-alpha',9.1)
 
    
-
    """information:
 
    website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
@@ -65,7 +64,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v2.12-rc1",
+                text="v2.12.0",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 

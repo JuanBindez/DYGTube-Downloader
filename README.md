@@ -5,7 +5,7 @@
 </h1>
 
 
-<h1 align="">DYGTube 2.12-rc1 Pre Released</h1>
+<h1 align="">DYGTube 2.12.0</h1>
 
 ----------
 
@@ -31,11 +31,11 @@
 
 ### Make a git clone:
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.12-rc1
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.12.0
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v2.12-rc1
+    cd DYGTube-Downloader-v2.12.0
 
 ### Activate the virtualenv and enter the command:
 
