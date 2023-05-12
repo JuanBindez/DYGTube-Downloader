@@ -7,6 +7,21 @@
 <h1 align="center">Change Log</h1>
 
 
+### v2.12.1:
+
+- user interface improvements
+
+- improvements to the notification system.
+
+- updated the base library
+
+### Bugfix:
+
+- fixed issue affecting notifications on windows 10
+
+----------
+
+
 ### v2.12.0:
 
 - user interface improvements
@@ -15,6 +30,7 @@
 
 - updated the base library
 
+----------
 
 ### v2.11.0:
 

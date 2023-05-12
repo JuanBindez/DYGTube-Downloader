@@ -21,25 +21,12 @@
 # repo: https://github.com/juanBindez
 
 
-import logging
+from plyer import notification
 
-class DebugInfo:
-    logging.basicConfig(filename="DYGTUbe_Debug_info.log",
-                        level=logging.INFO,
-                        format='%(asctime)s %(message)s',
-                        datefmt='%d/%m/%Y %H:%M:%S')
-    logger_info = logging.getLogger("DYGTUbe_Debug_info")
-
-    logging.basicConfig(filename='DYGTUbe_Error.log',
-                        level=logging.ERROR,
-                        format='%(asctime)s %(levelname)s: %(message)s',
-                        datefmt='%d/%m/%Y %H:%M:%S')
-    
-    logger_error = logging.getLogger("DYGTUbe_error")
-
-
-    info = logger_info.info("------------------------------start debugging--------------------------------")
-    bug_tag = logger_info.info("------------------------------ [BUG] ----------------------------------------")
-
-    info = ''
-    bug_tag = ''
+def notify_info():
+    notification.notify(
+        title='DYGTube',
+        message='Download Completed!',
+        app_icon=None,
+        timeout=10,
+    )

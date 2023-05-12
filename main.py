@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.12.0
+# Release: v2.12.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -34,7 +34,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
-import notify2
+
 
 from src.source import MixDownload
 from src.playlist_download_module import download_playlist
@@ -44,17 +44,12 @@ from src.channel_module import download_channel
 from src.progress_bar_module import progress_bar
 from src.images import *
 from src.debug import DebugInfo
+from src.notify_module import *
 
 
 ERROR_001 = False
 ERROR_002 = False
 ERROR_003 = False
-
-notify2.init("DYGTube")
-
-TITLE_NOTIFY = "DYGTube"
-MESSAGE_INIT_NOTIFY = "Started Downloading"
-MESSAGE_FINAL_NOTIFY = "download completed"
 
 
 def page_web():
@@ -114,13 +109,13 @@ def download_video():
             DebugInfo.info
             DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             video_stream.download(save_path)
-            notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+            notify_info()
         else:
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
                 ys = yt.streams.get_highest_resolution()
                 ys.download(save_path)
-                notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+                notify_info()
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
@@ -132,7 +127,7 @@ def download_video():
                 DebugInfo.logger_error.error(e, exc_info=True)
                 
             if not ERROR_001:
-                notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+                notify_info()
             else:
                 pass
 
@@ -185,7 +180,7 @@ def download_mp3():
             DebugInfo.bug_tag
             DebugInfo.logger_error.error(e, exc_info=True)
     if not ERROR_003:
-        notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+        notify_info()
     else:
         pass
 
@@ -313,7 +308,7 @@ lbl = Label(window, text = "")
 
 # version label
 label = Label(window,
-                text="v2.12.0",
+                text="v2.12.1",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=4, y=345)
 

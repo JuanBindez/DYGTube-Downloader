@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.12.0
+# Release: v2.12.1
 #
 # Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -32,10 +32,10 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 from tkinter import filedialog
-import notify2
 
 from src.debug import DebugInfo
 from src.progress_bar_module import progress_bar
+from src.notify_module import *
 
 
 ERROR_01 = False
@@ -45,11 +45,6 @@ ERROR_04 = False
 ERROR_05 = False
 ERROR_06 = False
 
-notify2.init("DYGTube")
-
-TITLE_NOTIFY = "DYGTube"
-MESSAGE_INIT_NOTIFY = "Started Downloading"
-MESSAGE_FINAL_NOTIFY = "download completed"
 
 class MixDownload():
     """This class will receive the url to download the video."""
@@ -103,7 +98,7 @@ class MixDownload():
             DebugInfo.bug_tag
             DebugInfo.logger_error.error(e, exc_info=True)
         if not ERROR_01:
-            notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+            notify_info()
         else:
             pass
 
@@ -142,7 +137,7 @@ class MixDownload():
             DebugInfo.info
             DebugInfo.logger_error.error(e, exc_info=True)
         if not ERROR_02:
-            notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+            notify_info()
         else:
             pass
 
@@ -176,7 +171,7 @@ class PlaylistDownload():
                     messagebox.showerror("DYGTube Downloader",
                                         "Something went wrong! check playlist link")
                 if not ERROR_03:
-                    notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+                    notify_info()
 
                 # Obter o caminho absoluto do arquivo baixado
                 downloaded_file_path = os.path.abspath(ys.default_filename)
@@ -203,7 +198,7 @@ class PlaylistDownload():
             messagebox.showerror("DYGTube Downloader",
                                  "Something went wrong! check playlist link")
         if not ERROR_04:
-            notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+            notify_info()
             messagebox.showinfo("DYG Downloader", 
                                 "The playlist has been downloaded successfully!")
 
@@ -227,7 +222,7 @@ class PlaylistDownload():
                     messagebox.showerror("DYGTube Downloader",
                                         "Something went wrong! check playlist link")
                 if not ERROR_05:
-                    notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+                    notify_info()
 
         except Exception as e:
             global ERROR_06
@@ -237,7 +232,7 @@ class PlaylistDownload():
             DebugInfo.logger_error.error(e, exc_info=True)
             messagebox.showerror("DYG Downloader", "Something went wrong! check playlist link.")
         if not ERROR_06:
-            notify2.Notification(TITLE_NOTIFY, MESSAGE_FINAL_NOTIFY).show()
+            notify_info()
             messagebox.showinfo("DYG Downloader", "The playlist has been downloaded successfully!")
 
 
