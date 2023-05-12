@@ -19,6 +19,10 @@
 
 - fixed issue affecting notifications on windows 10
 
+### Note:
+
+- There may be sudden changes in the video platform and downloads stop working, but just wait for the DYGTube update.
+
 ----------
 
 
