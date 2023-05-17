@@ -9,7 +9,7 @@
 
 ----------
 
-### Access the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+### Download this program for Windows and Linux from the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 ### See the review on Softpedia click __[here](https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml)__.
 
 ----------
