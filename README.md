@@ -15,10 +15,10 @@
 
 ## about:
 
-### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
+#### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
 
 -----------
-### Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+#### Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
 
 ![Captura de tela de 2023-05-11 11-23-00](https://github.com/JuanBindez/DYGTube-Downloader-v2.12.0/assets/79322362/e3b55b70-177c-4354-afc3-2f9b855e88d8)
@@ -71,7 +71,7 @@
 
 ![QR Code](https://github.com/JuanBindez/DYGTube-Downloader-v2.12.1/assets/79322362/ecc9699a-6e53-49cc-8e49-2de5416b5297)
 
-#### Motivate this developer to keep this software donate via Paypal
+### Motivate this developer to keep this software donate via Paypal!
 
 
 
