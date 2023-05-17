@@ -18,7 +18,7 @@
 #### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
 
 -----------
-## For developers
+## For developers:
 
 #### Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
 
@@ -27,11 +27,11 @@
 
 
 
-### Install Git:
+### Install Git (Linux):
 
     sudo apt install git
 
-### Make a git clone:
+### Make a git clone (Linux):
 
     git clone https://github.com/JuanBindez/DYGTube-Downloader-v2.12.1
     
@@ -41,18 +41,13 @@
 
 ### Activate the virtualenv and enter the command:
 
-
     pip install -r requirements.txt
 
 ### command to compile:
 
-
     pyinstaller --onefile --noconsole --windowed main.py
-    
-#### Or:
 
-    python3 setup.py build
-    
+----------
     
 ### Before compiling the files will look like this:
 
