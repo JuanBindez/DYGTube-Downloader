@@ -2,7 +2,7 @@
 #
 # Release: v2.12.1
 #
-# Copyright (c) 2022-2023  Juan Bindez  <juanbindez780@gmail.com>
+# Copyright (c) 2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
