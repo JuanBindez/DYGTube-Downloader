@@ -35,7 +35,6 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
 
-
 from src.source import MixDownload
 from src.playlist_download_module import download_playlist
 from src.mix_module import choice_mix
@@ -326,8 +325,6 @@ botao_mp3 = Button(window,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,).place(x=270, y=270)
 
-
-# button to display information about the program.
 botao_sobre = Button(window,
                 text="Help",
                 command=sobre_software,
@@ -335,7 +332,6 @@ botao_sobre = Button(window,
                 bg=COLOR_BUTTON,
                 width=3,).place(x=165, y=2)
 
-# button to playlist download.
 botao_playlist = Button(window,
                 text="Playlist",
                 command=download_playlist,
@@ -350,15 +346,13 @@ botao_channel = Button(window,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=4,).place(x=45, y=2) 
-
-# mix option button.                     
+                 
 botao_mix = Button(window,
                 text="Mix",
                 command=choice_mix,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,
                 width=2,).place(x=2, y=2)
-
 
 botao_logo = Button(window,
                 text="Github",
@@ -368,7 +362,6 @@ botao_logo = Button(window,
                 bd=0,
                 width=2,
                 height=1).place(x=450, y=342)
-
 
 if __name__ == "__main__":
   window.mainloop()
