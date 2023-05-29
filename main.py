@@ -305,20 +305,18 @@ entrada_de_dados.place(x=95, y=170)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 lbl = Label(window, text = "")
 
-# version label
+
 label = Label(window,
                 text="v2.12.1",
                 fg=COLOR_LETTER,
                 bg="#373636").place(x=4, y=345)
 
-# button that starts the download.
 botao = Button(window,
                 text="Download Video",
                 command=download_video,
                 fg=COLOR_LETTER,
                 bg=COLOR_BUTTON,).place(x=120, y=270)
 
-# button to start downloading only the audio of the video.
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
