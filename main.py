@@ -52,7 +52,7 @@ ERROR_003 = False
 
 
 def page_web():
-    webbrowser.open("https://github.com/JuanBindez/DYGTube-Downloader-v2.12-rc1")
+    webbrowser.open("https://dygtube.freesoftwarebrasil.com.br")
     pass
     
 
@@ -337,7 +337,6 @@ botao_playlist = Button(window,
                 bg=COLOR_BUTTON,
                 width=4,).place(x=104, y=2)
 
-# button to channel download.
 botao_channel = Button(window,
                 text="Channel",
                 command=download_channel,
@@ -353,7 +352,7 @@ botao_mix = Button(window,
                 width=2,).place(x=2, y=2)
 
 botao_logo = Button(window,
-                text="Github",
+                text="Web Page",
                 command=page_web,
                 fg=COLOR_LETTER,
                 bg="#373636",
