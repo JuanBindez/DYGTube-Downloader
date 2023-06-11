@@ -45,7 +45,6 @@ ERROR_04 = False
 ERROR_05 = False
 ERROR_06 = False
 
-
 class MixDownload():
     """This class will receive the url to download the video."""
 
@@ -235,7 +234,7 @@ class PlaylistDownload():
             notify_info()
             messagebox.showinfo("DYG Downloader", "The playlist has been downloaded successfully!")
 
-
+            
 class ChannelDownload():
     
     def __init__(self, url_channel):
