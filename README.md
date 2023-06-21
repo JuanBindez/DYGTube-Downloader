@@ -65,7 +65,3 @@
 
 ![Captura de tela de 2023-05-09 21-55-22](https://github.com/JuanBindez/DYGTube-Downloader-v2.11.0/assets/79322362/486fe912-4143-4b92-9fd2-86ea0b10dee2)
 
-
-![QR Code](https://github.com/JuanBindez/DYGTube-Downloader-v2.12.1/assets/79322362/ecc9699a-6e53-49cc-8e49-2de5416b5297)
-
-### Motivate this developer to keep this software donate via Paypal!
