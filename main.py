@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v2.12.1
+# Release: v3.0-rc1
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -51,6 +51,10 @@ ERROR_002 = False
 ERROR_003 = False
 
 
+def github_page():
+    webbrowser.open("https://github.com/JuanBindez")
+
+
 def page_web():
     webbrowser.open("https://dygtube.freesoftwarebrasil.com.br")
     pass
@@ -60,7 +64,7 @@ def check_quality():
     """this function checks the available resolution of a video."""
 
     link = entrada_de_dados.get()
-    if link == "":
+    if link == "" or "URL*":
         messagebox.showinfo("DYG Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
     else:
         pass
@@ -80,7 +84,7 @@ def download_video():
     """
 
     link = entrada_de_dados.get()
-    if link == "":
+    if link == "" or "URL*":
         messagebox.showerror("DYG Downloader", "the field is empty!")
     elif not link == "":
         pass
@@ -149,7 +153,7 @@ def download_mp3():
     """This function downloads audio only."""
 
     link = entrada_de_dados.get()
-    if link == "":
+    if link == "" or "URL*":
         messagebox.showerror("DYG Downloader", "the field is empty!")
     elif not link == "":
         pass
@@ -194,8 +198,8 @@ y ishei ght and x is for sides.
 
 window = Tk()
 window.title("DYGTube Downloader")
-window.geometry("500x370")
-window['background'] = '#373636'  
+window.geometry("500x365")
+#window['background'] = '#373636'  
 window.resizable(False, False)# False for non-responsive window and True for responsive.
 window.attributes('-alpha',9.1)
 foto_icon = PhotoImage(data=base64.b64decode(ICON_LOGO))
@@ -203,44 +207,12 @@ window.iconphoto(True, foto_icon)
 
 bg = PhotoImage(data=base64.b64decode(BANNER_LOGO))
 label = Label(window, image=bg, bd=0)
-label.place(x = 220,y = 60)
-
-"""
-bg2 = PhotoImage(data=base64.b64decode(GUAXINIM))
-label = Label(window, image=bg2)
-label.place(x = 7,y = 310)
-"""
-
-button_quality = PhotoImage(data=base64.b64decode(ICON_QUALITY_VIDEO))
-botao_mix = Button(window,
-                image=button_quality,
-                command=check_quality,
-                width=16,
-                height=17).place(x=423, y=170)
+label.place(x = 0,y = 0)
 
 
 COLOR_FRAME = '#585757'
 COLOR_BUTTON = '#191A1A'
 COLOR_LETTER = '#00E9CA'
-
-frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
-frame.grid(row=0, column=0)
-label = Label(window,
-                text="URL*",
-                fg=COLOR_LETTER,
-                bg="#373636").place(x=40, y=170)
-
-def make_menu(w):
-    global the_menu_1
-    the_menu_1 = Menu(w, tearoff=0)
-    the_menu_1.add_command(label="Colar")
-    
-    
-def show_menu(e):
-    w = e.widget
-    the_menu_1.entryconfigure("Colar",
-    command=lambda: w.event_generate("<<Paste>>"))
-    the_menu_1.tk.call("tk_popup", the_menu_1, e.x_root, e.y_root)
 
 
 var_1080p = IntVar()
@@ -252,113 +224,103 @@ var_144p = IntVar()
 
 check_1080p = Checkbutton(window,
                          text="1080p",
-                         fg=COLOR_LETTER,
-                         bg="#373636",
                          bd=0,
-                         variable=var_1080p,)
+                         variable=var_1080p,).place(x=80, y=220)
 
 check_720p = Checkbutton(window,
                         text="720p",
-                        fg=COLOR_LETTER,
-                        bg="#373636",
                         bd=0,
-                        variable=var_720p)
+                        variable=var_720p).place(x=149, y=220)
 
 check_480p = Checkbutton(window,
                         text="480p",
-                        fg=COLOR_LETTER,
-                        bg="#373636",
                         bd=0,
-                        variable=var_480p)
+                        variable=var_480p).place(x=210, y=220)
 
 check_360p = Checkbutton(window,
                         text="360p",
-                        fg=COLOR_LETTER,
-                        bg="#373636",
                         bd=0,
-                        variable=var_360p)
+                        variable=var_360p).place(x=270, y=220)
 
 check_240p = Checkbutton(window,
                         text="240p",
-                        fg=COLOR_LETTER,
-                        bg="#373636",
                         bd=0,
-                        variable=var_240p)
+                        variable=var_240p).place(x=330, y=220)
 
 check_144p = Checkbutton(window,
                         text="144p",
-                        fg=COLOR_LETTER,
-                        bg="#373636",
                         bd=0,
-                        variable=var_144p)
+                        variable=var_144p).place(x=390, y=220)
 
-check_1080p.place(x=80, y=220)
-check_720p.place(x=149, y=220)
-check_480p.place(x=210, y=220)
-check_360p.place(x=270, y=220)
-check_240p.place(x=330, y=220)
-check_144p.place(x=390, y=220)
+
+def make_menu(w):
+    global the_menu_1
+    the_menu_1 = Menu(w, tearoff=0)
+    the_menu_1.add_command(label="Colar")
+    
+
+def show_menu(e):
+    w = e.widget
+    the_menu_1.entryconfigure("Colar",
+    command=lambda: w.event_generate("<<Paste>>"))
+    the_menu_1.tk.call("tk_popup", the_menu_1, e.x_root, e.y_root)
+
+def on_entry_click(event):
+    if entrada_de_dados.get() == placeholder_text:
+        entrada_de_dados.delete(0, 'end')
+
+def on_focus_out(event):
+    if entrada_de_dados.get() == '':
+        entrada_de_dados.insert(0, placeholder_text)
+    
+button_quality = PhotoImage(data=base64.b64decode(ICON_QUALITY_VIDEO))
+botao_mix = Button(window,
+                image=button_quality,
+                command=check_quality,
+                width=16,
+                height=17).place(x=477, y=150)
+
+placeholder_text = 'URL*'
 
 make_menu(window)
-entrada_de_dados = Entry(window, width=40)
-entrada_de_dados.place(x=95, y=170)
+entrada_de_dados = Entry(window, width=58)
+entrada_de_dados.insert(0, placeholder_text)
+entrada_de_dados.bind('<FocusIn>', on_entry_click)
+entrada_de_dados.bind('<FocusOut>', on_focus_out)
+entrada_de_dados.place(x=2, y=150)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 lbl = Label(window, text = "")
 
 
 label = Label(window,
-                text="v2.12.1",
-                fg=COLOR_LETTER,
-                bg="#373636").place(x=4, y=345)
+                text="v3.0-rc1",).place(x=4, y=345)
 
-botao = Button(window,
+
+botao_video = Button(window,
                 text="Download Video",
                 command=download_video,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,).place(x=120, y=270)
+                width=60,).place(x=0, y=260)
 
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,).place(x=270, y=270)
+                width=60,).place(x=0, y=300)
 
-botao_sobre = Button(window,
-                text="Help",
-                command=sobre_software,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,
-                width=3,).place(x=165, y=2)
 
-botao_playlist = Button(window,
-                text="Playlist",
-                command=download_playlist,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,
-                width=4,).place(x=104, y=2)
+menu_barra = Menu(window)
 
-botao_channel = Button(window,
-                text="Channel",
-                command=download_channel,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,
-                width=4,).place(x=45, y=2) 
-                 
-botao_mix = Button(window,
-                text="Mix",
-                command=choice_mix,
-                fg=COLOR_LETTER,
-                bg=COLOR_BUTTON,
-                width=2,).place(x=2, y=2)
+menu_arquivo = Menu(menu_barra, tearoff=1)
+menu_arquivo.add_command(label="Mix", command=choice_mix)
+menu_arquivo.add_command(label="Channel", command=download_channel)
+menu_arquivo.add_command(label="Playlist", command=download_playlist)
+menu_arquivo.add_command(label="Web Page", command=page_web)
+menu_arquivo.add_command(label="Github", command=github_page)
+menu_arquivo.add_command(label="Help", command=sobre_software)
+menu_arquivo.add_command(label="Quit", command=quit)
 
-botao_logo = Button(window,
-                text="Web Page",
-                command=page_web,
-                fg=COLOR_LETTER,
-                bg="#373636",
-                bd=0,
-                width=2,
-                height=1).place(x=450, y=342)
+menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
+window.config(menu=menu_barra)
+
 
 if __name__ == "__main__":
   window.mainloop()
