@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc1
+# Release: v3.0-rc2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -64,7 +64,7 @@ def sobre_software():
                 bg=GENERAL_BACKGROUND_COLOR).place(x=188, y=10)
 
    label = Label(window,
-                text="v3.0-rc1",
+                text="v3.0-rc2",
                 fg=COLOR_VERSION,
                 bg=GENERAL_BACKGROUND_COLOR).place(x=195, y=29)
 

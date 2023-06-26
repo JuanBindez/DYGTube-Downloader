@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc1
+# Release: v3.0-rc2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -21,12 +21,24 @@
 # repo: https://github.com/juanBindez
 
 
-from plyer import notification
+import time
 
-def notify_info():
-    notification.notify(
-        title='DYGTube',
-        message='Download Completed!',
-        app_icon=None,
-        timeout=10,
-    )
+from pytube.cli import on_progress
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
+
+
+def notify_dowload():
+    """mix option progress bar interface"""
+
+    window_progress = Tk()
+    window_progress.title("DYGTube Downloader")
+    window_progress.geometry("400x100")
+    window_progress.resizable(False, False)
+    window_progress.attributes('-alpha', 9.1)
+
+    label = Label(window_progress,
+                  text="Dowload Concluído!",).place(x=140, y=60)
+    time.sleep(5)
+    window_progress.destroy()

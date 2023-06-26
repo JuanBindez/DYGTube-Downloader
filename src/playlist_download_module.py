@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc1
+# Release: v3.0-rc2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -33,15 +33,23 @@ from src.source import MixDownload, PlaylistDownload
 def download_playlist():
     """Here the url of the playlist will be captured and passed to the DownloadList class to download it."""
     def captura_playlist_mp3():
-        save_path = filedialog.askdirectory()
         url = entrada_url_playlist.get()
+        if url == "" or "URL Playlist*":
+            messagebox.showerror("DYGTube Downloader", "the field is empty!")
+        elif not url == "" or "URL Playlist*":
+            pass
+        save_path = filedialog.askdirectory()
         messagebox.showinfo("DYG Downloader", "download will start... please wait")
         DP = PlaylistDownload(url, save_path)
         DP.download_playlist_mp3()
 
     def captura_playlist_mp4():
-        save_path = filedialog.askdirectory()
         url = entrada_url_playlist.get()
+        if url == "" or "URL Playlist*":
+            messagebox.showerror("DYGTube Downloader", "the field is empty!")
+        elif not url == "" or "URL Playlist*":
+            pass
+        save_path = filedialog.askdirectory()
         messagebox.showinfo("DYG Downloader", "download will start... please wait")
         DP = PlaylistDownload(url, save_path)
         DP.download_playlist_mp4()
@@ -49,53 +57,48 @@ def download_playlist():
     window = Tk()
     window.title("DYGTube Downloader")
     window.geometry("455x320")
-    window['background'] = '#373636'
     window.resizable(False, False)
     window.attributes('-alpha',9.1)
     
-    """information:
-
-    website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-
-    y is height and x is for sides
-    """
 
     def make_menu(w):
-      global the_menu_2
-      the_menu_2 = Menu(w, tearoff=0)
-      the_menu_2.add_command(label="Colar")
-      
+        global the_menu_2
+        the_menu_2 = Menu(w, tearoff=0)
+        the_menu_2.add_command(label="Colar")
+    
+
     def show_menu(e):
         w = e.widget
         the_menu_2.entryconfigure("Colar",
         command=lambda: w.event_generate("<<Paste>>"))
         the_menu_2.tk.call("tk_popup", the_menu_2, e.x_root, e.y_root)
 
-    COLOR_FRAME = '#585757'
-    COLOR_BUTTON = '#191A1A'
-    LETTER_COLOR = '#00E9CA'
+    def on_entry_click(event):
+        if entrada_url_playlist.get() == placeholder_text:
+            entrada_url_playlist.delete(0, 'end')
 
-    frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
-    frame.grid(row=0, column=0)
-    label = Label(window,
-                  text="URL Playlist*",
-                  fg='#00E9CA',
-                  bg="#373636").place(x=6, y=100)
+    def on_focus_out(event):
+        if entrada_url_playlist.get() == '':
+            entrada_url_playlist.insert(0, placeholder_text)
+        
+
+    placeholder_text = 'URL Playlist*'
 
     make_menu(window)
-    entrada_url_playlist = Entry(window, width=40)
-    entrada_url_playlist.place(x=95, y=100)
+    entrada_url_playlist = Entry(window, width=58)
+    entrada_url_playlist.insert(0, placeholder_text)
+    entrada_url_playlist.bind('<FocusIn>', on_entry_click)
+    entrada_url_playlist.bind('<FocusOut>', on_focus_out)
+    entrada_url_playlist.place(x=2, y=100)
     entrada_url_playlist.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
     lbl = Label(window, text = "")
 
     botao_download = Button(window,
                     text="Download Video",
                     command=captura_playlist_mp4,
-                    fg=LETTER_COLOR,
-                    bg=COLOR_BUTTON,).place(x=90, y=200)
+                    width=55,).place(x=0, y=200)
     
     botao_download = Button(window,
                     text="Download MP3",
                     command=captura_playlist_mp3,
-                    fg=LETTER_COLOR,
-                    bg=COLOR_BUTTON,).place(x=230, y=200)
+                    width=55,).place(x=0, y=247)

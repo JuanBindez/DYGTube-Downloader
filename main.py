@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc1
+# Release: v3.0-rc2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -39,8 +39,6 @@ from src.source import MixDownload
 from src.playlist_download_module import download_playlist
 from src.mix_module import choice_mix
 from src.about_module import sobre_software
-from src.channel_module import download_channel
-from src.progress_bar_module import progress_bar
 from src.images import *
 from src.debug import DebugInfo
 from src.notify_module import *
@@ -65,7 +63,7 @@ def check_quality():
 
     link = entrada_de_dados.get()
     if link == "" or "URL*":
-        messagebox.showinfo("DYG Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
+        messagebox.showinfo("DYGTube Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
     else:
         pass
 
@@ -85,7 +83,7 @@ def download_video():
 
     link = entrada_de_dados.get()
     if link == "" or "URL*":
-        messagebox.showerror("DYG Downloader", "the field is empty!")
+        messagebox.showerror("DYGTube Downloader", "the field is empty!")
     elif not link == "":
         pass
     
@@ -112,13 +110,13 @@ def download_video():
             DebugInfo.info
             DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             video_stream.download(save_path)
-            notify_info()
+            notify_dowload()
         else:
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
                 ys = yt.streams.get_highest_resolution()
                 ys.download(save_path)
-                notify_info()
+                notify_dowload()
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
@@ -130,7 +128,7 @@ def download_video():
                 DebugInfo.logger_error.error(e, exc_info=True)
                 
             if not ERROR_001:
-                notify_info()
+                notify_dowload()
             else:
                 pass
 
@@ -144,8 +142,6 @@ def download_video():
             global ERROR_002
             ERROR_002 = True
             messagebox.showerror("DYG Downloader", "Something went wrong!")
-            DebugInfo.info
-            DebugInfo.bug_tag
             DebugInfo.logger_error.error(e, exc_info=True)
 
   
@@ -183,7 +179,7 @@ def download_mp3():
             DebugInfo.bug_tag
             DebugInfo.logger_error.error(e, exc_info=True)
     if not ERROR_003:
-        notify_info()
+        notify_dowload()
     else:
         pass
 
@@ -293,7 +289,7 @@ lbl = Label(window, text = "")
 
 
 label = Label(window,
-                text="v3.0-rc1",).place(x=4, y=345)
+                text="v3.0-rc2",).place(x=4, y=345)
 
 
 botao_video = Button(window,
@@ -311,7 +307,6 @@ menu_barra = Menu(window)
 
 menu_arquivo = Menu(menu_barra, tearoff=1)
 menu_arquivo.add_command(label="Mix", command=choice_mix)
-menu_arquivo.add_command(label="Channel", command=download_channel)
 menu_arquivo.add_command(label="Playlist", command=download_playlist)
 menu_arquivo.add_command(label="Web Page", command=page_web)
 menu_arquivo.add_command(label="Github", command=github_page)

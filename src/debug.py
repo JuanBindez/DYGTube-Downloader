@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc1
+# Release: v3.0-rc2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -39,7 +39,4 @@ class DebugInfo:
 
 
     info = logger_info.info("------------------------------start debugging--------------------------------")
-    bug_tag = logger_info.info("------------------------------ [BUG] ----------------------------------------")
 
-    info = ''
-    bug_tag = ''

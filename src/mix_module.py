@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc1
+# Release: v3.0-rc2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -30,7 +30,6 @@ from tkinter import filedialog
 from src.debug import DebugInfo
 from src.source import MixDownload
 from src.source import PlaylistDownload
-from src.progress_bar_module import progress_bar
 
 try:
   def choice_mix():
