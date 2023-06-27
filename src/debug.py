@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc3
+# Release: v3.0-rc4
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -38,5 +38,5 @@ class DebugInfo:
     logger_error = logging.getLogger("DYGTUbe_error")
 
 
-    info = logger_info.info("------------------------------start debugging--------------------------------")
+    info = logger_info.info("------------------------------[START DEBUG]--------------------------------")
 

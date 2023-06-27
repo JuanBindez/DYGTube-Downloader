@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc3
+# Release: v3.0-rc4
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -41,13 +41,6 @@ def sobre_software():
    window.resizable(False, False)
    window.attributes('-alpha',9.1)
 
-   
-   """information:
-
-   website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-
-   y is height and x is for sides.
-   """
 
    label = Label(window,
                 text="DYGTube",).place(x=188, y=10)

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc3
+# Release: v3.0-rc4
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -137,19 +137,7 @@ try:
     window.geometry("480x450")
     window.resizable(False, False)
     window.attributes('-alpha',9.1)
-
-    """information:
-
-    website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-
-    y is height and x is for sides
-    """
     
-    def info_function():
-      """displays information about the mix function.
-      clicking on the button will open a window with information.
-      """
-      messagebox.showinfo("DYG Downloader", "here you make 10 downloads at once")
 
     def make_menu(w):
       global the_menu
@@ -161,12 +149,7 @@ try:
         the_menu.entryconfigure("Paste",
         command=lambda: w.event_generate("<<Paste>>"))
         the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
-
-    COLOR_FRAME = '#585757'
-    GENERAL_BACKGROUND_COLOR = '#373636'
-    BUTTON_COLOR = '#191A1A'
-    LETTER_FG_COLOR = '#00E9CA'
-
+        
     label = Label(window,
                   text="URL 1*",).place(x=40, y=60)
 

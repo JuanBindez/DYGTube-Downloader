@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc3
+# Release: v3.0-rc4
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -54,7 +54,7 @@ def github_page():
 
 
 def page_web():
-    webbrowser.open("https://dygtube.freesoftwarebrasil.com.br")
+    webbrowser.open("https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml")
     pass
 
 def quit_func():
@@ -184,15 +184,6 @@ def download_mp3():
     else:
         pass
 
-
-"""
-information:
-
-website to generate colors in hex:  https://www.rapidtables.com/web/color/RGB_Color.html
-y ishei ght and x is for sides.
-"""
-
-
 window = Tk()
 window.title("DYGTube Downloader")
 window.geometry("500x365")
@@ -299,7 +290,7 @@ menu_arquivo.add_command(label="Playlist", command=download_playlist)
 menu_arquivo.add_command(label="Web Page", command=page_web)
 menu_arquivo.add_command(label="Github", command=github_page)
 menu_arquivo.add_command(label="Help", command=sobre_software)
-menu_arquivo.add_command(label="Quit", command=quit_func)
+#menu_arquivo.add_command(label="Quit", command=quit_func)
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
 window.config(menu=menu_barra)
