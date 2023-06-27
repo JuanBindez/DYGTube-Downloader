@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc2
+# Release: v3.0-rc3
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -62,7 +62,7 @@ def check_quality():
     """this function checks the available resolution of a video."""
 
     link = entrada_de_dados.get()
-    if link == "" or "URL*":
+    if link == "":
         messagebox.showinfo("DYGTube Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
     else:
         pass
@@ -73,7 +73,6 @@ def check_quality():
         messagebox.showinfo(title="DYGTUbe", message="The resolutions available for the video, " + video.title + ", ".join(resolucoes))
     except Exception as e:
         DebugInfo.info
-        DebugInfo.bug_tag
         DebugInfo.logger_error.error(e, exc_info=True)
     
 def download_video():
@@ -82,7 +81,7 @@ def download_video():
     """
 
     link = entrada_de_dados.get()
-    if link == "" or "URL*":
+    if link == "":
         messagebox.showerror("DYGTube Downloader", "the field is empty!")
     elif not link == "":
         pass
@@ -149,7 +148,7 @@ def download_mp3():
     """This function downloads audio only."""
 
     link = entrada_de_dados.get()
-    if link == "" or "URL*":
+    if link == "":
         messagebox.showerror("DYG Downloader", "the field is empty!")
     elif not link == "":
         pass
@@ -176,7 +175,6 @@ def download_mp3():
             ERROR_003 = True
             messagebox.showerror("DYG Downloader", "Something went wrong!")
             DebugInfo.info
-            DebugInfo.bug_tag
             DebugInfo.logger_error.error(e, exc_info=True)
     if not ERROR_003:
         notify_dowload()
@@ -252,23 +250,16 @@ check_144p = Checkbutton(window,
 def make_menu(w):
     global the_menu_1
     the_menu_1 = Menu(w, tearoff=0)
-    the_menu_1.add_command(label="Colar")
+    the_menu_1.add_command(label="Paste")
     
 
 def show_menu(e):
     w = e.widget
-    the_menu_1.entryconfigure("Colar",
+    the_menu_1.entryconfigure("Paste",
     command=lambda: w.event_generate("<<Paste>>"))
     the_menu_1.tk.call("tk_popup", the_menu_1, e.x_root, e.y_root)
 
-def on_entry_click(event):
-    if entrada_de_dados.get() == placeholder_text:
-        entrada_de_dados.delete(0, 'end')
-
-def on_focus_out(event):
-    if entrada_de_dados.get() == '':
-        entrada_de_dados.insert(0, placeholder_text)
-    
+ 
 button_quality = PhotoImage(data=base64.b64decode(ICON_QUALITY_VIDEO))
 botao_mix = Button(window,
                 image=button_quality,
@@ -276,20 +267,14 @@ botao_mix = Button(window,
                 width=16,
                 height=17).place(x=477, y=150)
 
-placeholder_text = 'URL*'
-
 make_menu(window)
 entrada_de_dados = Entry(window, width=58)
-entrada_de_dados.insert(0, placeholder_text)
-entrada_de_dados.bind('<FocusIn>', on_entry_click)
-entrada_de_dados.bind('<FocusOut>', on_focus_out)
 entrada_de_dados.place(x=2, y=150)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
-lbl = Label(window, text = "")
 
 
 label = Label(window,
-                text="v3.0-rc2",).place(x=4, y=345)
+                text="v3.0-rc3",).place(x=4, y=345)
 
 
 botao_video = Button(window,

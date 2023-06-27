@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc2
+# Release: v3.0-rc3
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -34,9 +34,9 @@ def download_playlist():
     """Here the url of the playlist will be captured and passed to the DownloadList class to download it."""
     def captura_playlist_mp3():
         url = entrada_url_playlist.get()
-        if url == "" or "URL Playlist*":
+        if url == "":
             messagebox.showerror("DYGTube Downloader", "the field is empty!")
-        elif not url == "" or "URL Playlist*":
+        elif not url == "":
             pass
         save_path = filedialog.askdirectory()
         messagebox.showinfo("DYG Downloader", "download will start... please wait")
@@ -45,9 +45,9 @@ def download_playlist():
 
     def captura_playlist_mp4():
         url = entrada_url_playlist.get()
-        if url == "" or "URL Playlist*":
+        if url == "":
             messagebox.showerror("DYGTube Downloader", "the field is empty!")
-        elif not url == "" or "URL Playlist*":
+        elif not url == "":
             pass
         save_path = filedialog.askdirectory()
         messagebox.showinfo("DYG Downloader", "download will start... please wait")
@@ -64,34 +64,19 @@ def download_playlist():
     def make_menu(w):
         global the_menu_2
         the_menu_2 = Menu(w, tearoff=0)
-        the_menu_2.add_command(label="Colar")
+        the_menu_2.add_command(label="Paste")
     
 
     def show_menu(e):
         w = e.widget
-        the_menu_2.entryconfigure("Colar",
+        the_menu_2.entryconfigure("Paste",
         command=lambda: w.event_generate("<<Paste>>"))
         the_menu_2.tk.call("tk_popup", the_menu_2, e.x_root, e.y_root)
 
-    def on_entry_click(event):
-        if entrada_url_playlist.get() == placeholder_text:
-            entrada_url_playlist.delete(0, 'end')
-
-    def on_focus_out(event):
-        if entrada_url_playlist.get() == '':
-            entrada_url_playlist.insert(0, placeholder_text)
-        
-
-    placeholder_text = 'URL Playlist*'
-
     make_menu(window)
     entrada_url_playlist = Entry(window, width=58)
-    entrada_url_playlist.insert(0, placeholder_text)
-    entrada_url_playlist.bind('<FocusIn>', on_entry_click)
-    entrada_url_playlist.bind('<FocusOut>', on_focus_out)
     entrada_url_playlist.place(x=2, y=100)
     entrada_url_playlist.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
-    lbl = Label(window, text = "")
 
     botao_download = Button(window,
                     text="Download Video",

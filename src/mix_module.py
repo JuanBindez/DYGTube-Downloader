@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc2
+# Release: v3.0-rc3
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -134,8 +134,7 @@ try:
 
     window = Tk()
     window.title("DYGTube Downloader")
-    window.geometry("450x500")
-    window['background'] = '#373636'
+    window.geometry("480x450")
     window.resizable(False, False)
     window.attributes('-alpha',9.1)
 
@@ -155,11 +154,11 @@ try:
     def make_menu(w):
       global the_menu
       the_menu = Menu(w, tearoff=0)
-      the_menu.add_command(label="Colar")
+      the_menu.add_command(label="Paste")
       
     def show_menu(e):
         w = e.widget
-        the_menu.entryconfigure("Colar",
+        the_menu.entryconfigure("Paste",
         command=lambda: w.event_generate("<<Paste>>"))
         the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
 
@@ -168,13 +167,8 @@ try:
     BUTTON_COLOR = '#191A1A'
     LETTER_FG_COLOR = '#00E9CA'
 
-    frame = Frame(window, width=600, height=35, bg=COLOR_FRAME)
-    frame.grid(row=0, column=0)
-
     label = Label(window,
-                  text="URL 1*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=60)
+                  text="URL 1*",).place(x=40, y=60)
 
     make_menu(window)
     entrada_url_1 = Entry(window, width=40)
@@ -183,95 +177,71 @@ try:
     lbl = Label(window, text = "")
 
     label = Label(window,
-                  text="URL 2*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=85)
+                  text="URL 2*",).place(x=40, y=85)
 
     entrada_url_2 = Entry(window, width=40)
     entrada_url_2.place(x=95, y=85)
 
     label = Label(window,
-                  text="URL 3*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=110)
+                  text="URL 3*",).place(x=40, y=110)
+    
     entrada_url_3 = Entry(window, width=40)
     entrada_url_3.place(x=95, y=110)
 
     label = Label(window,
-                  text="URL 4*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=135)
+                  text="URL 4*",).place(x=40, y=135)
 
     entrada_url_4 = Entry(window, width=40)
     entrada_url_4.place(x=95, y=135)
 
     label = Label(window,
-                  text="URL 5*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=160)
+                  text="URL 5*",).place(x=40, y=160)
 
     entrada_url_5 = Entry(window, width=40)
     entrada_url_5.place(x=95, y=160)
 
     label = Label(window,
-                  text="URL 6*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=185)
+                  text="URL 6*",).place(x=40, y=185)
 
     entrada_url_6 = Entry(window, width=40)
     entrada_url_6.place(x=95, y=185)
 
     label = Label(window,
-                  text="URL 7*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=210)
+                  text="URL 7*",).place(x=40, y=210)
 
     entrada_url_7 = Entry(window, width=40)
     entrada_url_7.place(x=95, y=210)
 
     label = Label(window,
-                  text="URL 8*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=235)
+                  text="URL 8*",).place(x=40, y=235)
 
     entrada_url_8 = Entry(window, width=40)
     entrada_url_8.place(x=95, y=235)
 
     label = Label(window,
-                  text="URL 9*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=260)
+                  text="URL 9*",).place(x=40, y=260)
 
     entrada_url_9 = Entry(window, width=40)
     entrada_url_9.place(x=95, y=260)
 
     label = Label(window,
-                  text="URL 10*",
-                  fg=LETTER_FG_COLOR,
-                  bg=GENERAL_BACKGROUND_COLOR).place(x=40, y=285)
+                  text="URL 10*",).place(x=40, y=285)
 
     entrada_url_10 = Entry(window, width=40)
     entrada_url_10.place(x=95, y=285)
 
-    # mix download option dutton video.
+
     botao_video = Button(window,
                     text="Download Video",
                     command=download_mix_video,
-                    fg=LETTER_FG_COLOR,
-                    bg=BUTTON_COLOR,).place(x=90, y=400)
-    # button to start downloading only the audio of the video from the mix option.
+                    width=60,).place(x=0, y=348)
+    
+
     botao_mp3 = Button(window,
                   text="Download MP3",
                   command=download_mix_mp3,
-                  fg=LETTER_FG_COLOR,
-                  bg=BUTTON_COLOR,).place(x=240, y=400)
+                  width=60,).place(x=0, y=385)
 
-    botao_info = Button(window,
-                  text="Info",
-                  command=info_function,
-                  fg=LETTER_FG_COLOR,
-                  bg=BUTTON_COLOR,
-                  width=2,).place(x=405, y=2)
                   
 except Exception as e:
   DebugInfo.logger_info.info("------------------------------start debugging--------------------------------")
