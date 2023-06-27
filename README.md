@@ -9,7 +9,11 @@
 
 ----------
 
-### Download this program for Windows and Linux from the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+### Download this program for Windows and Linux:
+
+__[Windows 10](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/download/v2.12.1/DYGTube-v2.12.1-x86_64-win10.exe)__.
+
+__[Ubuntu](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/download/v2.12.1/DYGTube-v2.12.1-x86_.1-x64-Ubuntu)__.
 
 ----------
 
