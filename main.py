@@ -56,6 +56,9 @@ def github_page():
 def page_web():
     webbrowser.open("https://dygtube.freesoftwarebrasil.com.br")
     pass
+
+def quit_func():
+    exit()
     
 
 def check_quality():
@@ -296,7 +299,7 @@ menu_arquivo.add_command(label="Playlist", command=download_playlist)
 menu_arquivo.add_command(label="Web Page", command=page_web)
 menu_arquivo.add_command(label="Github", command=github_page)
 menu_arquivo.add_command(label="Help", command=sobre_software)
-menu_arquivo.add_command(label="Quit", command=quit)
+menu_arquivo.add_command(label="Quit", command=quit_func)
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
 window.config(menu=menu_barra)
