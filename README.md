@@ -37,11 +37,11 @@ __[Ubuntu](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/do
 
 ### Make a git clone (Linux):
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc5
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v3.0-rc4
+    cd DYGTube-Downloader-v3.0-rc5
 
 ### Activate the virtualenv and enter the command:
 
@@ -49,7 +49,7 @@ __[Ubuntu](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/do
 
 ### command to compile:
 
-    pyinstaller --name DYGTube-v3.0-rc4-x86_64 --onefile --noconsole --windowed main.py
+    pyinstaller --name DYGTube-v3.0-rc5-x86_64 --onefile --noconsole --windowed main.py
 
 ----------
     
