@@ -21,24 +21,31 @@
 # repo: https://github.com/juanBindez
 
 
+import tkinter as tk
+from tkinter import messagebox
+import urllib.request
+import json
 import time
 
-from pytube.cli import on_progress
-from tkinter import *
-from tkinter import messagebox
-from tkinter import ttk
+def check_new_version(current_version):
 
+    version_url = "https://raw.githubusercontent.com/JuanBindez/DYGTube-version/main/version.json"
 
-def notify_dowload():
-    """mix option progress bar interface"""
+    try:
+        with urllib.request.urlopen(version_url) as response:
+            version_info = response.read().decode().strip()
 
-    window_progress = Tk()
-    window_progress.title("DYGTube Downloader")
-    window_progress.geometry("400x100")
-    window_progress.resizable(False, False)
-    window_progress.attributes('-alpha', 9.1)
+        version_data = json.loads(version_info)
+        latest_version = version_data.get("versao", "")
 
-    label = Label(window_progress,
-                  text="Dowload Concluído!",).place(x=140, y=60)
-    time.sleep(5)
-    window_progress.destroy()
+        if latest_version != current_version:
+            message = f"Uma nova versão ({latest_version}) está disponível!\n\n"
+            message += f"Data de lançamento: {version_data.get('data_lancamento', '')}\n"
+            message += f"Novidades:\n{version_data.get('novidades', '')}"
+
+            messagebox.showinfo("Nova Versão Disponível", message)
+
+    except urllib.error.URLError:
+        pass
+
+check_new_version("2.12.1")

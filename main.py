@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc4
+# Release: v3.0-rc5
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -42,6 +42,7 @@ from src.about_module import sobre_software
 from src.images import *
 from src.debug import DebugInfo
 from src.notify_module import *
+from src.update import check_new_version
 
 
 ERROR_001 = False
@@ -268,7 +269,7 @@ entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.0-rc3",).place(x=4, y=345)
+                text="v3.0-rc5",).place(x=4, y=345)
 
 
 botao_video = Button(window,
@@ -290,11 +291,9 @@ menu_arquivo.add_command(label="Playlist", command=download_playlist)
 menu_arquivo.add_command(label="Web Page", command=page_web)
 menu_arquivo.add_command(label="Github", command=github_page)
 menu_arquivo.add_command(label="Help", command=sobre_software)
-#menu_arquivo.add_command(label="Quit", command=quit_func)
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
 window.config(menu=menu_barra)
-
 
 if __name__ == "__main__":
   window.mainloop()
