@@ -9,14 +9,6 @@
 
 ----------
 
-### Download this program for Windows and Linux:
-
-__[Windows 10](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/download/v2.12.1/DYGTube-v2.12.1-x86_64-win10.exe)__.
-
-__[Ubuntu](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/download/v2.12.1/DYGTube-v2.12.1-x86_.1-x64-Ubuntu)__.
-
-----------
-
 ## about:
 
 #### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
@@ -37,11 +29,11 @@ __[Ubuntu](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/do
 
 ### Make a git clone (Linux):
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc5
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc6
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v3.0-rc5
+    cd DYGTube-Downloader-v3.0-rc6
 
 ### Activate the virtualenv and enter the command:
 
@@ -49,7 +41,7 @@ __[Ubuntu](https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc4/releases/do
 
 ### command to compile:
 
-    pyinstaller --name DYGTube-v3.0-rc5-x86_64 --onefile --noconsole --windowed main.py
+    pyinstaller --name DYGTube-v3.0-rc6-x86_64 --onefile --noconsole --windowed main.py
 
 ----------
     
