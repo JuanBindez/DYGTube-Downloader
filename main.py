@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc5
+# Release: v3.0-rc6
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -58,9 +58,6 @@ def page_web():
     webbrowser.open("https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml")
     pass
 
-def quit_func():
-    exit()
-    
 
 def check_quality():
     """this function checks the available resolution of a video."""
@@ -269,7 +266,7 @@ entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.0-rc5",).place(x=4, y=345)
+                text="v3.0-rc6",).place(x=4, y=345)
 
 
 botao_video = Button(window,

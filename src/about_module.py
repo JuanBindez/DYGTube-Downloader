@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc5
+# Release: v3.0-rc6
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -46,7 +46,7 @@ def sobre_software():
                 text="DYGTube",).place(x=188, y=10)
 
    label = Label(window,
-                text="v3.0-rc5",).place(x=195, y=29)
+                text="v3.0-rc6",).place(x=195, y=29)
 
    label = Label(window, 
                 text="DYGTube downloads MP4 video and audio MP3.", ).place(x=55, y=80)
