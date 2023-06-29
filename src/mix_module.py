@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc6
+# Release: v3.0-rc7
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -149,6 +149,13 @@ try:
         the_menu.entryconfigure("Paste",
         command=lambda: w.event_generate("<<Paste>>"))
         the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
+
+
+    custom_font = ('Arial', 30)
+    label = Label(window,
+                text="Mix",
+                fg='white',
+                font=custom_font,).place(x=200, y=5)
         
     label = Label(window,
                   text="URL 1*",).place(x=40, y=60)
@@ -158,6 +165,7 @@ try:
     entrada_url_1.place(x=95, y=60)
     entrada_url_1.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
     lbl = Label(window, text = "")
+
 
     label = Label(window,
                   text="URL 2*",).place(x=40, y=85)
@@ -216,14 +224,16 @@ try:
 
     botao_video = Button(window,
                     text="Download Video",
+                    font=('Arial'),
                     command=download_mix_video,
-                    width=60,).place(x=0, y=348)
+                    width=52,).place(x=0, y=348)
     
 
     botao_mp3 = Button(window,
                   text="Download MP3",
+                  font=('Arial'),
                   command=download_mix_mp3,
-                  width=60,).place(x=0, y=385)
+                  width=52,).place(x=0, y=385)
 
                   
 except Exception as e:

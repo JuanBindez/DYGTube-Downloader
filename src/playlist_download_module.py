@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc6
+# Release: v3.0-rc7
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -74,16 +74,25 @@ def download_playlist():
         the_menu_2.tk.call("tk_popup", the_menu_2, e.x_root, e.y_root)
 
     make_menu(window)
-    entrada_url_playlist = Entry(window, width=58)
-    entrada_url_playlist.place(x=2, y=100)
+    entrada_url_playlist = Entry(window, width=54)
+    entrada_url_playlist.place(x=3, y=100)
     entrada_url_playlist.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
+
+    custom_font = ('Arial', 30)
+    label = Label(window,
+                text="Playlist",
+                fg='white',
+                font=custom_font,).place(x=170, y=40)
+
 
     botao_download = Button(window,
                     text="Download Video",
+                    font=('Arial'),
                     command=captura_playlist_mp4,
-                    width=55,).place(x=0, y=200)
+                    width=50,).place(x=0, y=200)
     
     botao_download = Button(window,
                     text="Download MP3",
+                    font=('Arial'),
                     command=captura_playlist_mp3,
-                    width=55,).place(x=0, y=247)
+                    width=50,).place(x=0, y=247)

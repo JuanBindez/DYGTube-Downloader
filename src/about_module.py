@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc6
+# Release: v3.0-rc7
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -41,21 +41,24 @@ def sobre_software():
    window.resizable(False, False)
    window.attributes('-alpha',9.1)
 
-
+   custom_font_name = ('Arial', 15)
    label = Label(window,
-                text="DYGTube",).place(x=188, y=10)
-
+                text="DYGTube",
+                font=custom_font_name).place(x=185, y=20)
+   
+   custom_font_version = ('Arial', 14)
    label = Label(window,
-                text="v3.0-rc6",).place(x=195, y=29)
+                text="v3.0-rc7",
+                font=custom_font_version).place(x=195, y=42)
 
    label = Label(window, 
-                text="DYGTube downloads MP4 video and audio MP3.", ).place(x=55, y=80)
+                text="DYGTube: downloads MP4 video and audio MP3.", ).place(x=55, y=88)
 
    label = Label(window,
-                text="This software comes with absolutely no warranty.", ).place(x=45, y=110)
+                text="This software comes with absolutely no warranty.", ).place(x=45, y=154)
 
    label = Label(window, 
-                text="For more details, visit the GNU General Public License, version 2", ).place(x=9, y=150)
+                text="For more details, visit the GNU General Public License, version 2", ).place(x=9, y=170)
                 
    label = Label(window,
-                text="Copyright © 2022 - 2023  Juan Bindez",).place(x=80, y=270)
+                text="Copyright © 2022 - 2023  Juan Bindez",).place(x=80, y=260)

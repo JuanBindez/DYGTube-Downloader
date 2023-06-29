@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc6
+# Release: v3.0-rc7
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -52,11 +52,6 @@ ERROR_003 = False
 
 def github_page():
     webbrowser.open("https://github.com/JuanBindez")
-
-
-def page_web():
-    webbrowser.open("https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml")
-    pass
 
 
 def check_quality():
@@ -184,7 +179,7 @@ def download_mp3():
 
 window = Tk()
 window.title("DYGTube Downloader")
-window.geometry("500x365")
+window.geometry("530x375")
 #window['background'] = '#373636'  
 window.resizable(False, False)# False for non-responsive window and True for responsive.
 window.attributes('-alpha',9.1)
@@ -208,35 +203,37 @@ var_360p = IntVar()
 var_240p = IntVar()
 var_144p = IntVar()
 
+ALTURA = 210
+
 check_1080p = Checkbutton(window,
                          text="1080p",
                          bd=0,
-                         variable=var_1080p,).place(x=80, y=220)
+                         variable=var_1080p,).place(x=80, y=ALTURA)
 
 check_720p = Checkbutton(window,
                         text="720p",
                         bd=0,
-                        variable=var_720p).place(x=149, y=220)
+                        variable=var_720p).place(x=149, y=ALTURA)
 
 check_480p = Checkbutton(window,
                         text="480p",
                         bd=0,
-                        variable=var_480p).place(x=210, y=220)
+                        variable=var_480p).place(x=210, y=ALTURA)
 
 check_360p = Checkbutton(window,
                         text="360p",
                         bd=0,
-                        variable=var_360p).place(x=270, y=220)
+                        variable=var_360p).place(x=270, y=ALTURA)
 
 check_240p = Checkbutton(window,
                         text="240p",
                         bd=0,
-                        variable=var_240p).place(x=330, y=220)
+                        variable=var_240p).place(x=330, y=ALTURA)
 
 check_144p = Checkbutton(window,
                         text="144p",
                         bd=0,
-                        variable=var_144p).place(x=390, y=220)
+                        variable=var_144p).place(x=390, y=ALTURA)
 
 
 def make_menu(w):
@@ -257,37 +254,37 @@ botao_mix = Button(window,
                 image=button_quality,
                 command=check_quality,
                 width=16,
-                height=17).place(x=477, y=150)
+                height=17).place(x=498, y=150)
 
 make_menu(window)
-entrada_de_dados = Entry(window, width=58)
-entrada_de_dados.place(x=2, y=150)
+entrada_de_dados = Entry(window, width=61)
+entrada_de_dados.place(x=3, y=150)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.0-rc6",).place(x=4, y=345)
-
+                text="v3.0-rc7",).place(x=4, y=345)
 
 botao_video = Button(window,
                 text="Download Video",
+                font=('Arial'),
                 command=download_video,
-                width=60,).place(x=0, y=260)
+                width=57,).place(x=0, y=260)
 
 botao_mp3 = Button(window,
                 text="Download MP3",
                 command=download_mp3,
-                width=60,).place(x=0, y=300)
+                font=('Arial'),
+                width=57,).place(x=0, y=300)
 
 
 menu_barra = Menu(window)
 
 menu_arquivo = Menu(menu_barra, tearoff=1)
-menu_arquivo.add_command(label="Mix", command=choice_mix)
-menu_arquivo.add_command(label="Playlist", command=download_playlist)
-menu_arquivo.add_command(label="Web Page", command=page_web)
-menu_arquivo.add_command(label="Github", command=github_page)
-menu_arquivo.add_command(label="Help", command=sobre_software)
+menu_arquivo.add_command(label="Mix", command=choice_mix, font=('Arial'))
+menu_arquivo.add_command(label="Playlist", command=download_playlist, font=('Arial'))
+menu_arquivo.add_command(label="Github", command=github_page, font=('Arial'))
+menu_arquivo.add_command(label="Help", command=sobre_software, font=('Arial'))
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
 window.config(menu=menu_barra)
