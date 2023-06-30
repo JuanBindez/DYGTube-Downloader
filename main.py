@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc7
+# Release: v3.0-rc8
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -50,13 +50,12 @@ ERROR_002 = False
 ERROR_003 = False
 
 
-def github_page():
-    webbrowser.open("https://github.com/JuanBindez")
+def donete_page():
+    webbrowser.open("https://www.paypal.com/donate/?hosted_button_id=KLFTNVLPC5RYQ&source=qr")
 
 
 def check_quality():
     """this function checks the available resolution of a video."""
-
     link = entrada_de_dados.get()
     if link == "":
         messagebox.showinfo("DYGTube Downloader", "The field is empty, paste a URL and see the available resolutions for the video you want to download.")
@@ -75,7 +74,6 @@ def download_video():
     """Here the video is downloaded.
       the link variable receives the url.
     """
-
     link = entrada_de_dados.get()
     if link == "":
         messagebox.showerror("DYGTube Downloader", "the field is empty!")
@@ -142,7 +140,6 @@ def download_video():
   
 def download_mp3():
     """This function downloads audio only."""
-
     link = entrada_de_dados.get()
     if link == "":
         messagebox.showerror("DYG Downloader", "the field is empty!")
@@ -189,7 +186,6 @@ window.iconphoto(True, foto_icon)
 bg = PhotoImage(data=base64.b64decode(BANNER_LOGO))
 label = Label(window, image=bg, bd=0)
 label.place(x = 0,y = 0)
-
 
 COLOR_FRAME = '#585757'
 COLOR_BUTTON = '#191A1A'
@@ -258,12 +254,12 @@ botao_mix = Button(window,
 
 make_menu(window)
 entrada_de_dados = Entry(window, width=61)
-entrada_de_dados.place(x=3, y=150)
+entrada_de_dados.place(x=8, y=150)
 entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.0-rc7",).place(x=4, y=345)
+                text="v3.0-rc8",).place(x=4, y=345)
 
 botao_video = Button(window,
                 text="Download Video",
@@ -277,17 +273,18 @@ botao_mp3 = Button(window,
                 font=('Arial'),
                 width=57,).place(x=0, y=300)
 
-
 menu_barra = Menu(window)
 
 menu_arquivo = Menu(menu_barra, tearoff=1)
 menu_arquivo.add_command(label="Mix", command=choice_mix, font=('Arial'))
 menu_arquivo.add_command(label="Playlist", command=download_playlist, font=('Arial'))
-menu_arquivo.add_command(label="Github", command=github_page, font=('Arial'))
+#menu_arquivo.add_command(label="Donate", command=donete_page, font=('Arial'))
 menu_arquivo.add_command(label="Help", command=sobre_software, font=('Arial'))
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
 window.config(menu=menu_barra)
 
+
 if __name__ == "__main__":
+  check_new_version("2.12.1")
   window.mainloop()

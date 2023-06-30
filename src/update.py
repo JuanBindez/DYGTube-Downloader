@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc7
+# Release: v3.0-rc8
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -47,5 +47,3 @@ def check_new_version(current_version):
 
     except urllib.error.URLError:
         pass
-
-check_new_version("2.12.1")
