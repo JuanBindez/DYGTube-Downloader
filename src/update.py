@@ -28,7 +28,7 @@ import json
 import time
 
 def check_new_version(current_version):
-
+    time.sleep(4)
     version_url = "https://raw.githubusercontent.com/JuanBindez/DYGTube-version/main/version.json"
 
     try:
