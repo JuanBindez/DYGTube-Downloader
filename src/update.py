@@ -28,7 +28,7 @@ import json
 import time
 
 def check_new_version(current_version):
-    version_url = "https://raw.githubusercontent.com/JuanBindez/DYGTube-version/main/version.json"
+    version_url = "https://raw.githubusercontent.com/JuanBindez/DYGTube-Downloader/main/version.json"
 
     try:
         with urllib.request.urlopen(version_url) as response:
