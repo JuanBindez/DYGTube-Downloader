@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc8
+# Release: v3.0-rc9
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -48,7 +48,7 @@ def sobre_software():
    
    custom_font_version = ('Arial', 14)
    label = Label(window,
-                text="v3.0-rc8",
+                text="v3.0-rc9",
                 font=custom_font_version).place(x=195, y=42)
 
    label = Label(window, 

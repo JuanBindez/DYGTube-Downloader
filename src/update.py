@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc8
+# Release: v3.0-rc9
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -28,7 +28,6 @@ import json
 import time
 
 def check_new_version(current_version):
-    time.sleep(4)
     version_url = "https://raw.githubusercontent.com/JuanBindez/DYGTube-version/main/version.json"
 
     try:
@@ -36,14 +35,16 @@ def check_new_version(current_version):
             version_info = response.read().decode().strip()
 
         version_data = json.loads(version_info)
-        latest_version = version_data.get("versao", "")
+        latest_version = version_data.get("version", "")
 
         if latest_version != current_version:
-            message = f"Uma nova versão ({latest_version}) está disponível!\n\n"
-            message += f"Data de lançamento: {version_data.get('data_lancamento', '')}\n"
-            message += f"Novidades:\n{version_data.get('novidades', '')}"
+            message = f"DYGTube {latest_version} Available!\n\n"
+            message += f"Release Date: {version_data.get('release_date', '')}\n"
+            message += f"\nNew:\n{version_data.get('new', '- ')}"
+            message += f"\nBugfix:\n{version_data.get('bugfix', '- ')}"
 
-            messagebox.showinfo("Nova Versão Disponível", message)
+            messagebox.showinfo("DYGTube Release", message)
 
     except urllib.error.URLError:
         pass
+

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc8
+# Release: v3.0-rc9
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -259,7 +259,7 @@ entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.0-rc8",).place(x=4, y=345)
+                text="v3.0-rc9",).place(x=4, y=345)
 
 botao_video = Button(window,
                 text="Download Video",
