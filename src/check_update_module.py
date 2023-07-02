@@ -41,7 +41,6 @@ def check_new_version(current_version):
             message = f"DYGTube {latest_version} Available!\n\n"
             message += f"Release Date: {version_data.get('release_date', '')}\n"
             message += f"\nNew:\n{version_data.get('new', '- ')}"
-            message += f"\nBugfix:\n{version_data.get('bugfix', '- ')}"
 
             messagebox.showinfo("DYGTube Release", message)
 
