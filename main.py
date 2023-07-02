@@ -42,7 +42,7 @@ from src.about_module import sobre_software
 from src.images import *
 from src.debug import DebugInfo
 from src.notify_module import *
-from src.update import check_new_version
+from src.check_update_module import check_new_version
 
 
 ERROR_001 = False
