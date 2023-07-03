@@ -20,12 +20,15 @@
 #  
 # repo: https://github.com/juanBindez
 
+import time
+import json
 
 import tkinter as tk
 from tkinter import messagebox
 import urllib.request
-import json
-import time
+import webbrowser
+
+
 
 def check_new_version(current_version):
     version_url = "https://raw.githubusercontent.com/JuanBindez/DYGTube-Downloader/main/version.json"
@@ -42,7 +45,11 @@ def check_new_version(current_version):
             message += f"Release Date: {version_data.get('release_date', '')}\n"
             message += f"\nNew:\n{version_data.get('new', '- ')}"
 
-            messagebox.showinfo("DYGTube Release", message)
+            ask = messagebox.askokcancel("DYGTube Downloader", message + "\n\n\n\nwant to update?")
+            if ask == True:
+                webbrowser.open("https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml")
+            elif ask == False:
+                pass
 
     except urllib.error.URLError:
         pass
