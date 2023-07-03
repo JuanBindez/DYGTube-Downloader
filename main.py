@@ -50,8 +50,8 @@ ERROR_002 = False
 ERROR_003 = False
 
 
-def donete_page():
-    webbrowser.open("https://www.paypal.com/donate/?hosted_button_id=KLFTNVLPC5RYQ&source=qr")
+def source_code_page():
+    webbrowser.open("https://github.com/JuanBindez/DYGTube-Downloader")
 
 
 def check_quality():
@@ -278,7 +278,7 @@ menu_barra = Menu(window)
 menu_arquivo = Menu(menu_barra, tearoff=1)
 menu_arquivo.add_command(label="Mix", command=choice_mix, font=('Arial'))
 menu_arquivo.add_command(label="Playlist", command=download_playlist, font=('Arial'))
-#menu_arquivo.add_command(label="Donate", command=donete_page, font=('Arial'))
+menu_arquivo.add_command(label="Source code", command=source_code_page, font=('Arial'))
 menu_arquivo.add_command(label="Help", command=sobre_software, font=('Arial'))
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
