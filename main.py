@@ -262,7 +262,7 @@ label = Label(window,
                 text="v3.0-rc9",).place(x=4, y=345)
 
 botao_video = Button(window,
-                text="Download Video",
+                text="Download MP4",
                 font=('Arial'),
                 command=download_video,
                 width=57,).place(x=0, y=260)
