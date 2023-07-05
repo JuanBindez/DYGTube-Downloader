@@ -275,7 +275,7 @@ botao_mp3 = Button(window,
 
 menu_barra = Menu(window)
 
-menu_arquivo = Menu(menu_barra, tearoff=1)
+menu_arquivo = Menu(menu_barra, tearoff=0)
 menu_arquivo.add_command(label="Mix", command=choice_mix, font=('Arial'))
 menu_arquivo.add_command(label="Playlist", command=download_playlist, font=('Arial'))
 menu_arquivo.add_command(label="Source code", command=source_code_page, font=('Arial'))
