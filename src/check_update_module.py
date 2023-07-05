@@ -45,14 +45,17 @@ def check_new_version(current_version):
             message += f"Release Date: {version_data.get('release_date', '')}\n"
             message += f"\nNew:\n{version_data.get('new', '- ')}"
 
+            link_update = version_data.get('link', '')
+            link = link_update[0]
+
             ask = messagebox.askokcancel("DYGTube Downloader", message + "\n\n\n\nwant to update?")
             if ask == True:
-                webbrowser.open("https://www.softpedia.com/get/Internet/Download-Managers/DYGTube-Downloader.shtml")
+                webbrowser.open(link)
                 exit()
             elif ask == False:
                 exit()
 
     except urllib.error.URLError:
-        messagebox.showerror("Cautionr", "no internet connection")
+        messagebox.showerror("Caution", "no internet connection")
         exit()
 
