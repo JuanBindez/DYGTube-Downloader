@@ -223,7 +223,7 @@ try:
 
 
     botao_video = Button(window,
-                    text="Download Video",
+                    text="Download MP4",
                     font=('Arial'),
                     command=download_mix_video,
                     width=52,).place(x=0, y=348)
