@@ -16,7 +16,11 @@
 -----------
 ## For developers:
 
-#### Below is the step-by-step process for compiling (turning it into an executable), but if you prefer, the executable is already available on the website Visit the website click __[here](https://dygtube.freesoftwarebrasil.com.br)__.
+### Run Script main.py:
+
+    python3 main.py
+
+#### Below is the step-by-step process for compiling (turning it into an executable):
 
 
 ![Captura de tela de 2023-05-11 11-23-00](https://github.com/JuanBindez/DYGTube-Downloader-v2.12.0/assets/79322362/e3b55b70-177c-4354-afc3-2f9b855e88d8)
