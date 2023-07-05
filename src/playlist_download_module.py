@@ -86,7 +86,7 @@ def download_playlist():
 
 
     botao_download = Button(window,
-                    text="Download Video",
+                    text="Download MP4",
                     font=('Arial'),
                     command=captura_playlist_mp4,
                     width=50,).place(x=0, y=200)
