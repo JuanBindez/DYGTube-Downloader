@@ -44,20 +44,3 @@
     pyinstaller --name DYGTube-v3.0-rc9-x86_64 --onefile --noconsole --windowed main.py
 
 ----------
-    
-### Before compiling the files will look like this:
-
-![Captura de tela de 2022-07-18 13-58-12](https://user-images.githubusercontent.com/79322362/179566764-2d5149fe-4425-45d6-a025-032d66251c7f.png)
-
-### After compiling, 3 new files will appear:
-
-![Captura de tela de 2022-07-18 14-16-32](https://user-images.githubusercontent.com/79322362/179566787-86690eba-0902-4be7-9d7f-620996c776b5.png)
-
-### In the Dist folder will be the compiled file:
-
-![Captura de tela de 2022-07-18 13-59-03](https://user-images.githubusercontent.com/79322362/179566803-b58c664b-bb25-4d49-8bb0-8fd5466123de.png)
-
-### Clicking on it will open the program:
-
-![Captura de tela de 2023-05-09 21-55-22](https://github.com/JuanBindez/DYGTube-Downloader-v2.11.0/assets/79322362/486fe912-4143-4b92-9fd2-86ea0b10dee2)
-
