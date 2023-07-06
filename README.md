@@ -33,11 +33,11 @@
 
 ### Make a git clone (Linux):
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc9
+    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc10
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v3.0-rc9
+    cd DYGTube-Downloader-v3.0-rc10
 
 ### Activate the virtualenv and enter the command:
 
