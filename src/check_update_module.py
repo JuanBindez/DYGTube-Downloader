@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc10
+# Release: v3.0.0
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -53,7 +53,7 @@ def check_new_version(current_version):
                 webbrowser.open(link)
                 exit()
             elif ask == False:
-                exit()
+                pass
 
     except urllib.error.URLError:
         messagebox.showerror("Caution", "no internet connection")

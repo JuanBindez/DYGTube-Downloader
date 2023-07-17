@@ -5,7 +5,7 @@
 </h1>
 
 
-<h1 align="">DYGTube 2.12.1</h1>
+<h1 align="">DYGTube 3.0.0</h1>
 
 ----------
 
@@ -33,11 +33,11 @@
 
 ### Make a git clone (Linux):
 
-    git clone https://github.com/JuanBindez/DYGTube-Downloader-v3.0-rc10
+    git clone https://github.com/JuanBindez/DYGTube-Downloader
     
 ### Access the folder:
 
-    cd DYGTube-Downloader-v3.0-rc10
+    cd DYGTube-Downloader
 
 ### Activate the virtualenv and enter the command:
 
@@ -45,6 +45,6 @@
 
 ### command to compile:
 
-    pyinstaller --name DYGTube-v3.0-rc9-x86_64 --onefile --noconsole --windowed main.py
+    pyinstaller --name DYGTube-v3.0.0-x86_64 --onefile --noconsole --windowed main.py
 
 ----------

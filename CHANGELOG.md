@@ -7,6 +7,18 @@
 <h1 align="center">Change Log</h1>
 
 
+
+### v3.0.0:
+
+- User interface improvements
+- Added function to check for updates
+- Removed the Channel option
+
+### Note:
+
+- There may be sudden changes in the video platform and downloads stop working, but just wait for the DYGTube update.
+----------
+
 ### v2.12.1:
 
 - user interface improvements

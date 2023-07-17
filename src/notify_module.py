@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0-rc10
+# Release: v3.0.0
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -39,10 +39,10 @@ def notify_dowload():
     label = Label(top, text="Download Complete.")
     label.pack(padx=40, pady=40)
 
-    tempo_espera = 4000
+    tempo_espera = 400
 
     def fechar_tela():
-        top.destroy()
+        root.destroy()
 
     top.after(tempo_espera, fechar_tela)
 
