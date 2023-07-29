@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0.0
+# Release: v3.1-rc1
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -35,14 +35,12 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
 
-from src.source import MixDownload
-from src.playlist_download_module import download_playlist
-from src.mix_module import choice_mix
-from src.about_module import sobre_software
-from src.images import *
-from src.debug import DebugInfo
-from src.notify_module import *
-from src.check_update_module import check_new_version
+from src.views.playlist_download_view import download_playlist
+from src.views.mix_view import choice_mix
+from src.views.about_view import sobre_software
+from src.services.images_service import *
+from src.services.debug_service import DebugInfo
+from src.services.check_update_service import check_new_version
 
 
 ERROR_001 = False
@@ -76,7 +74,7 @@ def download_video():
     """
     link = entrada_de_dados.get()
     if link == "":
-        messagebox.showerror("DYGTube Downloader", "the field is empty!")
+        messagebox.showwarning("DYGTube Downloader", "the field is empty!")
     elif not link == "":
         pass
     
@@ -103,25 +101,25 @@ def download_video():
             DebugInfo.info
             DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             video_stream.download(save_path)
-            notify_dowload()
+            messagebox.showinfo("DYG Downloader", "Download Completed")
         else:
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
                 ys = yt.streams.get_highest_resolution()
                 ys.download(save_path)
-                notify_dowload()
+                messagebox.showinfo("DYG Downloader", "Download Completed")
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
             except Exception as e:
                 global ERROR_001
                 ERROR_001 = True
-                messagebox.showerror("DYG Downloader", "Something went wrong!")
+                messagebox.showwarning("DYG Downloader", "Something went wrong!")
                 DebugInfo.info
                 DebugInfo.bug_tag
                 DebugInfo.logger_error.error(e, exc_info=True)
                 
             if not ERROR_001:
-                notify_dowload()
+                messagebox.showinfo("DYG Downloader", "Download Completed")
             else:
                 pass
 
@@ -129,12 +127,12 @@ def download_video():
             DebugInfo.info
             DebugInfo.bug_tag
             DebugInfo.logger_info.info("(Error from in main.py) Error KeyError found in download video MP4 from URL: %s",link)
-            messagebox.showerror("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
+            messagebox.showwarning("DYG Downloader", "Unable to download, this is caused by some change on Youtube, try another video.")
             DebugInfo.logger_error.error(KeyError, exc_info=True)
     except Exception as e:
             global ERROR_002
             ERROR_002 = True
-            messagebox.showerror("DYG Downloader", "Something went wrong!")
+            messagebox.showwarning("DYG Downloader", "Something went wrong!")
             DebugInfo.logger_error.error(e, exc_info=True)
 
   
@@ -142,7 +140,7 @@ def download_mp3():
     """This function downloads audio only."""
     link = entrada_de_dados.get()
     if link == "":
-        messagebox.showerror("DYG Downloader", "the field is empty!")
+        messagebox.showwarning("DYG Downloader", "the field is empty!")
     elif not link == "":
         pass
 
@@ -166,11 +164,11 @@ def download_mp3():
     except Exception as e:
             global ERROR_003
             ERROR_003 = True
-            messagebox.showerror("DYG Downloader", "Something went wrong!")
+            messagebox.showwarning("DYG Downloader", "Something went wrong!")
             DebugInfo.info
             DebugInfo.logger_error.error(e, exc_info=True)
     if not ERROR_003:
-        notify_dowload()
+        messagebox.showinfo("DYG Downloader", "Download Completed")
     else:
         pass
 
@@ -259,7 +257,7 @@ entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.0.0",).place(x=4, y=345)
+                text="v3.1-rc1",).place(x=4, y=345)
 
 botao_video = Button(window,
                 text="Download MP4",

@@ -1,6 +1,5 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.0.0
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -27,7 +26,8 @@ from tkinter import messagebox
 from tkinter import filedialog
 from tkinter import ttk
 
-from src.source import MixDownload, PlaylistDownload
+from src.core.mix_core import MixDownload
+from src.core.playlist_core import PlaylistDownload
 
 
 def download_playlist():
