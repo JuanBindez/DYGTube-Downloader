@@ -6,8 +6,18 @@
 
 <h1 align="center">Change Log</h1>
 
+### v3.1.4:
 
+- performance improvements
 
+### Bugfix:
+
+- fixed issue that affected playlist downloads crashing.
+- fixed affected the "mix" option.
+- fixed problem with notifications
+- fixed issue that affected windows causing the program to crash
+
+----------
 ### v3.0.0:
 
 - User interface improvements
