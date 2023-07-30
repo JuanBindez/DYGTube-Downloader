@@ -47,7 +47,7 @@ def sobre_software():
    
    custom_font_version = ('Arial', 14)
    label = Label(window,
-                text="v3.1-rc1",
+                text="v3.1.4",
                 font=custom_font_version).place(x=195, y=42)
 
    label = Label(window, 

@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.1-rc1
+# Release: v3.1.4
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -257,7 +257,7 @@ entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.1-rc1",).place(x=4, y=345)
+                text="v3.1.4",).place(x=4, y=345)
 
 botao_video = Button(window,
                 text="Download MP4",
@@ -284,5 +284,5 @@ window.config(menu=menu_barra)
 
 
 if __name__ == "__main__":
-  check_new_version("3.0.0")
+  check_new_version("3.1.4")
   window.mainloop()
