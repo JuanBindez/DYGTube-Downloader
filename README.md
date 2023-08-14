@@ -29,7 +29,6 @@
 #### Below is the step-by-step process for compiling (turning it into an executable):
 
 
-
 ### Install Git (Linux):
 
     sudo apt install git
