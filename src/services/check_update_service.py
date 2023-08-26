@@ -19,6 +19,7 @@
 #  
 # repo: https://github.com/juanBindez
 
+
 import time
 import json
 
@@ -26,7 +27,6 @@ import tkinter as tk
 from tkinter import messagebox
 import urllib.request
 import webbrowser
-
 
 
 def check_new_version(current_version):
