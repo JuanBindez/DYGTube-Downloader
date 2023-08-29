@@ -4,7 +4,7 @@
 
 
 
-<h1 align="center">Change Log</h1>
+<h1 align="center">CHANGELOG</h1>
 
 ### v3.1.4:
 
