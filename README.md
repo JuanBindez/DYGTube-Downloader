@@ -1,7 +1,7 @@
 
 
 <h1 align="">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="images/DYGTube_ico.png" width="98px"/>
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="images/DYGTube_ico.png" width="97px"/>
 </h1>
 
 
