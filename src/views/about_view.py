@@ -43,21 +43,21 @@ def sobre_software():
    custom_font_name = ('Arial', 15)
    label = Label(window,
                 text="DYGTube",
-                font=custom_font_name).place(x=185, y=20)
+                font=custom_font_name).place(x=182, y=20)
    
    custom_font_version = ('Arial', 14)
    label = Label(window,
                 text="v3.1.4",
-                font=custom_font_version).place(x=195, y=42)
+                font=custom_font_version).place(x=192, y=42)
 
    label = Label(window, 
-                text="DYGTube: downloads MP4 video and audio MP3.", ).place(x=55, y=88)
+                text="DYGTube: downloads MP4 video and audio MP3.", ).place(x=55, y=110)
 
    label = Label(window,
-                text="This software comes with absolutely no warranty.", ).place(x=45, y=154)
+                text="This software comes with absolutely no warranty.", ).place(x=45, y=174)
 
    label = Label(window, 
-                text="For more details, visit the GNU General Public License, version 2", ).place(x=9, y=170)
+                text="For more details, visit the GNU General Public License, version 2", ).place(x=9, y=194)
                 
    label = Label(window,
                 text="Copyright © 2022 - 2023  Juan Bindez",).place(x=80, y=260)
