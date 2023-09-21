@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="images/DYGTube_ico.png" width="110px"/>
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="img/DYGTube_ico.png" width="110px"/>
 </h1>
 
 
