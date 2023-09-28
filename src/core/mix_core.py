@@ -58,17 +58,9 @@ class MixDownload():
             elif not self.link_url_input == "":
                 pass
 
-            EXTENSION_MP3 = '.mp3'
-            EXTENSION_MP4 = '.mp4'
-
             yt = YouTube(self.link_url_input, on_progress_callback=on_progress)
             ys = yt.streams.get_audio_only()
-            ys.download(self.save_path)
-
-            downloaded_file_path = os.path.abspath(ys.default_filename)
-
-            new_file_path = os.path.splitext(downloaded_file_path)[0] + EXTENSION_MP3
-            os.rename(downloaded_file_path, new_file_path)
+            ys.download(self.save_path, mp3=True)
 
             DebugInfo.logger_info.info("[INFO] (From main) Starting to download audio MP3 from URL: %s",self.link_url_input)
             time.sleep(3)
