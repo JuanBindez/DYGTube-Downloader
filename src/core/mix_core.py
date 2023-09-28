@@ -23,10 +23,10 @@
 import os
 import time
 
-from pytube import YouTube
-from pytube import Playlist
-from pytube import Channel
-from pytube.cli import on_progress
+from pytubefix import YouTube
+from pytubefix import Playlist
+from pytubefix import Channel
+from pytubefix.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk

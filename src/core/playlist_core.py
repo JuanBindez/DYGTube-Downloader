@@ -23,10 +23,10 @@
 import os
 import time
 
-from pytube import YouTube
-from pytube import Playlist
-from pytube import Channel
-from pytube.cli import on_progress
+from pytubefix import YouTube
+from pytubefix import Playlist
+from pytubefix import Channel
+from pytubefix.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
@@ -54,13 +54,11 @@ class PlaylistDownload():
         """Here the download of the playlist will start."""
 
         try:
-            EXTENSION_MP3 = '.mp3'
-
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
                 try:
                     ys = video.streams.get_audio_only()
-                    ys.download(self.path_to_save)
+                    ys.download(self.path_to_save, mp3=True)
                     DebugInfo.info
                     DebugInfo.logger_info.info("[INFO] (From source playlist) Starting to download audio MP3 from URL: %s",self.url_playlist)
                 except Exception as e:
@@ -73,10 +71,6 @@ class PlaylistDownload():
                 if not ERROR_03:
                     pass
 
-                downloaded_file_path = os.path.abspath(ys.default_filename)
-
-                new_file_path = os.path.splitext(downloaded_file_path)[0] + EXTENSION_MP3
-                os.rename(downloaded_file_path, new_file_path)
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From source playlist) Starting to download audio MP3 from URL: %s",self.url_playlist)
                

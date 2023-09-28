@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v3.1.4
+# Release: v4.0.0
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -28,8 +28,8 @@ import time
 import base64
 import webbrowser
 
-from pytube import YouTube
-from pytube.cli import on_progress
+from pytubefix import YouTube
+from pytubefix.cli import on_progress
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -147,15 +147,9 @@ def download_mp3():
     save_path = filedialog.askdirectory()
 
     try:
-        EXTENSION_MP3 = '.mp3'
-        EXTENSION_MP4 = '.mp4'
-
         yt = YouTube(link, on_progress_callback=on_progress)
         ys = yt.streams.get_audio_only()
-        ys.download(save_path)
-        downloaded_file_path = os.path.abspath(ys.default_filename)
-        new_file_path = os.path.splitext(downloaded_file_path)[0] + EXTENSION_MP3
-        os.rename(downloaded_file_path, new_file_path)
+        ys.download(save_path, mp3=True)
 
         DebugInfo.info
         DebugInfo.logger_info.info("[INFO] (From main) Starting to download audio MP3 from URL: %s",link)
@@ -257,7 +251,7 @@ entrada_de_dados.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 
 label = Label(window,
-                text="v3.1.4",).place(x=4, y=345)
+                text="v4.0.0",).place(x=4, y=345)
 
 botao_video = Button(window,
                 text="Download MP4",
@@ -284,5 +278,5 @@ window.config(menu=menu_barra)
 
 
 if __name__ == "__main__":
-  check_new_version("3.1.4")
+  check_new_version("4.0.0")
   window.mainloop()

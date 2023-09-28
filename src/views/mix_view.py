@@ -20,7 +20,7 @@
 # repo: https://github.com/juanBindez
 
 
-from pytube.cli import on_progress
+from pytubefix.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk

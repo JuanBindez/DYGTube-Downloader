@@ -20,7 +20,7 @@
 # repo: https://github.com/juanBindez
 
 
-from pytube.cli import on_progress
+from pytubefix.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
@@ -39,7 +39,6 @@ def download_playlist():
         elif not url == "":
             pass
         save_path = filedialog.askdirectory()
-        messagebox.showinfo("DYG Downloader", "download will start... please wait")
         DP = PlaylistDownload(url, save_path)
         DP.download_playlist_mp3()
 
@@ -50,7 +49,6 @@ def download_playlist():
         elif not url == "":
             pass
         save_path = filedialog.askdirectory()
-        messagebox.showinfo("DYG Downloader", "download will start... please wait")
         DP = PlaylistDownload(url, save_path)
         DP.download_playlist_mp4()
 

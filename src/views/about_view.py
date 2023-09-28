@@ -22,7 +22,7 @@
 
 import base64
 
-from pytube.cli import on_progress
+from pytubefix.cli import on_progress
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
@@ -47,7 +47,7 @@ def sobre_software():
    
    custom_font_version = ('Arial', 14)
    label = Label(window,
-                text="v3.1.4",
+                text="v4.0.0",
                 font=custom_font_version).place(x=192, y=50)
 
    label = Label(window, 
