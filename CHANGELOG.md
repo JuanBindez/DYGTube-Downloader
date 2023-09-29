@@ -6,6 +6,11 @@
 
 <h1 align="center">CHANGELOG</h1>
 
+### v4.0.0:
+
+- changed base library which had many errors
+
+----------
 ### v3.1.4:
 
 - performance improvements
