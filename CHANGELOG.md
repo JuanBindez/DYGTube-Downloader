@@ -6,6 +6,12 @@
 
 <h1 align="center">CHANGELOG</h1>
 
+### v4.1.1:
+
+- Updated base library with some fixes
+- fixed problem that affected downloads in the "mix" option
+
+----------
 ### v4.0.0:
 
 - changed base library which had many errors
