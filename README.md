@@ -6,7 +6,7 @@
 
 
 
-<h1 align="">DYGTube 4.0.0</h1>
+<h1 align="">DYGTube 4.1.1</h1>
 
 ----------
 
@@ -47,6 +47,6 @@
 
 ### command to compile:
 
-    pyinstaller --name DYGTube-v4.0.0-x86_64 --onefile --noconsole --windowed main.py
+    pyinstaller --name DYGTube-v4.1.1-x86_64 --onefile --noconsole --windowed main.py
 
 ----------

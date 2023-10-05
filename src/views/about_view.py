@@ -27,6 +27,8 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
+from src.views.version import *
+
 
 def sobre_software():
    """displays information about the program.
@@ -47,11 +49,14 @@ def sobre_software():
    
    custom_font_version = ('Arial', 14)
    label = Label(window,
-                text="v4.0.0",
+                text=VERSION,
                 font=custom_font_version).place(x=192, y=50)
+   
+   label = Label(window, 
+                text="(MPEG-4 AAC audio codec)", ).place(x=128, y=110)
 
    label = Label(window, 
-                text="DYGTube: downloads MP4 video and audio MP3.", ).place(x=55, y=130)
+                text="DYGTube: downloads MP4 video and audio MP3.", ).place(x=55, y=147)
 
    label = Label(window,
                 text="This software comes with absolutely no warranty.", ).place(x=45, y=177)

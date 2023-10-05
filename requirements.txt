@@ -1,6 +1,0 @@
-altgraph
-packaging
-pyinstaller
-pyinstaller-hooks-contrib
-pytubefix
-urllib3
