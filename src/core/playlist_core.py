@@ -57,6 +57,7 @@ class PlaylistDownload():
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
                 try:
+                    print(video.title)
                     ys = video.streams.get_audio_only()
                     ys.download(self.path_to_save, mp3=True)
                     DebugInfo.info
@@ -97,7 +98,8 @@ class PlaylistDownload():
             pl = Playlist(self.url_playlist)
             for video in pl.videos:
                 try:
-                    video.streams.get_lowest_resolution().download(self.path_to_save)
+                    print(video.title)
+                    video.streams.get_highest_resolution().download(self.path_to_save)
                     DebugInfo.info
                     DebugInfo.logger_info.info("[INFO] (From source playlist) Starting to download video MP4 from URL: %s",self.url_playlist)
                 except Exception as e:
@@ -107,9 +109,9 @@ class PlaylistDownload():
                     DebugInfo.logger_error.error(e, exc_info=True)
                     messagebox.showerror("DYGTube Downloader",
                                         "Something went wrong! check playlist link")
-                if not ERROR_05:
-                    messagebox.showinfo("DYG Downloader", 
-                                "The playlist has been downloaded successfully!")
+            if not ERROR_05:
+                messagebox.showinfo("DYG Downloader", 
+                            "The playlist has been downloaded successfully!")
 
 
         except Exception as e:

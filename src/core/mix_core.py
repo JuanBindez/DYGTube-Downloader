@@ -59,6 +59,7 @@ class MixDownload():
                 pass
 
             yt = YouTube(self.link_url_input, on_progress_callback=on_progress)
+            print(yt.title)
             ys = yt.streams.get_audio_only()
             ys.download(self.save_path, mp3=True)
 
@@ -85,6 +86,7 @@ class MixDownload():
                 pass
 
             yt = YouTube(self.link_url_input, on_progress_callback = on_progress)
+            print(yt.title)
             ys = yt.streams.get_highest_resolution()
             ys.download(self.save_path)
             DebugInfo.info

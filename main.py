@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v4.1.1
+# Release: v4.1.2
 #
 # Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
 #
@@ -81,6 +81,7 @@ def download_video():
     
     save_path = filedialog.askdirectory()
     video = YouTube(link)
+    print(video.title)
 
     try:
         video_stream = None 
@@ -106,8 +107,10 @@ def download_video():
         else:
             try:
                 yt = YouTube(link, on_progress_callback = on_progress)
+                print(yt.title)
                 ys = yt.streams.get_highest_resolution()
                 ys.download(save_path)
+                
                 messagebox.showinfo("DYG Downloader", "Download Completed")
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
@@ -149,6 +152,7 @@ def download_mp3():
 
     try:
         yt = YouTube(link, on_progress_callback=on_progress)
+        print(yt.title)
         ys = yt.streams.get_audio_only()
         ys.download(save_path, mp3=True)
 
