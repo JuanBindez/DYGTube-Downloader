@@ -30,6 +30,7 @@ import webbrowser
 
 from pytubefix import YouTube
 from pytubefix.cli import on_progress
+from pytubefix.exceptions import AgeRestrictedError
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -114,6 +115,10 @@ def download_video():
                 messagebox.showinfo("DYG Downloader", "Download Completed")
                 DebugInfo.info
                 DebugInfo.logger_info.info("[INFO] (From main.py ) Starting to download video from URL: %s",link)
+                
+            except AgeRestrictedError:
+                messagebox.showwarning("DYG Downloader", "Age Restricted Error")
+                pass
             except Exception as e:
                 global ERROR_001
                 ERROR_001 = True
@@ -126,6 +131,10 @@ def download_video():
                 messagebox.showinfo("DYG Downloader", "Download Completed")
             else:
                 pass
+                
+    except AgeRestrictedError:
+            messagebox.showwarning("DYG Downloader", "Age Restricted Error")
+            pass
 
     except KeyError:
             DebugInfo.info
@@ -160,7 +169,12 @@ def download_mp3():
         DebugInfo.logger_info.info("[INFO] (From main) Starting to download audio MP3 from URL: %s",link)
         time.sleep(3)
         
+    except AgeRestrictedError:
+            messagebox.showwarning("DYG Downloader", "Age Restricted Error")
+            pass
+        
     except Exception as e:
+           
             global ERROR_003
             ERROR_003 = True
             messagebox.showwarning("DYG Downloader", "Something went wrong!")

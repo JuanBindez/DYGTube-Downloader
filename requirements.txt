@@ -1,7 +1,7 @@
-altgraph==0.17.4
-packaging==23.2
-pyinstaller==6.0.0
-pyinstaller-hooks-contrib==2023.9
-pytubefix==1.5.0
-urllib3==2.0.6
+altgraph
+packaging
+pyinstaller
+pyinstaller-hooks-contrib
+pytubefix
+urllib3
 requests
