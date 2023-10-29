@@ -47,6 +47,6 @@
 
 ### command to compile:
 
-    pyinstaller --name DYGTube-v4.1.1-x86_64 --onefile --noconsole --windowed main.py
+    make build
 
 ----------
