@@ -4,8 +4,6 @@
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="img/DYGTube_ico.png" width="99px"/>
 </h1>
 
-
-
 <h1 align="">DYGTube 4.1.2</h1>
 
 ----------
