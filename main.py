@@ -40,6 +40,7 @@ from tkinter import filedialog
 
 from src.views.playlist_download_view import download_playlist
 from src.views.mix_view import choice_mix
+from src.views.captions_view import captions_download
 from src.views.about_view import sobre_software
 from src.services.images_service import *
 from src.services.debug_service import DebugInfo
@@ -295,7 +296,7 @@ menu_barra = Menu(window)
 menu_arquivo = Menu(menu_barra, tearoff=0)
 menu_arquivo.add_command(label="Mix", command=choice_mix, font=('Arial'))
 menu_arquivo.add_command(label="Playlist", command=download_playlist, font=('Arial'))
-menu_arquivo.add_command(label="Source code", command=source_code_page, font=('Arial'))
+menu_arquivo.add_command(label="Captions", command=captions_download, font=('Arial'))
 menu_arquivo.add_command(label="Help", command=sobre_software, font=('Arial'))
 
 menu_barra.add_cascade(label="Menu", menu=menu_arquivo)
