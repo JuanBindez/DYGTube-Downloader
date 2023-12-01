@@ -1,5 +1,3 @@
-
-
 <h1 align="">
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="img/DYGTube_ico.png" width="99px"/>
 </h1>
