@@ -1,7 +1,7 @@
 # this is part of the DYGtube Downloader project.
 #
 #
-# Copyright ©  2022 - 2023  Juan Bindez  <juanbindez780@gmail.com>
+# Copyright ©  2022 - 2024  Juan Bindez  <juanbindez780@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ from tkinter import ttk
 from src.views.version import *
 
 
-def sobre_software():
+def about_software():
    """displays information about the program.
 
    clicking on the button will open a window with information.
@@ -65,4 +65,4 @@ def sobre_software():
                 text="For more details, visit the GNU General Public License, version 2", ).place(x=9, y=194)
                 
    label = Label(window,
-                text="Copyright © 2022 - 2023  Juan Bindez",).place(x=80, y=257)
+                text="Copyright © 2022 - 2024  Juan Bindez",).place(x=80, y=257)

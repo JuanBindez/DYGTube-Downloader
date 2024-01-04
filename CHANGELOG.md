@@ -6,6 +6,12 @@
 
 <h1 align="center">CHANGELOG</h1>
 
+### v5.0.0:
+
+- Updated base library
+
+----------
+
 ### v4.1.2:
 
 - Updated base library that fixes Windows Defender alert related issues like false positive malware alert.
