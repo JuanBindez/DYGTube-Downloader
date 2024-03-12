@@ -1,6 +1,6 @@
 # this is part of the DYGtube Downloader project.
 #
-# Release: v5.0.0
+# Release: v6.0.0
 #
 # Copyright ©  2022 - 2024  Juan Bindez  <juanbindez780@gmail.com>
 #

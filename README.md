@@ -2,7 +2,7 @@
   <img alt="NextLevelWeek" title="#NextLevelWeek" src="img/DYGTube_ico.png" width="99px"/>
 </h1>
 
-<h1 align="">DYGTube 5.0.0</h1>
+<h1 align="">DYGTube 6.0.0</h1>
 
 ----------
 
@@ -25,17 +25,13 @@
 #### Below is the step-by-step process for compiling (turning it into an executable):
 
 
-### Install Git (Linux):
-
-    sudo apt install git
-
 ### Make a git clone (Linux):
 
     git clone https://github.com/JuanBindez/DYGTube-Downloader
     
 ### Access the folder:
 
-    cd DYGTube-Downloader
+    cd DYGTube-Downloader/
 
 ### Activate the virtualenv and enter the command:
 
