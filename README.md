@@ -3,6 +3,7 @@
 </h1>
 
 <h1 align="">DYGTube 6.0.0</h1>
+
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/JuanBindez/DYGTube-Downloader/total)
 
 
