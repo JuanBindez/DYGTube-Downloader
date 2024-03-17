@@ -4,12 +4,10 @@
 
 <h1 align="">DYGTube 6.0.0</h1>
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/JuanBindez/DYGTube-Downloader/total)
+
+
 ----------
-
-## about:
-
-#### This software effectively allows you to download videos and audios, with a friendly and intuitive interface, the user can choose the desired quality and output format, in addition to being able to download entire playlists at once. With its simplified functionality, the software provides an agile and practical experience for those who want to download multimedia content.
-
 
 ![Captura de tela de 2023-07-17 16-59-07](https://github.com/JuanBindez/DYGTube-Downloader/assets/79322362/30f90ed8-3d5f-4a1b-bcf3-9c429e7c3860)
 
