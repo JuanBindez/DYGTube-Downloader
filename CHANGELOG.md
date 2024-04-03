@@ -6,6 +6,12 @@
 
 <h1 align="center">CHANGELOG</h1>
 
+### v7.0.0:
+
+- Updated base library
+
+----------
+
 ### v6.0.0:
 
 - Updated base library
