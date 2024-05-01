@@ -6,6 +6,12 @@
 
 <h1 align="center">CHANGELOG</h1>
 
+### v7.1.0:
+
+- Update YouTube handler lib
+
+----------
+
 ### v7.0.0:
 
 - Updated base library
